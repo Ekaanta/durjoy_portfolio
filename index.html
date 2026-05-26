@@ -728,6 +728,63 @@
   }
 
 
+
+  /* WORK SAMPLES */
+  .work-samples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .work-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+  }
+  .work-card:hover { box-shadow: 0 4px 24px rgba(15,14,12,0.08); }
+  .wc-top { padding: 1.25rem 1.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--paper2); }
+  .wc-type-label { display:block; font-family:"DM Mono",monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:0.3rem; }
+  .wc-project-name { display:block; font-family:"Fraunces",serif; font-size:1rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:0.65rem; }
+  .wc-severity-row { display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .sev-pill { font-family:"DM Mono",monospace; font-size:0.62rem; padding:0.2rem 0.55rem; border-radius:2px; font-weight:500; }
+  .wc-issue-log { padding:0.75rem 1.5rem; display:flex; flex-direction:column; border-bottom:1px solid var(--border); }
+  .wci-row { display:grid; grid-template-columns:52px 1fr auto; gap:0.5rem; align-items:center; padding:0.4rem 0; border-bottom:1px solid var(--border); font-size:0.75rem; }
+  .wci-row:last-child { border-bottom:none; }
+  .wci-id { font-family:"DM Mono",monospace; font-size:0.62rem; color:var(--muted); }
+  .wci-text { color:var(--ink); line-height:1.3; }
+  .wci-sev { font-family:"DM Mono",monospace; font-size:0.58rem; font-weight:600; white-space:nowrap; }
+  .gap-stats-row { display:flex; padding:1rem 1.5rem; border-bottom:1px solid var(--border); }
+  .gap-stat-item { flex:1; text-align:center; padding:0.5rem 0; border-right:1px solid var(--border); }
+  .gap-stat-item:last-child { border-right:none; }
+  .gsn-light { display:block; font-family:"Fraunces",serif; font-size:2rem; font-weight:700; line-height:1; margin-bottom:0.2rem; }
+  .gsl-light { font-family:"DM Mono",monospace; font-size:0.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+  .light-track-table { padding:0.75rem 1.5rem; border-bottom:1px solid var(--border); }
+  .ltt-header { display:grid; grid-template-columns:1.3fr 1.1fr 0.7fr 0.8fr; gap:0.5rem; font-family:"DM Mono",monospace; font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); padding-bottom:0.4rem; border-bottom:1px solid var(--border); margin-bottom:0.35rem; }
+  .ltt-row { display:grid; grid-template-columns:1.3fr 1.1fr 0.7fr 0.8fr; gap:0.5rem; align-items:center; padding:0.35rem 0; border-bottom:1px solid var(--border); font-size:0.72rem; color:var(--ink); }
+  .ltt-row:last-child { border-bottom:none; }
+  .ltt-bar { height:5px; background:var(--border); border-radius:3px; overflow:hidden; }
+  .ltt-bar div { height:100%; border-radius:3px; }
+  .ltt-pill { font-family:"DM Mono",monospace; font-size:0.58rem; padding:0.15rem 0.4rem; border-radius:2px; white-space:nowrap; }
+  .fl-light { padding:0.75rem 1.5rem; border-bottom:1px solid var(--border); font-size:0.78rem; }
+  .fll-section { font-family:"DM Mono",monospace; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-dark); margin-bottom:0.3rem; }
+  .fll-item { display:flex; gap:0.5rem; padding:0.3rem 0; border-bottom:1px solid var(--border); color:var(--ink); line-height:1.3; }
+  .fll-item:last-child { border-bottom:none; }
+  .fll-check { color:var(--forest); font-weight:700; flex-shrink:0; }
+  .muted-item { color:var(--muted); }
+  .wc-bottom { padding:1rem 1.5rem; display:flex; flex-direction:column; gap:0.6rem; flex:1; }
+  .wc-what-label { font-family:"DM Mono",monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dark); }
+  .wc-what-text { font-size:0.8rem; color:var(--muted); line-height:1.65; }
+  .wc-chips { display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .wc-chip { font-size:0.68rem; padding:0.25rem 0.6rem; background:var(--paper2); border:1px solid var(--border); border-radius:2px; color:var(--ink); }
+  @media (max-width: 900px) {
+    .work-samples-grid { grid-template-columns: 1fr; }
+    .ltt-header, .ltt-row { grid-template-columns: 1fr 1fr 0.5fr 0.7fr; }
+  }
+
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -1026,134 +1083,141 @@
 </section>
 
 <!-- WORK IN ACTION -->
-<section id="work-samples" style="background: var(--paper);">
+<section id="work-samples" style="background: var(--paper2);">
   <div class="section-label">Real Work Samples</div>
   <h2 class="section-title">My Work <em>In Action</em></h2>
-  <p style="color:var(--muted); font-size:0.9rem; max-width:55ch; margin-top:0.5rem; line-height:1.7;">These are actual documents and systems I have created across real client projects — not templates, not mockups.</p>
+  <p style="color:var(--muted); font-size:0.9rem; max-width:55ch; margin-top:0.5rem; line-height:1.7;">Actual documents and systems I have created across real client projects — not templates, not mockups.</p>
 
   <div class="work-samples-grid">
 
+    <!-- CARD 1 -->
     <div class="work-card fade-up">
-      <div class="work-card-header" style="background:#1a0a00;">
-        <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;flex-wrap:wrap;">
-          <span class="wc-badge" style="background:#c04b2a;">4 CRITICAL</span>
-          <span class="wc-badge" style="background:#7a3200;">5 HIGH</span>
-          <span class="wc-badge" style="background:#3d3d00;">3 MEDIUM</span>
+      <div class="wc-top">
+        <div class="wc-top-meta">
+          <span class="wc-type-label">📄 Forensic QA Report</span>
+          <span class="wc-project-name">Astrology Mobile App — iOS &amp; Android</span>
         </div>
-        <div class="wc-title-sm">FORENSIC QA REPORT</div>
-        <div class="wc-subtitle-sm">Astrology Mobile App — iOS &amp; Android Pre-Submission Audit</div>
-        <div class="wc-issue-list">
-          <div class="wc-issue"><span style="color:#c04b2a;">●</span> ISS-04 In-App Purchase Not Configured</div>
-          <div class="wc-issue"><span style="color:#c04b2a;">●</span> ISS-07 Hardcoded AI Data, Misleading Claims</div>
-          <div class="wc-issue"><span style="color:#c04b2a;">●</span> ISS-09 About Us Page Completely Empty</div>
-          <div class="wc-issue"><span style="color:#c04b2a;">●</span> ISS-12 Delete Account Non-Functional</div>
-          <div class="wc-issue"><span style="color:#f5a623;">●</span> ISS-03 Back Button Broken on AI Screen</div>
-          <div class="wc-issue"><span style="color:#f5a623;">●</span> ISS-08 Tarot Cards Static, No Draw Limit</div>
+        <div class="wc-severity-row">
+          <span class="sev-pill" style="background:#fde8e3;color:#c04b2a;">4 Critical</span>
+          <span class="sev-pill" style="background:#fff3cd;color:#856404;">5 High</span>
+          <span class="sev-pill" style="background:#e2f0fb;color:#1a56db;">3 Medium</span>
         </div>
       </div>
-      <div class="work-card-body">
-        <div class="wc-label">What I Did</div>
-        <div class="wc-desc">Full pre-submission QA audit of an astrology app before App Store and Play Store upload. Audited 11 screens, found and documented 12 issues with severity ratings, impact analysis, and fix recommendations for each.</div>
-        <div class="wc-outcome-row">
-          <span class="outcome-chip">⛔ App blocked from submission</span>
-          <span class="outcome-chip">✅ All P1 issues documented</span>
-        </div>
-        <div class="wc-meta-row">
-          <span class="wc-type-tag">📄 Forensic QA Report</span>
-          <span class="wc-type-tag">📱 Mobile App PM</span>
+      <div class="wc-issue-log">
+        <div class="wci-row critical"><span class="wci-id">ISS-04</span><span class="wci-text">In-App Purchase Not Configured</span><span class="wci-sev" style="color:#c04b2a;">CRITICAL</span></div>
+        <div class="wci-row critical"><span class="wci-id">ISS-07</span><span class="wci-text">Hardcoded AI Data, Misleading Claims</span><span class="wci-sev" style="color:#c04b2a;">CRITICAL</span></div>
+        <div class="wci-row critical"><span class="wci-id">ISS-09</span><span class="wci-text">About Us Page Completely Empty</span><span class="wci-sev" style="color:#c04b2a;">CRITICAL</span></div>
+        <div class="wci-row critical"><span class="wci-id">ISS-12</span><span class="wci-text">Delete Account Non-Functional</span><span class="wci-sev" style="color:#c04b2a;">CRITICAL</span></div>
+        <div class="wci-row high"><span class="wci-id">ISS-03</span><span class="wci-text">Back Button Broken on AI Screen</span><span class="wci-sev" style="color:#856404;">HIGH</span></div>
+        <div class="wci-row high"><span class="wci-id">ISS-08</span><span class="wci-text">Tarot Cards Static, No Draw Limit</span><span class="wci-sev" style="color:#856404;">HIGH</span></div>
+      </div>
+      <div class="wc-bottom">
+        <div class="wc-what-label">What I Did</div>
+        <div class="wc-what-text">Full pre-submission QA audit across 11 screens before App Store and Play Store upload. Documented 12 issues with severity ratings, business impact, and fix recommendations for each one.</div>
+        <div class="wc-chips">
+          <span class="wc-chip">⛔ App blocked from submission</span>
+          <span class="wc-chip">✅ All P1 issues documented with fixes</span>
         </div>
       </div>
     </div>
 
+    <!-- CARD 2 -->
     <div class="work-card fade-up">
-      <div class="work-card-header" style="background:#0a1a0f;">
-        <div class="gap-summary-row">
-          <div class="gap-stat-box"><span class="gsn" style="color:#34a853;">28</span><span class="gsl">Implemented</span></div>
-          <div class="gap-stat-box"><span class="gsn" style="color:#fbbc04;">3</span><span class="gsl">Partial</span></div>
-          <div class="gap-stat-box"><span class="gsn" style="color:#ea4335;">3</span><span class="gsl">Missing</span></div>
-          <div class="gap-stat-box"><span class="gsn" style="color:#8ab4f8;">5</span><span class="gsl">Beyond PRD</span></div>
-        </div>
-        <div class="wc-title-sm" style="margin-top:1rem;">PRD vs IMPLEMENTATION</div>
-        <div class="wc-subtitle-sm">SurveyMate Platform — Full Gap Analysis Report</div>
-        <div style="margin-top:0.75rem;">
-          <div style="display:flex;height:6px;border-radius:3px;overflow:hidden;gap:2px;">
-            <div style="width:72%;background:#34a853;border-radius:3px;"></div>
-            <div style="width:8%;background:#fbbc04;"></div>
-            <div style="width:8%;background:#ea4335;"></div>
-            <div style="width:12%;background:#8ab4f8;border-radius:3px;"></div>
-          </div>
-          <div style="font-size:0.62rem;color:rgba(245,242,235,0.4);margin-top:0.35rem;">Overall verdict: ~92% complete</div>
+      <div class="wc-top">
+        <div class="wc-top-meta">
+          <span class="wc-type-label">📊 PRD Gap Analysis</span>
+          <span class="wc-project-name">SurveyMate Platform — Full Requirements Review</span>
         </div>
       </div>
-      <div class="work-card-body">
-        <div class="wc-label">What I Did</div>
-        <div class="wc-desc">Compared the full product PRD against live implementation across the worker-facing site and admin panel. Screened every feature, documented gaps, and gave priority fix recommendations to the development team.</div>
-        <div class="wc-outcome-row">
-          <span class="outcome-chip">📊 39 features reviewed</span>
-          <span class="outcome-chip">🎯 3 priority gaps flagged</span>
+      <div class="gap-stats-row">
+        <div class="gap-stat-item"><span class="gsn-light" style="color:#2a5c45;">28</span><span class="gsl-light">Implemented ✓</span></div>
+        <div class="gap-stat-item"><span class="gsn-light" style="color:#856404;">3</span><span class="gsl-light">Partial</span></div>
+        <div class="gap-stat-item"><span class="gsn-light" style="color:#c04b2a;">3</span><span class="gsl-light">Missing</span></div>
+        <div class="gap-stat-item"><span class="gsn-light" style="color:#1a56db;">5</span><span class="gsl-light">Beyond PRD</span></div>
+      </div>
+      <div style="padding: 0 1.5rem;">
+        <div style="display:flex;height:8px;border-radius:4px;overflow:hidden;gap:2px;margin-bottom:0.4rem;">
+          <div style="width:72%;background:#34a853;"></div>
+          <div style="width:8%;background:#fbbc04;"></div>
+          <div style="width:8%;background:#ea4335;"></div>
+          <div style="width:12%;background:#4285f4;border-radius:0 4px 4px 0;"></div>
         </div>
-        <div class="wc-meta-row">
-          <span class="wc-type-tag">📄 Gap Analysis Report</span>
-          <span class="wc-type-tag">🔍 QA and Validation</span>
+        <div style="font-size:0.68rem;color:var(--muted);">Overall verdict: ~92% complete</div>
+      </div>
+      <div class="wc-bottom">
+        <div class="wc-what-label">What I Did</div>
+        <div class="wc-what-text">Compared the full product PRD against live implementation — worker site and admin panel. Screened every feature, documented gaps, and gave priority fix recommendations to the development team.</div>
+        <div class="wc-chips">
+          <span class="wc-chip">📋 39 features reviewed</span>
+          <span class="wc-chip">🎯 3 priority gaps identified</span>
+          <span class="wc-chip">📄 Full written report delivered</span>
         </div>
       </div>
     </div>
 
+    <!-- CARD 3 -->
     <div class="work-card fade-up">
-      <div class="work-card-header" style="background:#0a0f1a;">
-        <div class="wc-title-sm">PM TRACK SHEET</div>
-        <div class="wc-subtitle-sm">Multi-client Project Management — 330+ Active Rows</div>
-        <div class="mini-track-table">
-          <div class="mtt-header"><span>Client</span><span>Phase</span><span>Progress</span><span>Status</span></div>
-          <div class="mtt-row"><span>ihamrick</span><span>Bug Fixing</span><div class="mtt-bar"><div style="width:90%;background:#34a853;"></div></div><span class="mtt-pill" style="background:#d4edda;color:#2a5c45;">Complete</span></div>
-          <div class="mtt-row"><span>dlmiked</span><span>App Backend</span><div class="mtt-bar"><div style="width:100%;background:#34a853;"></div></div><span class="mtt-pill" style="background:#c8f0d8;color:#1a4a2a;">Delivered</span></div>
-          <div class="mtt-row"><span>musaabadam</span><span>AI UI/UX</span><div class="mtt-bar"><div style="width:10%;background:#fbbc04;"></div></div><span class="mtt-pill" style="background:#fff3cd;color:#856404;">Running</span></div>
-          <div class="mtt-row"><span>alexskz</span><span>AI Backend</span><div class="mtt-bar"><div style="width:100%;background:#34a853;"></div></div><span class="mtt-pill" style="background:#d4edda;color:#2a5c45;">Complete</span></div>
-          <div class="mtt-row"><span>letybonelli</span><span>AI Frontend</span><div class="mtt-bar"><div style="width:40%;background:#8ab4f8;"></div></div><span class="mtt-pill" style="background:#e8f0fe;color:#1a56db;">Running</span></div>
+      <div class="wc-top">
+        <div class="wc-top-meta">
+          <span class="wc-type-label">📋 PM Track Sheet</span>
+          <span class="wc-project-name">Multi-client Project Management System</span>
+        </div>
+        <div class="wc-severity-row">
+          <span class="sev-pill" style="background:#e8f5e9;color:#2a5c45;">330+ Active Rows</span>
+          <span class="sev-pill" style="background:#e8f0fe;color:#1a56db;">Live Tracking</span>
         </div>
       </div>
-      <div class="work-card-body">
-        <div class="wc-label">What I Did</div>
-        <div class="wc-desc">Built and maintained a full multi-client PM tracking system — tracking delivery dates, project phases, pricing, progress percentage, team links, and feature docs across 330+ project entries simultaneously.</div>
-        <div class="wc-outcome-row">
-          <span class="outcome-chip">📋 330+ projects tracked</span>
-          <span class="outcome-chip">👥 Multiple teams coordinated</span>
+      <div class="light-track-table">
+        <div class="ltt-header">
+          <span>Client</span><span>Phase</span><span>Progress</span><span>Status</span>
         </div>
-        <div class="wc-meta-row">
-          <span class="wc-type-tag">📊 Google Sheets System</span>
-          <span class="wc-type-tag">🔗 Project Coordination</span>
+        <div class="ltt-row"><span>ihamrick</span><span>Bug Fixing</span><div class="ltt-bar"><div style="width:90%;background:#34a853;"></div></div><span class="ltt-pill" style="background:#d4edda;color:#2a5c45;">Complete</span></div>
+        <div class="ltt-row"><span>dlmiked</span><span>App Backend</span><div class="ltt-bar"><div style="width:100%;background:#34a853;"></div></div><span class="ltt-pill" style="background:#c8f0d8;color:#1a4a2a;">Delivered</span></div>
+        <div class="ltt-row"><span>musaabadam</span><span>AI UI/UX</span><div class="ltt-bar"><div style="width:10%;background:#fbbc04;"></div></div><span class="ltt-pill" style="background:#fff3cd;color:#856404;">Running</span></div>
+        <div class="ltt-row"><span>alexskz</span><span>AI Backend</span><div class="ltt-bar"><div style="width:100%;background:#34a853;"></div></div><span class="ltt-pill" style="background:#d4edda;color:#2a5c45;">Complete</span></div>
+        <div class="ltt-row"><span>letybonelli</span><span>AI Frontend</span><div class="ltt-bar"><div style="width:40%;background:#4285f4;"></div></div><span class="ltt-pill" style="background:#e8f0fe;color:#1a56db;">Running</span></div>
+      </div>
+      <div class="wc-bottom">
+        <div class="wc-what-label">What I Did</div>
+        <div class="wc-what-text">Built and maintained a full multi-client PM tracking system — delivery dates, project phases, pricing, progress %, team links, and feature docs across 330+ project entries simultaneously.</div>
+        <div class="wc-chips">
+          <span class="wc-chip">👥 Multiple teams coordinated</span>
+          <span class="wc-chip">📊 Google Sheets system</span>
         </div>
       </div>
     </div>
 
+    <!-- CARD 4 -->
     <div class="work-card fade-up">
-      <div class="work-card-header" style="background:#0f0a1a;">
-        <div class="wc-title-sm">FEATURE SCOPING DOC</div>
-        <div class="wc-subtitle-sm">sammymgmt11 — Trading Journal Web App</div>
-        <div class="fl-preview">
-          <div class="fl-section-label">Core Features</div>
-          <div class="fl-item-row">✓ Trader Dashboard — P&amp;L, win rate, stats</div>
-          <div class="fl-item-row">✓ Trade Journal — add/edit, emotion tagging</div>
-          <div class="fl-item-row">✓ Analytics and Data Visualization</div>
-          <div class="fl-item-row">✓ AI Insights Interface</div>
-          <div class="fl-item-row">✓ CSV Trade Import System</div>
-          <div class="fl-item-row">✓ Subscription and Billing UX</div>
-          <div class="fl-section-label" style="margin-top:0.5rem;">Secondary Features</div>
-          <div class="fl-item-row" style="color:rgba(245,242,235,0.5);">+ Admin Dashboard</div>
-          <div class="fl-item-row" style="color:rgba(245,242,235,0.5);">+ Notifications System</div>
-          <div class="fl-item-row" style="color:rgba(245,242,235,0.5);">+ Two-Factor Authentication</div>
+      <div class="wc-top">
+        <div class="wc-top-meta">
+          <span class="wc-type-label">📝 Feature Scoping Document</span>
+          <span class="wc-project-name">sammymgmt11 — Trading Journal Web App</span>
+        </div>
+        <div class="wc-severity-row">
+          <span class="sev-pill" style="background:#e8f5e9;color:#2a5c45;">Client Signed</span>
+          <span class="sev-pill" style="background:#fde8e3;color:#c04b2a;">Scope Locked</span>
         </div>
       </div>
-      <div class="work-card-body">
-        <div class="wc-label">What I Did</div>
-        <div class="wc-desc">Translated raw client requirements into a structured, signed Feature and Change Tracking Document — defining core scope, secondary features, and getting client sign-off before development began to prevent scope creep.</div>
-        <div class="wc-outcome-row">
-          <span class="outcome-chip">📝 Scope locked before dev</span>
-          <span class="outcome-chip">✅ Client signed off</span>
-        </div>
-        <div class="wc-meta-row">
-          <span class="wc-type-tag">📄 Scoping Document</span>
-          <span class="wc-type-tag">🤝 Client Management</span>
+      <div class="fl-light">
+        <div class="fll-section">Core Features</div>
+        <div class="fll-item"><span class="fll-check">✓</span> Trader Dashboard — P&amp;L, win rate, stats</div>
+        <div class="fll-item"><span class="fll-check">✓</span> Trade Journal — add/edit, emotion tagging</div>
+        <div class="fll-item"><span class="fll-check">✓</span> Analytics and Data Visualization</div>
+        <div class="fll-item"><span class="fll-check">✓</span> AI Insights Interface</div>
+        <div class="fll-item"><span class="fll-check">✓</span> CSV Trade Import System</div>
+        <div class="fll-item"><span class="fll-check">✓</span> Subscription and Billing UX</div>
+        <div class="fll-section" style="margin-top:0.5rem;">Secondary Features</div>
+        <div class="fll-item muted-item"><span>+</span> Admin Dashboard</div>
+        <div class="fll-item muted-item"><span>+</span> Notifications System</div>
+        <div class="fll-item muted-item"><span>+</span> Two-Factor Authentication</div>
+      </div>
+      <div class="wc-bottom">
+        <div class="wc-what-label">What I Did</div>
+        <div class="wc-what-text">Translated raw client requirements into a structured, signed Feature and Change Tracking Document — defining core scope, secondary features, and getting client approval before development to prevent scope creep.</div>
+        <div class="wc-chips">
+          <span class="wc-chip">📝 Scope locked before dev starts</span>
+          <span class="wc-chip">🤝 Client sign-off obtained</span>
         </div>
       </div>
     </div>
