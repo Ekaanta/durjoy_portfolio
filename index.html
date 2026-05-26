@@ -538,7 +538,196 @@
 
   footer span { color: rgba(245,242,235,0.7); }
 
-  /* ANIMATE */
+  /* FEATURED PROJECT */
+  .featured-project {
+    background: var(--paper2);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-top: 3rem;
+    position: relative;
+  }
+
+  .featured-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .featured-num {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .featured-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+
+  .featured-client {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold-dark);
+    margin-bottom: 1rem;
+  }
+
+  .featured-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .story-blocks { display: flex; flex-direction: column; gap: 1rem; }
+
+  .story-block {
+    display: flex;
+    gap: 0.85rem;
+    padding: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  .story-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+  .story-label {
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+    color: var(--ink);
+  }
+
+  .story-text {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* VISUALS COLUMN */
+  .featured-visuals { display: flex; flex-direction: column; gap: 1rem; }
+
+  /* PHONE MOCKUP */
+  .mockup-phone {
+    background: var(--ink);
+    border-radius: 24px;
+    padding: 1.25rem 1rem;
+    box-shadow: 0 8px 32px rgba(15,14,12,0.2);
+  }
+
+  .phone-screen { color: var(--paper); text-align: center; }
+  .phone-header { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .phone-sub { font-size: 0.7rem; color: rgba(245,242,235,0.5); margin-bottom: 1rem; }
+
+  .compass-wrap { display: flex; justify-content: center; margin-bottom: 0.75rem; }
+
+  .compass-ring {
+    width: 110px; height: 110px;
+    border: 2px dashed rgba(201,168,76,0.4);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .compass-n, .compass-s, .compass-e, .compass-w {
+    position: absolute;
+    font-size: 0.6rem;
+    color: rgba(245,242,235,0.5);
+    font-family: 'DM Mono', monospace;
+  }
+  .compass-n { top: 4px; left: 50%; transform: translateX(-50%); }
+  .compass-s { bottom: 4px; left: 50%; transform: translateX(-50%); }
+  .compass-e { right: 6px; top: 50%; transform: translateY(-50%); }
+  .compass-w { left: 6px; top: 50%; transform: translateY(-50%); }
+
+  .compass-needle {
+    width: 3px; height: 40px;
+    background: linear-gradient(to top, var(--rust), var(--gold));
+    border-radius: 2px;
+    transform: rotate(-25deg);
+  }
+
+  .kaaba-marker {
+    position: absolute;
+    top: 8px; left: 14px;
+    font-size: 1rem;
+  }
+
+  .phone-loc { font-size: 0.62rem; color: rgba(245,242,235,0.45); }
+  .phone-dir { font-size: 0.7rem; color: var(--gold); margin-top: 0.25rem; font-family: 'DM Mono', monospace; }
+
+  /* REVIEW CARD */
+  .review-card {
+    background: var(--forest);
+    color: var(--paper);
+    padding: 1.25rem 1.5rem;
+    border-radius: 2px;
+  }
+
+  .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .review-text { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.88rem; line-height: 1.5; margin-bottom: 0.5rem; }
+  .review-author { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: rgba(245,242,235,0.6); margin-bottom: 0.75rem; }
+  .review-tags-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rtag { background: rgba(245,242,235,0.12); color: rgba(245,242,235,0.7); font-size: 0.62rem; padding: 0.2rem 0.5rem; border-radius: 2px; font-family: 'DM Mono', monospace; }
+
+  /* ISSUE TRACKER */
+  .tracker-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  .tracker-header { display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.75rem; }
+  .tracker-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .tracker-dot.green { background: #34a853; }
+  .tracker-dot.yellow { background: #fbbc04; }
+  .tracker-dot.red { background: #ea4335; }
+
+  .tracker-rows { display: flex; flex-direction: column; gap: 0.4rem; }
+  .tracker-row { display: flex; justify-content: space-between; align-items: center; }
+  .issue-text { font-size: 0.72rem; color: var(--ink); }
+
+  .badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .badge.fixed { background: #d4edda; color: #2a5c45; }
+  .badge.si { background: #fde8e3; color: var(--rust); }
+
+  @media (max-width: 900px) {
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-project { padding: 1.5rem; }
+  }
+
+
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -660,9 +849,112 @@
   <div class="section-label">Portfolio</div>
   <h2 class="section-title">Selected <em>Projects</em></h2>
 
-  <div class="projects-list">
+  <!-- FEATURED PROJECT: QIBLA APP -->
+  <div class="featured-project fade-up">
+    <div class="featured-badge">⭐ Featured Project</div>
+    <div class="featured-grid">
+      <div class="featured-content">
+        <div class="featured-num">01</div>
+        <h3 class="featured-title">Muslim Prayer & Qibla Direction App</h3>
+        <p class="featured-client">📍 Client: USA-based — Personal Islamic App</p>
+        <p class="featured-desc">
+          A US-based client wanted a personal Muslim prayer app after struggling to find accurate Qibla direction from his location. I took <strong>full project ownership</strong> — from initial client briefing to final delivery — managing the entire development lifecycle across a cross-functional team.
+        </p>
+
+        <div class="story-blocks">
+          <div class="story-block">
+            <div class="story-icon">🔍</div>
+            <div>
+              <div class="story-label">The Problem</div>
+              <div class="story-text">The app's Qibla compass was pointing in the wrong direction. The developer couldn't identify why. After multiple failed fixes, the client was frustrated. I stepped in, conducted a deep-dive meeting with the client, and traced the root cause: the app was using generic coordinates instead of the client's actual GPS latitude and longitude.</div>
+            </div>
+          </div>
+          <div class="story-block">
+            <div class="story-icon">🎯</div>
+            <div>
+              <div class="story-label">My Role</div>
+              <div class="story-text">Ran structured client meetings, documented 13+ issues in a tracked Google Sheet, prioritized them by severity, communicated each fix to the development team, and verified resolution. Built a full issue log with status tracking (Fixed / Still Issues) and video evidence links.</div>
+            </div>
+          </div>
+          <div class="story-block">
+            <div class="story-icon">✅</div>
+            <div>
+              <div class="story-label">The Outcome</div>
+              <div class="story-text">All reported issues resolved. Qibla direction now accurately reflects the user's real-time GPS location. Client left a 5-star review on Fiverr, praising communication, deep understanding, and delivery quality.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-tags" style="margin-top:1.5rem;">
+          <span class="tag">Full Project Ownership</span>
+          <span class="tag">Client Communication</span>
+          <span class="tag">Issue Tracking</span>
+          <span class="tag">QA & Testing</span>
+          <span class="tag">Root Cause Analysis</span>
+          <span class="tag">Google Sheets</span>
+          <span class="tag">Mobile App PM</span>
+        </div>
+      </div>
+
+      <div class="featured-visuals">
+        <!-- App Screenshot Mockup -->
+        <div class="mockup-phone">
+          <div class="phone-screen">
+            <div class="phone-header">Qibla</div>
+            <div class="phone-sub">Find the Qibla direction</div>
+            <div class="compass-wrap">
+              <div class="compass-ring">
+                <span class="compass-n">N</span>
+                <span class="compass-s">S</span>
+                <span class="compass-e">E</span>
+                <span class="compass-w">W</span>
+                <div class="compass-needle"></div>
+                <div class="kaaba-marker">🕋</div>
+              </div>
+            </div>
+            <div class="phone-loc">📍 BRAC University, Dhaka</div>
+            <div class="phone-dir">Direction: Accurate ✓</div>
+          </div>
+        </div>
+
+        <!-- Review Card -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">"Amazing work — went above and beyond. Deep understanding of the project."</div>
+          <div class="review-author">— nunobankz, Fiverr Client (USA)</div>
+          <div class="review-tags-row">
+            <span class="rtag">Politeness</span>
+            <span class="rtag">Above & Beyond</span>
+            <span class="rtag">Deep Understanding</span>
+          </div>
+        </div>
+
+        <!-- Issue Tracker Preview -->
+        <div class="tracker-card">
+          <div class="tracker-header">
+            <span class="tracker-dot green"></span>
+            <span class="tracker-dot yellow"></span>
+            <span class="tracker-dot red"></span>
+            <span style="margin-left:0.5rem; font-size:0.7rem; color:var(--muted);">Prayer App Issues — Management Log</span>
+          </div>
+          <div class="tracker-rows">
+            <div class="tracker-row"><span class="issue-text">Date Suffix Issue</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Qibla Direction (GPS Coords)</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Mood Tracker Functionality</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Journal Data Display</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Prayer Time API</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Language Section Remove</span><span class="badge fixed">Fixed</span></div>
+            <div class="tracker-row"><span class="issue-text">Fitness Tracker UI</span><span class="badge si">Still Issues</span></div>
+          </div>
+          <div style="font-size:0.65rem; color:var(--muted); margin-top:0.75rem;">13 issues tracked · 11 resolved · Full ownership</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-list" style="margin-top:2rem;">
     <div class="project-row fade-up">
-      <div class="project-num">01</div>
+      <div class="project-num">02</div>
       <div class="project-info">
         <div class="project-name">SaaS Platform Launch</div>
         <div class="project-desc">Led cross-functional coordination for a B2B SaaS product — managing dev, design, and QA timelines across 3 teams. Identified and resolved 12 critical blockers in pre-launch phase.</div>
@@ -680,10 +972,10 @@
     </div>
 
     <div class="project-row fade-up">
-      <div class="project-num">02</div>
+      <div class="project-num">03</div>
       <div class="project-info">
-        <div class="project-name">E-commerce Redesign</div>
-        <div class="project-desc">Coordinated full UI overhaul — from wireframe approval to development handoff. Managed stakeholder feedback loops and built a structured QA checklist reducing bugs by 40%.</div>
+        <div class="project-name">E-commerce Redesign — QA & Coordination</div>
+        <div class="project-desc">Coordinated full UI overhaul from wireframe approval to development handoff. Managed stakeholder feedback loops and built a structured QA checklist that reduced shipped bugs significantly.</div>
         <div class="project-tags">
           <span class="tag">Stakeholder Management</span>
           <span class="tag">QA</span>
@@ -694,24 +986,6 @@
       <div class="project-outcome">
         <span class="outcome-num">40%</span>
         <span class="outcome-label">Fewer bugs shipped</span>
-      </div>
-    </div>
-
-    <div class="project-row fade-up">
-      <div class="project-num">03</div>
-      <div class="project-info">
-        <div class="project-name">API Integration Sprint</div>
-        <div class="project-desc">Managed a 6-week technical sprint for a third-party API integration. Documented all requirements, tracked dev progress daily, and produced weekly executive summaries.</div>
-        <div class="project-tags">
-          <span class="tag">Technical PM</span>
-          <span class="tag">Sprint Management</span>
-          <span class="tag">Documentation</span>
-          <span class="tag">Slack</span>
-        </div>
-      </div>
-      <div class="project-outcome">
-        <span class="outcome-num">100%</span>
-        <span class="outcome-label">On-time delivery</span>
       </div>
     </div>
   </div>
