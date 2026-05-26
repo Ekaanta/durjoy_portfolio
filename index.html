@@ -538,6 +538,21 @@
 
   footer span { color: rgba(245,242,235,0.7); }
 
+
+  /* CASE STUDY IMAGES */
+  .case-study-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .case-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(15,14,12,0.15);
+    transition: transform 0.2s;
+  }
+  .case-img:hover { transform: scale(1.02); }
+
   /* FEATURED PROJECT */
   .featured-project {
     background: var(--paper2);
@@ -954,24 +969,10 @@
       </div>
 
       <div class="featured-visuals">
-        <!-- App Screenshot Mockup -->
-        <div class="mockup-phone">
-          <div class="phone-screen">
-            <div class="phone-header">Qibla</div>
-            <div class="phone-sub">Find the Qibla direction</div>
-            <div class="compass-wrap">
-              <div class="compass-ring">
-                <span class="compass-n">N</span>
-                <span class="compass-s">S</span>
-                <span class="compass-e">E</span>
-                <span class="compass-w">W</span>
-                <div class="compass-needle"></div>
-                <div class="kaaba-marker">🕋</div>
-              </div>
-            </div>
-            <div class="phone-loc">📍 BRAC University, Dhaka</div>
-            <div class="phone-dir">Direction: Accurate ✓</div>
-          </div>
+        <!-- Case Study Images -->
+        <div class="case-study-imgs">
+          <img src="hidaya1.png" alt="Hidaya Islamic Prayer App - Case Study" class="case-img" />
+          <img src="hidaya2.png" alt="Hidaya Home Screen Design" class="case-img" />
         </div>
 
         <!-- Review Card -->
