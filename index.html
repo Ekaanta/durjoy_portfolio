@@ -748,9 +748,10 @@
   /* BORNOLIPI PROJECT CARD */
   .bornolipi-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    padding: 2rem 0;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    align-items: start;
   }
 
   .borno-left { display: flex; flex-direction: column; }
@@ -799,15 +800,15 @@
     margin-bottom: 1.25rem;
   }
 
-  .borno-highlights { display: flex; flex-direction: column; gap: 0.6rem; }
+  .borno-highlights { display: flex; flex-direction: column; gap: 0.4rem; }
 
   .borno-hl {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.6rem;
     align-items: flex-start;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     color: var(--muted);
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .borno-hl strong { color: var(--ink); }
@@ -817,12 +818,12 @@
     display: flex;
     gap: 0;
     border: 1px solid var(--border);
-    margin-top: 1.25rem;
+    margin-top: 0.75rem;
   }
 
   .borno-out {
     flex: 1;
-    padding: 0.75rem 0.5rem;
+    padding: 0.5rem 0.35rem;
     text-align: center;
     border-right: 1px solid var(--border);
   }
@@ -831,41 +832,45 @@
   .borno-out-num {
     display: block;
     font-family: "Fraunces", serif;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--rust);
     line-height: 1;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
 
   .borno-out-label {
     font-family: "DM Mono", monospace;
-    font-size: 0.58rem;
+    font-size: 0.52rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
   }
 
   /* RIGHT COLUMN */
-  .borno-right { display: flex; flex-direction: column; gap: 0.75rem; }
+  .borno-right { display: flex; flex-direction: column; gap: 0.6rem; }
 
   .borno-img-main {
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(15,14,12,0.12);
+    border-radius: 6px;
+    box-shadow: 0 3px 14px rgba(15,14,12,0.12);
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
   }
 
   .borno-img-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 0.75rem;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 0.5rem;
   }
 
   .borno-img-sm {
     width: 100%;
-    border-radius: 6px;
-    box-shadow: 0 2px 12px rgba(15,14,12,0.1);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(15,14,12,0.1);
     object-fit: cover;
+    max-height: 110px;
   }
 
   .borno-qa-preview {
@@ -1159,7 +1164,7 @@
 
     <div class="project-row fade-up" style="display:block; padding:0; border-bottom:1px solid var(--border);">
       <!-- BORNOLIPI FEATURED ROW -->
-      <div class="bornolipi-card">
+      <div class="bornolipi-card" style="grid-template-columns:1fr 1fr; max-height:none;">
         <div class="borno-left">
           <div class="borno-num">02</div>
           <div class="borno-badge">🇧🇩 AR · EdTech · Mobile App</div>
