@@ -254,6 +254,33 @@ footer{background:var(--ink);color:rgba(245,242,235,0.4);padding:1.75rem 4rem;di
   .work-grid{grid-template-columns:1fr;}
   .track-header,.track-row{grid-template-columns:1fr 1fr 0.5fr 0.6fr;}
 }
+
+  .hero-photo-wrap { position:relative; width:250px; flex-shrink:0; }
+  .hero-photo { width:100%; height:auto; border-radius:6px; box-shadow:0 8px 30px rgba(15,14,12,0.15); display:block; }
+  .hero-photo-col { display:flex; align-items:center; justify-content:center; padding:3rem 2rem 3rem 4rem; background:var(--paper2); border-right:1px solid var(--border); }
+  .hero-content-col { display:flex; flex-direction:column; justify-content:center; padding:4rem 4rem 4rem 3rem; }
+  .hero-tag-line { font-family:"DM Mono",monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:0.75rem; }
+  .hero-name { font-family:"Fraunces",serif; font-size:clamp(2rem,4.5vw,4rem); font-weight:700; line-height:1; letter-spacing:-0.03em; margin-bottom:0.25rem; }
+  .hero-name span { display:block; font-style:italic; font-weight:300; color:var(--muted); font-size:0.5em; margin-top:0.3rem; }
+  .hero-role { font-family:"DM Mono",monospace; font-size:0.8rem; color:var(--muted); margin:1rem 0 0.85rem; }
+  .hero-desc { font-size:0.88rem; color:var(--muted); max-width:42ch; line-height:1.7; margin-bottom:1.25rem; }
+  .hero-links { display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .hero-link-pill { font-family:"DM Mono",monospace; font-size:0.62rem; padding:0.28rem 0.7rem; border:1px solid var(--border); color:var(--muted); text-decoration:none; border-radius:2px; transition:border-color 0.2s,color 0.2s; }
+  .hero-link-pill:hover { border-color:var(--gold); color:var(--ink); }
+  .btn-cv { background:var(--gold); color:var(--ink); border:none; padding:0.85rem 1.5rem; font-family:"Manrope",sans-serif; font-size:0.85rem; font-weight:600; cursor:pointer; transition:background 0.2s; }
+  .btn-cv:hover { background:var(--gold-dark); color:var(--paper); }
+  .hero { min-height:100vh; display:grid; grid-template-columns:0.8fr 1.2fr; padding-top:5rem; overflow:hidden; }
+  .hero-stats { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--border); margin-top:2rem; }
+  .stat-box { padding:1rem 0.75rem; border-right:1px solid var(--border); }
+  .stat-box:last-child { border-right:none; }
+  .stat-num { font-family:"Fraunces",serif; font-size:1.75rem; font-weight:700; line-height:1; color:var(--ink); }
+  .stat-num span { color:var(--rust); }
+  .stat-label { font-size:0.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.07em; margin-top:0.2rem; }
+  .photo-badge { position:absolute; bottom:-12px; left:50%; transform:translateX(-50%); background:var(--gold); color:var(--ink); font-family:"DM Mono",monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:2px; white-space:nowrap; }
+  .slide-in-left { opacity:0; transform:translateX(-50px); animation:slideLeft 0.8s ease forwards 0.2s; }
+  .slide-in-right { opacity:0; transform:translateX(50px); animation:slideRight 0.8s ease forwards 0.4s; }
+  @keyframes slideLeft { to { opacity:1; transform:translateX(0); } }
+  @keyframes slideRight { to { opacity:1; transform:translateX(0); } }
 </style>
 </head>
 <body>
