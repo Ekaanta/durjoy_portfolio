@@ -291,6 +291,18 @@ footer{background:var(--ink);color:rgba(245,242,235,0.4);padding:1.75rem 4rem;di
   .exp-logo-item { height: 32px; display: flex; align-items: center; }
   .exp-logo-item img { height: 100%; width: auto; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: opacity 0.2s, filter 0.2s; }
   .exp-logo-item img:hover { filter: grayscale(0%); opacity: 1; }
+
+  .btn-extra { background:transparent; color:var(--ink); border:1.5px solid var(--border); padding:0.85rem 1.25rem; font-family:"Manrope",sans-serif; font-size:0.82rem; font-weight:600; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
+  .btn-extra:hover { border-color:var(--ink); background:var(--paper2); }
+
+  .meeting-card { background:var(--paper); border:1px solid var(--border); border-radius:4px; overflow:hidden; transition:box-shadow 0.2s; }
+  .meeting-card:hover { box-shadow:0 4px 20px rgba(15,14,12,0.08); }
+  .meeting-thumb { background:var(--ink); height:140px; display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; }
+  .meeting-play { width:44px; height:44px; background:rgba(245,242,235,0.15); border:2px solid rgba(245,242,235,0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--paper); font-size:1rem; padding-left:3px; transition:background 0.2s; }
+  .meeting-card:hover .meeting-play { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+  .meeting-info { padding:1rem 1.25rem; }
+  .meeting-title { font-family:"Fraunces",serif; font-size:1rem; font-weight:700; margin-bottom:0.25rem; }
+  .meeting-meta { font-family:"DM Mono",monospace; font-size:0.62rem; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -341,6 +353,8 @@ footer{background:var(--ink);color:rgba(245,242,235,0.4);padding:1.75rem 4rem;di
       <a href="#projects" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
       <button onclick="document.getElementById('cv-modal').style.display='flex'" class="btn-cv">View CV</button>
+      <a href="#automation" class="btn-extra">My PM System</a>
+      <a href="#meetings" class="btn-extra">Client Meetings</a>
     </div>
 
     <div class="hero-stats">
@@ -660,6 +674,44 @@ footer{background:var(--ink);color:rgba(245,242,235,0.4);padding:1.75rem 4rem;di
       </div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- CLIENT MEETINGS -->
+<section id="meetings" style="background:var(--paper2);">
+  <div class="section-label">Proof of Work</div>
+  <h2 class="section-title">Client <em>Meeting Demos</em></h2>
+  <p style="color:var(--muted);font-size:0.88rem;max-width:50ch;line-height:1.7;margin-bottom:2rem;">Real recorded meetings with international clients — showing how I communicate, handle feedback, and coordinate across time zones.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+    <div class="meeting-card">
+      <div class="meeting-thumb">
+        <div class="meeting-play">&#9654;</div>
+      </div>
+      <div class="meeting-info">
+        <div class="meeting-title">Client Onboarding Call</div>
+        <div class="meeting-meta">Coming soon — link will be added</div>
+      </div>
+    </div>
+    <div class="meeting-card">
+      <div class="meeting-thumb">
+        <div class="meeting-play">&#9654;</div>
+      </div>
+      <div class="meeting-info">
+        <div class="meeting-title">Issue Review Meeting</div>
+        <div class="meeting-meta">Coming soon — link will be added</div>
+      </div>
+    </div>
+    <div class="meeting-card">
+      <div class="meeting-thumb">
+        <div class="meeting-play">&#9654;</div>
+      </div>
+      <div class="meeting-info">
+        <div class="meeting-title">Project Delivery Debrief</div>
+        <div class="meeting-meta">Coming soon — link will be added</div>
+      </div>
+    </div>
   </div>
 </section>
 
