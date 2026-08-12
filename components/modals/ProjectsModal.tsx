@@ -12,7 +12,7 @@ const slides = [
   {
     title: "Virtual Try-On System (AI GenAI App)",
     subtitle: "Stable Diffusion & OpenCV Body Segmentation",
-    image: "/images/work-api-dashboard.png",
+    image: "/images/project-virtual-tryon.png",
     description: "AI-powered clothing virtual try-on app using Stable Diffusion Inpainting. Users upload a photo and describe clothing via text prompt; system generates realistic try-on results using GrabCut body segmentation. Tech: Python, Stable Diffusion, Diffusers, OpenCV, Gradio, HuggingFace Spaces.",
     live: "https://ekantabanik-virtual-try-on.hf.space",
     github: "https://github.com/Ekaanta/Virtual-Try-On-System"
@@ -20,7 +20,7 @@ const slides = [
   {
     title: "Client Requirement Analyzer Agent (Agentic AI)",
     subtitle: "LLM, LangChain & Document AI Engine",
-    image: "/images/work-code.png",
+    image: "/images/project-requirement-analyzer.png",
     description: "Agentic AI system analyzing client documents and extracting structured business requirements. Leverages LLMs for deep document understanding, requirement classification, and natural language report generation. Tech: Python, LLM, LangChain, Prompt Engineering, NLP, Vercel.",
     live: "https://client-requirement-analyzer-agent.vercel.app/",
     github: "https://github.com/Ekaanta/Client-Requirement-Analyzer-Agent"
@@ -28,16 +28,23 @@ const slides = [
   {
     title: "N8N AI Model Automation",
     subtitle: "Multi-Step Workflow Orchestration",
-    image: "/images/qa-tracker.png",
+    image: "/images/project-n8n-automation.png",
     description: "Designed multi-step AI automation workflows using N8N, orchestrating LLM agents, external APIs, and data pipelines. Features agentic task delegation, conditional branching, and process automation. Tech: N8N, LLM Integration, Agentic AI, API Orchestration, Python.",
     github: "https://github.com/Ekaanta/N8N_AI-MODEL"
   },
   {
     title: "Real-Time Cheat Detection System",
     subtitle: "YOLOv8 & Computer Vision Video Analysis",
-    image: "/images/ar-experience.png",
+    image: "/images/project-cheat-detection.png",
     description: "AI-powered exam cheat detection using YOLOv8. Collected & annotated custom datasets using Roboflow, trained object detection models, and performed real-time video analysis to identify suspicious exam activities. Tech: Roboflow, Matplotlib, OpenCV, Object Detection, Computer Vision.",
     github: "https://github.com/Ekaanta/Ai_Project-Real-time-cheat-detection-system-exam"
+  },
+  {
+    title: "Bangladesh AI Agent (LLM Assistant)",
+    subtitle: "Conversational AI for Institutions, Hospitals & Services",
+    image: "/images/project-bangladesh-ai-agent.png",
+    description: "Intelligent conversational AI agent for querying Bangladesh healthcare, educational institutions, restaurants, and policies. Built with prompt engineering, custom frontend, and API backend.",
+    github: "https://github.com/Ekaanta"
   },
   {
     title: "Bornolipi AR Educational App",
@@ -47,17 +54,10 @@ const slides = [
     github: "https://github.com/Ekaanta"
   },
   {
-    title: "Coupon Management System",
-    subtitle: "Mobile Automation Testing Suite",
+    title: "Coupon Management & Volunteering Systems",
+    subtitle: "Mobile Automation & Postman API Testing",
     image: "/images/app-flow.png",
-    description: "Managed mobile automation testing project for Android and iOS applications. Oversaw development and execution of Python-based test scripts, ensuring timely project milestones.",
-    github: "https://github.com/Ekaanta"
-  },
-  {
-    title: "Volunteering Application System",
-    subtitle: "API Testing & Bug Lifecycle Management",
-    image: "/images/figma-design.png",
-    description: "Led project activities for volunteering management application. Organized test case design, bug tracking, and Postman API validation while coordinating with developers.",
+    description: "Managed mobile automation testing project for Android and iOS applications with Python test scripts, organized test cases, bug tracking, and Postman API validation.",
     github: "https://github.com/Ekaanta"
   }
 ];
@@ -106,13 +106,13 @@ export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
           <div style={{ fontSize: "0.85rem", color: "var(--ink-muted)" }}>{slide.subtitle}</div>
         </div>
 
-        <div style={{ background: "#f5f3ff", borderRadius: "var(--radius-md)", overflow: "hidden", position: "relative", marginBottom: "1.25rem", aspectRatio: "16 / 10", border: "1px solid var(--purple-border)" }}>
+        <div style={{ background: "#111", borderRadius: "var(--radius-md)", overflow: "hidden", position: "relative", marginBottom: "1.25rem", aspectRatio: "16 / 10", border: "1px solid var(--purple-border)" }}>
           <Image
             src={slide.image}
             alt={slide.title}
             fill
             sizes="(max-width: 900px) 100vw, 850px"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             priority
           />
         </div>
