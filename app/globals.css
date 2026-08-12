@@ -274,26 +274,28 @@ body {
   box-shadow: 0 10px 25px rgba(227, 83, 54, 0.45);
 }
 
-/* HERO SECTION WITH GIANT TEXT & PROFILE CUTOUT */
+/* HERO SECTION WITH GIANT TEXT & CLEAN CUTOUT PROFILE */
 .hero-editorial {
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
   overflow: hidden;
 }
 
 .giant-hero-text {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(3.8rem, 13vw, 11rem);
+  font-size: clamp(4rem, 14vw, 12rem);
   font-weight: 900;
   line-height: 0.85;
   letter-spacing: -0.04em;
   color: var(--purple-primary);
   text-align: center;
   user-select: none;
-  margin-bottom: -4rem;
+  margin-bottom: -5rem;
   text-transform: uppercase;
-  opacity: 0.9;
+  opacity: 0.92;
+  position: relative;
+  z-index: 1;
 }
 
 .giant-hero-text span.black-text {
@@ -302,7 +304,7 @@ body {
 
 .hero-cutout-wrap {
   position: relative;
-  max-width: 480px;
+  max-width: 440px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -311,34 +313,35 @@ body {
 
 .hero-profile-img {
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   height: auto;
   display: block;
-  border-radius: var(--radius-lg);
-  filter: drop-shadow(0 18px 36px rgba(160, 82, 45, 0.25));
+  background: transparent;
+  filter: drop-shadow(0 15px 30px rgba(160, 82, 45, 0.22));
   mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 
-/* Badge overlay on chest */
+/* Elegant Badge overlay on chest */
 .hero-chest-badge {
   position: absolute;
-  top: 55%;
+  bottom: 8%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background: var(--ink);
   color: #ffffff;
   padding: 0.7rem 1.4rem;
   border-radius: var(--radius-pill);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  font-size: clamp(0.82rem, 1.8vw, 0.98rem);
   display: flex;
   align-items: center;
   gap: 0.6rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   white-space: nowrap;
   z-index: 5;
+  border: 1px solid rgba(244, 164, 96, 0.3);
 }
 
 .chest-badge-gold {
@@ -400,7 +403,7 @@ body {
     margin-bottom: 1rem;
   }
   .giant-hero-text {
-    margin-bottom: -2rem;
+    margin-bottom: -3rem;
   }
 }
 

@@ -10,7 +10,7 @@ interface HeroSectionProps {
 export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
   return (
     <section className="hero-editorial" id="hero">
-      {/* Top Left Stats Overlay */}
+      {/* Top Left Floating Stat Pill */}
       <div className="hero-top-left-stats">
         <div className="stat-pill-box">
           <div className="stat-pill-num">AI<span>/ML</span></div>
@@ -22,31 +22,39 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Giant Typography Header */}
+      {/* Giant Typography Header behind Cutout */}
       <h1 className="giant-hero-text">
         D U <span className="black-text">R</span> J O Y
       </h1>
 
-      {/* Centered Cutout Profile Photo with Chest Badge */}
+      {/* Transparent Cutout Profile Photo Overlay */}
       <div className="hero-cutout-wrap">
         <Image
           src="/images/durjoy-hero.png"
           alt="Ekanta Banik (Durjoy) - AI/ML Engineer & Project Coordinator"
-          width={400}
-          height={480}
+          width={440}
+          height={520}
           className="hero-profile-img"
           priority
         />
 
+        {/* Elegant Executive Badge */}
         <div className="hero-chest-badge">
           <span>AI/ML Engineer & Project Coordinator</span>
           <span className="chest-badge-gold">GenAI & LLMs</span>
         </div>
       </div>
 
-      {/* Interactive Quick Links */}
-      <div style={{ display: "flex", justifyContent: "center", gap: "0.8rem", marginTop: "2.5rem", flexWrap: "wrap" }}>
-        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.8rem 1.8rem" }}>
+      {/* Sub-headline description */}
+      <div style={{ textAlign: "center", maxWidth: "680px", margin: "2rem auto 0", zIndex: 10, position: "relative" }}>
+        <p style={{ fontSize: "1.05rem", color: "var(--ink-secondary)", fontWeight: 500, lineHeight: 1.6 }}>
+          Building intelligent AI agents, LLM automation pipelines, and leading agile software delivery for enterprise & consumer products.
+        </p>
+      </div>
+
+      {/* Action Buttons */}
+      <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "2rem", flexWrap: "wrap", zIndex: 10, position: "relative" }}>
+        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.85rem 2rem", fontSize: "0.92rem" }}>
           Explore AI & PM Projects ↓
         </a>
         <a
@@ -54,14 +62,14 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="read-more-btn"
-          style={{ padding: "0.8rem 1.6rem", fontSize: "0.88rem" }}
+          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--bg-card-white)", borderColor: "var(--sandy-amber)" }}
         >
           Live AI Site ↗
         </a>
         <button
           onClick={onOpenCvModal}
           className="read-more-btn"
-          style={{ padding: "0.8rem 1.6rem", fontSize: "0.88rem", background: "var(--ink)", color: "#ffffff" }}
+          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--ink)", color: "#ffffff", borderColor: "var(--ink)" }}
         >
           View Full CV
         </button>
