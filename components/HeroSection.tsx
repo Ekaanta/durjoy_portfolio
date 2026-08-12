@@ -14,7 +14,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
       {/* Top Left Floating Stat Pill */}
       <div className="hero-top-left-stats">
         <div className="stat-pill-box">
-          <div className="stat-pill-num">AI<span>/ML</span></div>
+          <div className="stat-pill-num">PM<span>&AI</span></div>
           <div className="stat-pill-lbl">Sparktech AI & Unilever</div>
         </div>
         <div className="stat-pill-box">
@@ -32,7 +32,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
       <div className="hero-cutout-wrap">
         <Image
           src="/images/durjoy-hero.png"
-          alt="Ekanta Banik (Durjoy) - AI/ML Engineer & Project Coordinator"
+          alt="Ekanta Banik (Durjoy) - Software Project Coordinator & AI Specialist"
           width={440}
           height={520}
           className="hero-profile-img"
@@ -43,7 +43,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
         <div className="hero-chest-badge">
           <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
             <Sparkles size={15} style={{ color: "#ffffff" }} />
-            <span>AI/ML Engineer & Project Coordinator</span>
+            <span>Software Project Coordinator & AI Specialist</span>
           </span>
           <span className="chest-badge-gold">GenAI & LLMs</span>
         </div>
@@ -52,7 +52,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
       {/* Sub-headline description */}
       <div style={{ textAlign: "center", maxWidth: "680px", margin: "2rem auto 0", zIndex: 10, position: "relative" }}>
         <p style={{ fontSize: "1.05rem", color: "var(--ink-secondary)", fontWeight: 500, lineHeight: 1.6 }}>
-          Building intelligent AI agents, LLM automation pipelines, and leading agile software delivery for enterprise & consumer products.
+          Building intelligent AI agents, LLM automation pipelines, and leading agile software project delivery for enterprise & consumer products.
         </p>
       </div>
 

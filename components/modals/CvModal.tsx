@@ -39,7 +39,7 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
               Ekanta Banik (Durjoy)
             </h2>
             <div style={{ fontSize: "0.9rem", color: "var(--ink-muted)" }}>
-              AI/ML Engineer & Technical Project Coordinator • Dhaka, Bangladesh
+              Software Project Coordinator & AI Specialist • Dhaka, Bangladesh
             </div>
           </div>
           <div style={{ display: "flex", gap: "0.5rem" }}>
@@ -61,7 +61,7 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
               Career Objective
             </h3>
             <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", lineHeight: 1.7 }}>
-              AI Engineer with hands-on experience in Large Language Models (LLMs), Generative AI, Agentic AI systems, and computer vision applications. Experienced in developing intelligent automation pipelines and AI-driven solutions. Seeking an AI/ML Engineer, AI Automation Engineer, or GenAI Developer role to build innovative, real-world AI products.
+              Software Project Coordinator & AI Specialist with hands-on experience in Large Language Models (LLMs), Generative AI, Agentic AI systems, computer vision, and Agile team coordination. Experienced in developing intelligent automation pipelines and delivering real-world software products.
             </p>
           </div>
 

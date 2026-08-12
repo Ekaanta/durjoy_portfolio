@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowUp, Mail, FileText } from "lucide-react";
+import { ArrowUp, FileText } from "lucide-react";
 
 interface FooterProps {
   onOpenCvModal: () => void;
@@ -17,7 +17,7 @@ export default function Footer({ onOpenCvModal }: FooterProps) {
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "1.5rem", borderTop: "1px solid var(--border)", fontSize: "0.85rem", color: "var(--ink-muted)", flexWrap: "wrap", gap: "1rem" }}>
         <div>
-          © {new Date().getFullYear()} Ekanta Banik (Durjoy) • AI/ML Engineer & Project Coordinator (Dhaka, Bangladesh)
+          © {new Date().getFullYear()} Ekanta Banik (Durjoy) • Software Project Coordinator & AI Specialist (Dhaka, Bangladesh)
         </div>
         <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
           <button

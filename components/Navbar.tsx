@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Github, Linkedin, Copy, Check, FileText } from "lucide-react";
+import { Github, Linkedin, Copy, Check, FileText, Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onOpenCvModal: () => void;
@@ -9,6 +9,7 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenCvModal }: NavbarProps) {
   const [copied, setCopied] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const email = "durjoybanik35138@gmail.com";
 
   const handleCopyEmail = () => {
@@ -17,14 +18,19 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const handleNavClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <aside className="sidebar-column">
-      <div className="sidebar-top">
-        {/* Brand Header */}
-        <div className="brand-row">
-          <a href="#" className="brand-logo">
-            DURJOY<span>*</span>
-          </a>
+      {/* Brand & Mobile Header Row */}
+      <div className="brand-row">
+        <a href="#" className="brand-logo" onClick={handleNavClick}>
+          DURJOY<span>*</span>
+        </a>
+        
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <div className="social-pills">
             <a
               href="https://github.com/Ekaanta"
@@ -45,75 +51,94 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               <Linkedin size={16} />
             </a>
           </div>
-        </div>
 
+          {/* Mobile Hamburger Toggle Button */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Expandable Sidebar Menu Content */}
+      <div className={`sidebar-menu-wrapper ${mobileMenuOpen ? "open" : ""}`}>
         {/* Sidebar Stats Box */}
         <div className="sidebar-stats-card">
           <div>
-            <div className="sb-stat-num">AI/ML</div>
-            <div className="sb-stat-label">Engineer</div>
+            <div className="sb-stat-num">Software</div>
+            <div className="sb-stat-label">PM Lead</div>
           </div>
           <div>
-            <div className="sb-stat-num">PM</div>
-            <div className="sb-stat-label">Lead</div>
+            <div className="sb-stat-num">AI</div>
+            <div className="sb-stat-label">Specialist</div>
           </div>
         </div>
 
         {/* Navigation List */}
         <ul className="sidebar-nav-list">
           <li>
-            <a href="#hero" className="sidebar-nav-link active">
+            <a href="#hero" className="sidebar-nav-link active" onClick={handleNavClick}>
               HOME
             </a>
           </li>
           <li>
-            <a href="#journey" className="sidebar-nav-link">
+            <a href="#journey" className="sidebar-nav-link" onClick={handleNavClick}>
               EXPERIENCE
             </a>
           </li>
           <li>
-            <a href="#stack" className="sidebar-nav-link">
+            <a href="#stack" className="sidebar-nav-link" onClick={handleNavClick}>
               TECH STACK
             </a>
           </li>
           <li>
-            <a href="#projects" className="sidebar-nav-link">
+            <a href="#projects" className="sidebar-nav-link" onClick={handleNavClick}>
               AI & PM PROJECTS
             </a>
           </li>
           <li>
-            <a href="#what-you-get" className="sidebar-nav-link">
+            <a href="#what-you-get" className="sidebar-nav-link" onClick={handleNavClick}>
               DELIVERABLES
             </a>
           </li>
           <li>
-            <a href="#services" className="sidebar-nav-link">
+            <a href="#services" className="sidebar-nav-link" onClick={handleNavClick}>
               SERVICES
             </a>
           </li>
           <li>
-            <a href="#contact" className="sidebar-nav-link">
+            <a href="#contact" className="sidebar-nav-link" onClick={handleNavClick}>
               CONTACT
             </a>
           </li>
         </ul>
-      </div>
 
-      {/* Sidebar Bottom Actions */}
-      <div className="sidebar-bottom">
-        <div className="email-copy-pill" onClick={handleCopyEmail} title="Click to copy email">
-          <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-            {email}
-          </span>
-          <span style={{ display: "flex", alignItems: "center", marginLeft: "0.4rem", color: "var(--purple-primary)" }}>
-            {copied ? <Check size={14} /> : <Copy size={14} />}
-          </span>
+        {/* Sidebar Bottom Actions */}
+        <div className="sidebar-bottom">
+          <div className="email-copy-pill" onClick={handleCopyEmail} title="Click to copy email">
+            <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              {email}
+            </span>
+            <span style={{ display: "flex", alignItems: "center", marginLeft: "0.4rem", color: "var(--purple-primary)" }}>
+              {copied ? <Check size={14} /> : <Copy size={14} />}
+            </span>
+          </div>
+
+          <button
+            onClick={() => {
+              handleNavClick();
+              onOpenCvModal();
+            }}
+            className="btn-hire-gold"
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}
+          >
+            <FileText size={16} />
+            <span>View Resume / CV</span>
+          </button>
         </div>
-
-        <button onClick={onOpenCvModal} className="btn-hire-gold" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
-          <FileText size={16} />
-          <span>View Resume / CV</span>
-        </button>
       </div>
     </aside>
   );

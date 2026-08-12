@@ -87,6 +87,30 @@ body {
   padding: 2rem 3rem 4rem;
 }
 
+.mobile-menu-toggle {
+  display: none;
+  background: var(--purple-primary);
+  color: #ffffff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(227, 83, 54, 0.3);
+  transition: all 0.25s ease;
+}
+
+.sidebar-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 1024px) {
   .app-container {
     flex-direction: column;
@@ -98,28 +122,46 @@ body {
     top: 0;
     border-right: none;
     border-bottom: 1px solid var(--border);
-    padding: 1rem 1.5rem;
+    padding: 0.85rem 1.25rem;
     background: rgba(245, 245, 220, 0.95);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 100;
   }
   .content-column {
     padding: 1.5rem 1.25rem 3rem;
   }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  .sidebar-menu-wrapper {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 62px);
+    background: rgba(245, 245, 220, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 1.5rem;
+    overflow-y: auto;
+    margin-top: 0;
+    z-index: 99;
+    box-shadow: var(--shadow-lg);
+  }
+  .sidebar-menu-wrapper.open {
+    display: flex;
+  }
 }
 
 /* Sidebar Styling */
-.sidebar-top {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 .brand-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .brand-logo {
