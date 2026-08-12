@@ -7,88 +7,110 @@ interface NavbarProps {
 }
 
 export default function Navbar({ onOpenCvModal }: NavbarProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "durjoybanik35138@gmail.com";
 
-  const toggleMenu = () => {
-    setMobileMenuOpen((prev) => !prev);
-  };
-
-  const closeMenu = () => {
-    setMobileMenuOpen(false);
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <nav>
-      <div className="nav-brand">
-        <a href="#" className="nav-logo" onClick={closeMenu}>
-          Ekanta Banik Durjoy
-        </a>
-        <span className="nav-role-badge">PM & QA LEAD</span>
+    <aside className="sidebar-column">
+      <div className="sidebar-top">
+        {/* Brand Header */}
+        <div className="brand-row">
+          <a href="#" className="brand-logo">
+            DURJOY<span>*</span>
+          </a>
+          <div className="social-pills">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-btn"
+              title="GitHub"
+            >
+              ⌨
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-btn"
+              title="LinkedIn"
+            >
+              in
+            </a>
+          </div>
+        </div>
+
+        {/* Sidebar Stats Box */}
+        <div className="sidebar-stats-card">
+          <div>
+            <div className="sb-stat-num">15+</div>
+            <div className="sb-stat-label">Projects</div>
+          </div>
+          <div>
+            <div className="sb-stat-num">4+</div>
+            <div className="sb-stat-label">Yrs Exp.</div>
+          </div>
+        </div>
+
+        {/* Navigation List */}
+        <ul className="sidebar-nav-list">
+          <li>
+            <a href="#hero" className="sidebar-nav-link active">
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="#journey" className="sidebar-nav-link">
+              ABOUT ME
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className="sidebar-nav-link">
+              PROJECTS
+            </a>
+          </li>
+          <li>
+            <a href="#what-you-get" className="sidebar-nav-link">
+              WHAT YOU GET
+            </a>
+          </li>
+          <li>
+            <a href="#services" className="sidebar-nav-link">
+              SERVICES
+            </a>
+          </li>
+          <li>
+            <a href="#work-samples" className="sidebar-nav-link">
+              CLIENTS
+            </a>
+          </li>
+          <li>
+            <a href="#faq" className="sidebar-nav-link">
+              FAQ
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <ul className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
-        <li>
-          <a href="#skills" onClick={closeMenu}>
-            Capabilities
-          </a>
-        </li>
-        <li>
-          <a href="#projects" onClick={closeMenu}>
-            Projects
-          </a>
-        </li>
-        <li>
-          <a href="#process" onClick={closeMenu}>
-            Process
-          </a>
-        </li>
-        <li>
-          <a href="#automation" onClick={closeMenu}>
-            Automation
-          </a>
-        </li>
-        <li>
-          <a href="#work-samples" onClick={closeMenu}>
-            Artifacts
-          </a>
-        </li>
-        <li>
-          <a href="#meetings" onClick={closeMenu}>
-            Demos
-          </a>
-        </li>
-        <li>
-          <a href="#tools" onClick={closeMenu}>
-            Tools
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={closeMenu}>
-            Contact
-          </a>
-        </li>
-        <li>
-          <button
-            onClick={() => {
-              closeMenu();
-              onOpenCvModal();
-            }}
-            className="nav-cta"
-          >
-            Resume / CV
-          </button>
-        </li>
-      </ul>
+      {/* Sidebar Bottom Actions */}
+      <div className="sidebar-bottom">
+        <div className="email-copy-pill" onClick={handleCopyEmail}>
+          <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            {email}
+          </span>
+          <span style={{ fontWeight: 700, marginLeft: "0.4rem" }}>{copied ? "✓" : "📋"}</span>
+        </div>
 
-      <button
-        className={`hamburger ${mobileMenuOpen ? "active" : ""}`}
-        onClick={toggleMenu}
-        aria-label="Toggle navigation"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+        <button onClick={onOpenCvModal} className="btn-hire-gold">
+          Hire Me
+        </button>
+      </div>
+    </aside>
   );
 }

@@ -2,52 +2,72 @@
 
 import React from "react";
 
-const steps = [
+const services = [
   {
-    num: "01",
-    name: "Discover & Align",
-    desc: "Understand business scope, stakeholder requirements, technical constraints, and project objectives."
+    badge: "AGILE & PM",
+    title: "Project Management & Delivery",
+    bullets: [
+      "Sprint planning & backlog grooming",
+      "Resource allocation & scheduling",
+      "Risk assessment & mitigation",
+      "Cross-functional team alignment"
+    ]
   },
   {
-    num: "02",
-    name: "Plan & Scope",
-    desc: "Break down epics into actionable user stories with clear acceptance criteria and backlog estimations."
+    badge: "AUTOMATION",
+    title: "QA & Test Automation Architecture",
+    bullets: [
+      "Playwright & Selenium test suites",
+      "CI/CD pipeline test triggers",
+      "Manual & regression testing",
+      "Zero-critical defect standard"
+    ]
   },
   {
-    num: "03",
-    name: "Build & Execute",
-    desc: "Coordinate daily standups, manage developer workflows, and align sprint goals across cross-functional teams."
+    badge: "API TESTING",
+    title: "REST API & Backend QA",
+    bullets: [
+      "Postman collection automation",
+      "Payload & JSON schema assertions",
+      "PostgreSQL & MongoDB validation",
+      "Performance & load checks"
+    ]
   },
   {
-    num: "04",
-    name: "Test & Validate",
-    desc: "Execute Playwright automated regression suites, multi-device manual testing, and performance audits."
-  },
-  {
-    num: "05",
-    name: "Deliver & Launch",
-    desc: "Deploy zero-critical defect production releases, deliver client reporting, and conduct post-mortems."
+    badge: "COACHING",
+    title: "Agile Process Optimization",
+    bullets: [
+      "Sprint ceremony facilitation",
+      "Jira / Confluence workflow setup",
+      "Defect tracking matrix design",
+      "Team execution reporting"
+    ]
   }
 ];
 
 export default function ProcessSection() {
   return (
-    <section id="process">
-      <div className="container">
-        <div className="section-label">03 / MY METHODOLOGY</div>
-        <h2 className="section-heading">
-          Structured Delivery <em>Lifecycle</em>
-        </h2>
+    <section className="section-wrapper" id="services">
+      <div className="section-tag">SERVICES</div>
+      <h2 className="section-title-large">
+        Solutions<br /><em>That Deliver</em>
+      </h2>
+      <p style={{ maxWidth: "600px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "2.5rem" }}>
+        Tailored project management and QA services designed to elevate product quality and team execution velocity.
+      </p>
 
-        <div className="process-steps">
-          {steps.map((step) => (
-            <div key={step.num} className="process-step fade-up">
-              <div className="step-num">{step.num}</div>
-              <h3 className="step-name">{step.name}</h3>
-              <p className="step-desc">{step.desc}</p>
-            </div>
-          ))}
-        </div>
+      <div className="services-grid">
+        {services.map((s, idx) => (
+          <div key={idx} className="service-card fade-up">
+            <span className="service-badge">{s.badge}</span>
+            <h3 className="service-title">{s.title}</h3>
+            <ul className="service-bullets">
+              {s.bullets.map((b, i) => (
+                <li key={i}>{b}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );

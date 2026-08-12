@@ -2,99 +2,61 @@
 
 import React from "react";
 
-const capabilities = [
+const stacks = [
   {
-    num: "01",
-    title: "Agile & Project Management",
-    skills: [
-      "Agile / Scrum Sprint Management",
-      "Sprint Planning & Backlog Grooming",
-      "Stakeholder Communication & Alignment",
-      "Cross-functional Team Leadership",
-      "Risk Assessment & Mitigation Scoping"
-    ]
-  },
-  {
-    num: "02",
-    title: "Test Automation Architecture",
-    skills: [
-      "C# & ASP.NET Core Frameworks",
-      "Playwright Automated UI & E2E Testing",
+    title: "QA & Test Automation",
+    items: [
+      "Playwright (UI & E2E Testing)",
       "Selenium Web Automation",
-      "CI/CD Test Pipeline Integration",
-      "Cross-Browser & Multi-Device Suites"
+      "C# & ASP.NET Core Frameworks",
+      "CI/CD Pipeline Integration",
+      "Manual & Regression Test Suites"
     ]
   },
   {
-    num: "03",
-    title: "QA Engineering & Execution",
-    skills: [
-      "Manual & Automated Test Execution",
-      "Bug Life Cycle & Defect Matrix",
-      "Comprehensive Test Case Design",
-      "Regression & Sanity Suite Planning",
-      "UI/UX & Accessibility Validation"
+    title: "Project Management & Agile",
+    items: [
+      "Agile / Scrum Sprint Leadership",
+      "Jira & Confluence Administration",
+      "Backlog Grooming & User Stories",
+      "Stakeholder Communication",
+      "Risk Management & Mitigation"
     ]
   },
   {
-    num: "04",
-    title: "Product Operations & Scoping",
-    skills: [
-      "Jira, Confluence & Trello Management",
-      "User Story & Acceptance Criteria Writing",
-      "Release Management Checklists",
-      "Technical Documentation & Reporting",
-      "Client Onboarding & Product Demos"
-    ]
-  },
-  {
-    num: "05",
-    title: "API & Data Validation",
-    skills: [
-      "REST API Testing & Assertion Suites",
-      "Postman Collection Automation",
-      "SQL, PostgreSQL & MongoDB Validation",
-      "JSON Schema & Payload Inspection",
-      "Performance & Load Benchmarking"
-    ]
-  },
-  {
-    num: "06",
-    title: "Technical Strategy & Quality",
-    skills: [
-      "End-to-End Delivery Ownership",
-      "Defect Root Cause Analysis",
-      "Zero-Critical Post-Launch QA Standard",
-      "Requirement Traceability Matrix",
-      "Continuous Quality Improvement"
+    title: "API, Backend & Databases",
+    items: [
+      "REST API Testing (Postman)",
+      "PostgreSQL & SQL Databases",
+      "MongoDB & NoSQL Stores",
+      "JSON Schema Validation",
+      "Git / GitHub Workflow"
     ]
   }
 ];
 
 export default function SkillsSection() {
   return (
-    <section id="skills">
-      <div className="container">
-        <div className="section-label">01 / CORE CAPABILITIES</div>
-        <h2 className="section-heading">
-          Systematic PM & <em>QA Discipline</em>
-        </h2>
+    <section className="section-wrapper" id="stack">
+      <div className="section-tag">STACK</div>
+      <h2 className="section-title-large">
+        The Stack<br /><em>I Build With</em>
+      </h2>
 
-        <div className="skills-grid">
-          {capabilities.map((cap) => (
-            <div key={cap.num} className="skill-card fade-up">
-              <div className="skill-num">{cap.num}</div>
-              <h3 className="skill-title">{cap.title}</h3>
-              <ul className="skill-list">
-                {cap.skills.map((s, i) => (
-                  <li key={i} className="skill-item">
-                    {s}
-                  </li>
-                ))}
-              </ul>
+      <div className="stack-grid">
+        {stacks.map((st, idx) => (
+          <div key={idx} className="stack-card fade-up">
+            <h3 className="stack-card-title">{st.title}</h3>
+            <div className="stack-items-list">
+              {st.items.map((item, i) => (
+                <div key={i} className="stack-item-row">
+                  <span className="stack-dot"></span>
+                  {item}
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

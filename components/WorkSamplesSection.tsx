@@ -3,68 +3,71 @@
 import React from "react";
 import Image from "next/image";
 
-const artifacts = [
+const reviews = [
   {
-    type: "QA ARTIFACT",
-    title: "Automated Test Suite & Codebase",
-    image: "/images/work-code.png",
-    alt: "Code",
-    description: "Modular C# Playwright test scripts with Page Object Model (POM) pattern and clean assertions."
+    logo: "/images/unilever.png",
+    name: "Unilever Campaign Lead",
+    title: "FMCG Digital Transformation & QA",
+    quote: "Durjoy's attention to detail during our product rollout was exceptional. He caught several critical API integration bugs prior to go-live and kept cross-functional teams synchronized."
   },
   {
-    type: "PM ARTIFACT",
-    title: "Sprint Velocity & Burndown Analytics",
-    image: "/images/work-stats.png",
-    alt: "Stats",
-    description: "Jira dashboard tracking team velocity, bug burn rate, and sprint release predictability."
+    logo: "/images/betupia.png",
+    name: "Betupia Group Product Director",
+    title: "Mobile App & SaaS Delivery",
+    quote: "Working with Durjoy transformed our release pipeline. His automated Playwright scripts reduced test cycles drastically, and his daily standup reports gave stakeholders full visibility."
   },
   {
-    type: "METRICS ARTIFACT",
-    title: "Test Coverage & Quality Distribution",
-    image: "/images/work-graph.png",
-    alt: "Graph",
-    description: "Comprehensive coverage matrix mapping user stories directly to automated test cases."
-  },
-  {
-    type: "API QA ARTIFACT",
-    title: "REST API Postman Workspace",
-    image: "/images/work-api-dashboard.png",
-    alt: "API Test Dashboard",
-    description: "Automated API collection runs, environment variable configs, and JSON schema assertions."
+    logo: "/images/pureit.png",
+    name: "Pureit Tech Lead",
+    title: "Web Application QA",
+    quote: "Highly professional, communicative, and thorough. Durjoy brings a rare blend of PM organization and deep QA technical skills that elevate the entire engineering team."
   }
 ];
 
 export default function WorkSamplesSection() {
   return (
-    <section id="work-samples">
-      <div className="container">
-        <div className="section-label">05 / QA & MANAGEMENT ARTIFACTS</div>
-        <h2 className="section-heading">
-          My Work <em>In Action</em>
-        </h2>
+    <section className="section-wrapper" id="work-samples">
+      <div className="section-tag">TESTIMONIALS</div>
+      <h2 className="section-title-large">
+        From People<br /><em>I've Worked With</em>
+      </h2>
 
-        <div className="work-grid">
-          {artifacts.map((art, idx) => (
-            <div key={idx} className="work-card fade-up">
-              <div className="wc-type">{art.type}</div>
-              <h3 className="wc-name">{art.title}</h3>
-              
-              <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", borderRadius: "var(--radius-sm)", overflow: "hidden", marginBottom: "1rem", background: "#111" }}>
-                <Image
-                  src={art.image}
-                  alt={art.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  style={{ objectFit: "cover" }}
-                />
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "2.5rem" }}>
+        {reviews.map((r, idx) => (
+          <div key={idx} className="what-card fade-up" style={{ background: "var(--bg-card)" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+              <div style={{ width: 44, height: 44, position: "relative", flexShrink: 0 }}>
+                <Image src={r.logo} alt={r.name} fill style={{ objectFit: "contain" }} />
               </div>
-
-              <div className="work-card-bot">
-                <div className="wc-what-lbl">Deliverable Summary</div>
-                <div className="wc-what-txt">{art.description}</div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: "0.95rem" }}>{r.name}</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--ink-muted)" }}>{r.title}</div>
               </div>
             </div>
-          ))}
+            <p style={{ fontSize: "0.85rem", color: "var(--ink-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
+              "{r.quote}"
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom Stats Row */}
+      <div className="sidebar-stats-card" style={{ gridTemplateColumns: "repeat(4, 1fr)", padding: "1.5rem", background: "var(--bg-card-white)" }}>
+        <div>
+          <div className="sb-stat-num" style={{ fontSize: "2rem" }}>15+</div>
+          <div className="sb-stat-label">Projects Delivered</div>
+        </div>
+        <div>
+          <div className="sb-stat-num" style={{ fontSize: "2rem" }}>99%</div>
+          <div className="sb-stat-label">QA Coverage</div>
+        </div>
+        <div>
+          <div className="sb-stat-num" style={{ fontSize: "2rem" }}>4+</div>
+          <div className="sb-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div className="sb-stat-num" style={{ fontSize: "2rem" }}>100%</div>
+          <div className="sb-stat-label">On-Time Delivery</div>
         </div>
       </div>
     </section>

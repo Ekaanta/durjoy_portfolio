@@ -3,14 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import JourneySection from "@/components/JourneySection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import WhatYouGetSection from "@/components/WhatYouGetSection";
 import ProcessSection from "@/components/ProcessSection";
-import AutomationSection from "@/components/AutomationSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
-import MeetingsSection from "@/components/MeetingsSection";
-import ToolsSection from "@/components/ToolsSection";
-import ContactSection from "@/components/ContactSection";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 
 import ProjectsModal from "@/components/modals/ProjectsModal";
@@ -46,47 +45,44 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ minHeight: "100vh", background: "var(--paper)" }}>
-      {/* Navigation */}
+    <div className="app-container">
+      {/* Sidebar Navigation */}
       <Navbar onOpenCvModal={() => setCvModalOpen(true)} />
 
-      {/* Hero Section */}
-      <HeroSection
-        onOpenReviewsModal={() => setReviewsModalOpen(true)}
-        onOpenCvModal={() => setCvModalOpen(true)}
-      />
+      {/* Main Content Area */}
+      <main className="content-column">
+        {/* Giant Hero Section with Cutout Profile */}
+        <HeroSection onOpenCvModal={() => setCvModalOpen(true)} />
 
-      {/* 01 / Core Capabilities */}
-      <SkillsSection />
+        {/* Journey Timeline Section ('21, '23, '25) */}
+        <JourneySection onOpenCvModal={() => setCvModalOpen(true)} />
 
-      {/* 02 / Featured Projects */}
-      <ProjectsSection onOpenProjectsModal={() => setProjectsModalOpen(true)} />
+        {/* The Stack I Build With */}
+        <SkillsSection />
 
-      {/* 03 / My Methodology */}
-      <ProcessSection />
+        {/* Built to Scale, Made to Perform (Projects Rows) */}
+        <ProjectsSection onOpenProjectsModal={() => setProjectsModalOpen(true)} />
 
-      {/* 04 / Automation Architecture */}
-      <AutomationSection />
+        {/* What You Get? */}
+        <WhatYouGetSection />
 
-      {/* 05 / QA & Management Artifacts */}
-      <WorkSamplesSection />
+        {/* Solutions That Deliver (Services) */}
+        <ProcessSection />
 
-      {/* 06 / Leadership & Meetings */}
-      <MeetingsSection />
+        {/* From People I've Worked With (Testimonials & Impact Stats) */}
+        <WorkSamplesSection />
 
-      {/* 07 / Tools & Tech Stack */}
-      <ToolsSection />
+        {/* Got any questions? (FAQ Accordion) */}
+        <FaqSection />
 
-      {/* 08 / Get in Touch */}
-      <ContactSection />
-
-      {/* Footer */}
-      <Footer />
+        {/* Footer with Giant DURJOY Header */}
+        <Footer onOpenCvModal={() => setCvModalOpen(true)} />
+      </main>
 
       {/* Interactive Modals */}
       <ProjectsModal isOpen={projectsModalOpen} onClose={() => setProjectsModalOpen(false)} />
       <ReviewsModal isOpen={reviewsModalOpen} onClose={() => setReviewsModalOpen(false)} />
       <CvModal isOpen={cvModalOpen} onClose={() => setCvModalOpen(false)} />
-    </main>
+    </div>
   );
 }
