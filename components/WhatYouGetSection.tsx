@@ -1,45 +1,46 @@
 "use client";
 
 import React from "react";
+import { Zap, ShieldCheck, Plug, BarChart3, Users, Rocket, RefreshCw, Mic } from "lucide-react";
 
 const deliverables = [
   {
-    icon: "⚡",
+    icon: <Zap size={20} />,
     title: "Sprint Management",
     desc: "Structured Agile sprint planning, backlog grooming, and predictable velocity."
   },
   {
-    icon: "🛡",
+    icon: <ShieldCheck size={20} />,
     title: "Test Automation",
-    desc: "Robust Playwright & Selenium automated E2E testing suites covering critical user flows."
+    desc: "Robust Playwright, Selenium & Python automated testing suites covering critical user flows."
   },
   {
-    icon: "🔌",
+    icon: <Plug size={20} />,
     title: "API Validation",
     desc: "Postman collections, payload assertion tests, and REST endpoint verification."
   },
   {
-    icon: "📊",
+    icon: <BarChart3 size={20} />,
     title: "Defect Matrix",
     desc: "Clear bug lifecycle tracking in Jira with severity classification and zero critical post-launch bugs."
   },
   {
-    icon: "👥",
+    icon: <Users size={20} />,
     title: "Team Leadership",
     desc: "Aligning developers, designers, QA engineers, and clients through clear communication."
   },
   {
-    icon: "🚀",
+    icon: <Rocket size={20} />,
     title: "Release Management",
     desc: "Strict pre-deployment checklists, staging verification, and production release sign-off."
   },
   {
-    icon: "🔄",
+    icon: <RefreshCw size={20} />,
     title: "CI/CD Integration",
     desc: "Automated test runs triggered on Git commits & pull requests via GitHub Actions."
   },
   {
-    icon: "🎤",
+    icon: <Mic size={20} />,
     title: "Client Demos",
     desc: "Transparent product walkthroughs, stakeholder progress reports, and sprint retrospectives."
   }
@@ -53,7 +54,7 @@ export default function WhatYouGetSection() {
         What<br /><em>You Get?</em>
       </h2>
       <p style={{ maxWidth: "600px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "2.5rem" }}>
-        Clean workflows, automated QA, and scalable architecture combined — turning your vision into a product that holds up in production.
+        Clean workflows, automated QA, and scalable AI architecture combined — turning your vision into a product that holds up in production.
       </p>
 
       <div className="what-grid">

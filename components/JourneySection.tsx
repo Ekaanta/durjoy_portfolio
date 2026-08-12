@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Sparkles, Building2, ShieldCheck, ChevronRight } from "lucide-react";
 
 export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () => void }) {
   return (
@@ -18,7 +19,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         <svg className="timeline-svg-connector" viewBox="0 0 1000 900" fill="none" preserveAspectRatio="none">
           <path
             d="M 250,150 C 750,250 800,450 350,550 C 100,620 400,780 750,850"
-            stroke="#9333ea"
+            stroke="var(--purple-primary)"
             strokeWidth="2"
             strokeDasharray="4 4"
           />
@@ -26,7 +27,10 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
 
         {/* Card 1: Sparktech AI Limited */}
         <div className="journey-card card-left fade-up">
-          <div className="journey-year">'25</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="journey-year">'25</div>
+            <Sparkles size={24} style={{ color: "var(--purple-primary)" }} />
+          </div>
           <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
           <h3 className="journey-role">Jr. AI Engineer</h3>
           <div className="journey-company">
@@ -43,15 +47,19 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
               <span className="journey-tag">N8N Automation</span>
               <span className="journey-tag">FastAPI</span>
             </div>
-            <button onClick={onOpenCvModal} className="read-more-btn">
-              Details
+            <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
+              <span>Details</span>
+              <ChevronRight size={14} />
             </button>
           </div>
         </div>
 
         {/* Card 2: Unilever (UCL-Bangladesh) */}
         <div className="journey-card card-right fade-up">
-          <div className="journey-year">'25</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="journey-year">'25</div>
+            <Building2 size={24} style={{ color: "var(--purple-primary)" }} />
+          </div>
           <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
           <h3 className="journey-role">Project Coordinator</h3>
           <div className="journey-company">
@@ -67,15 +75,19 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
               <span className="journey-tag">Stakeholder Mgmt</span>
               <span className="journey-tag">Retail Software</span>
             </div>
-            <button onClick={onOpenCvModal} className="read-more-btn">
-              Details
+            <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
+              <span>Details</span>
+              <ChevronRight size={14} />
             </button>
           </div>
         </div>
 
         {/* Card 3: Pureit */}
         <div className="journey-card card-left fade-up">
-          <div className="journey-year">'22</div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="journey-year">'22</div>
+            <ShieldCheck size={24} style={{ color: "var(--purple-primary)" }} />
+          </div>
           <div className="journey-date">03/2022 – 09/2024 • MOHAKHALI DOHS, DHAKA</div>
           <h3 className="journey-role">Technical Project Coordinator</h3>
           <div className="journey-company">
@@ -91,8 +103,9 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
               <span className="journey-tag">API Integration</span>
               <span className="journey-tag">Task Tracking</span>
             </div>
-            <button onClick={onOpenCvModal} className="read-more-btn">
-              Details
+            <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
+              <span>Details</span>
+              <ChevronRight size={14} />
             </button>
           </div>
         </div>

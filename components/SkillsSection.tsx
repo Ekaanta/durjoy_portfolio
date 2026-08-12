@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { Brain, Code2, CheckSquare } from "lucide-react";
 
 const stacks = [
   {
+    icon: <Brain size={22} style={{ color: "var(--purple-primary)" }} />,
     title: "AI Engineering & Automation",
     items: [
       "Large Language Models (LLMs)",
@@ -14,6 +16,7 @@ const stacks = [
     ]
   },
   {
+    icon: <Code2 size={22} style={{ color: "var(--purple-primary)" }} />,
     title: "Programming & Backend Dev",
     items: [
       "Python & JavaScript",
@@ -24,6 +27,7 @@ const stacks = [
     ]
   },
   {
+    icon: <CheckSquare size={22} style={{ color: "var(--purple-primary)" }} />,
     title: "Project Management & QA",
     items: [
       "Agile & Scrum Methodology",
@@ -46,7 +50,10 @@ export default function SkillsSection() {
       <div className="stack-grid">
         {stacks.map((st, idx) => (
           <div key={idx} className="stack-card fade-up">
-            <h3 className="stack-card-title">{st.title}</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.65rem", marginBottom: "1.25rem" }}>
+              {st.icon}
+              <h3 className="stack-card-title" style={{ margin: 0 }}>{st.title}</h3>
+            </div>
             <div className="stack-items-list">
               {st.items.map((item, i) => (
                 <div key={i} className="stack-item-row">

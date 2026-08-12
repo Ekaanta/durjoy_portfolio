@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ArrowUp, Mail, FileText } from "lucide-react";
 
 interface FooterProps {
   onOpenCvModal: () => void;
@@ -18,12 +19,17 @@ export default function Footer({ onOpenCvModal }: FooterProps) {
         <div>
           © {new Date().getFullYear()} Ekanta Banik (Durjoy) • AI/ML Engineer & Project Coordinator (Dhaka, Bangladesh)
         </div>
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <button onClick={onOpenCvModal} style={{ background: "none", border: "none", color: "var(--purple-primary)", fontWeight: 700, cursor: "pointer" }}>
-            View Full CV
+        <div style={{ display: "flex", gap: "1.25rem", alignItems: "center" }}>
+          <button
+            onClick={onOpenCvModal}
+            style={{ background: "none", border: "none", color: "var(--purple-primary)", fontWeight: 700, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+          >
+            <FileText size={15} />
+            <span>View Full CV</span>
           </button>
-          <a href="#hero" style={{ color: "var(--ink)", textDecoration: "none", fontWeight: 700 }}>
-            Back to Top ↑
+          <a href="#hero" style={{ color: "var(--ink)", textDecoration: "none", fontWeight: 700, display: "inline-flex", alignItems: "center", gap: "0.25rem" }}>
+            <span>Back to Top</span>
+            <ArrowUp size={15} />
           </a>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { ExternalLink, FileText, ArrowDown, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenCvModal: () => void;
@@ -40,7 +41,10 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
         {/* Elegant Executive Badge */}
         <div className="hero-chest-badge">
-          <span>AI/ML Engineer & Project Coordinator</span>
+          <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+            <Sparkles size={15} style={{ color: "#ffffff" }} />
+            <span>AI/ML Engineer & Project Coordinator</span>
+          </span>
           <span className="chest-badge-gold">GenAI & LLMs</span>
         </div>
       </div>
@@ -54,24 +58,27 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
       {/* Action Buttons */}
       <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "2rem", flexWrap: "wrap", zIndex: 10, position: "relative" }}>
-        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.85rem 2rem", fontSize: "0.92rem" }}>
-          Explore AI & PM Projects ↓
+        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.85rem 2rem", fontSize: "0.92rem", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+          <span>Explore AI & PM Projects</span>
+          <ArrowDown size={16} />
         </a>
         <a
           href="https://durjoy-ai.lovable.app"
           target="_blank"
           rel="noopener noreferrer"
           className="read-more-btn"
-          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--bg-card-white)", borderColor: "var(--sandy-amber)" }}
+          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--bg-card-white)", borderColor: "var(--sandy-amber)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
         >
-          Live AI Site ↗
+          <span>Live AI Site</span>
+          <ExternalLink size={15} />
         </a>
         <button
           onClick={onOpenCvModal}
           className="read-more-btn"
-          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--ink)", color: "#ffffff", borderColor: "var(--ink)" }}
+          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--ink)", color: "#ffffff", borderColor: "var(--ink)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
         >
-          View Full CV
+          <FileText size={16} />
+          <span>View Full CV</span>
         </button>
       </div>
     </section>

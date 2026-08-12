@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Github, Linkedin, Copy, Check, FileText } from "lucide-react";
 
 interface NavbarProps {
   onOpenCvModal: () => void;
@@ -32,7 +33,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               className="social-icon-btn"
               title="GitHub Profile"
             >
-              ⌨
+              <Github size={16} />
             </a>
             <a
               href="https://linkedin.com/in/durjoy-banik"
@@ -41,7 +42,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               className="social-icon-btn"
               title="LinkedIn Profile"
             >
-              in
+              <Linkedin size={16} />
             </a>
           </div>
         </div>
@@ -104,11 +105,14 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
             {email}
           </span>
-          <span style={{ fontWeight: 700, marginLeft: "0.4rem" }}>{copied ? "✓" : "📋"}</span>
+          <span style={{ display: "flex", alignItems: "center", marginLeft: "0.4rem", color: "var(--purple-primary)" }}>
+            {copied ? <Check size={14} /> : <Copy size={14} />}
+          </span>
         </div>
 
-        <button onClick={onOpenCvModal} className="btn-hire-gold">
-          View Resume / CV
+        <button onClick={onOpenCvModal} className="btn-hire-gold" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}>
+          <FileText size={16} />
+          <span>View Resume / CV</span>
         </button>
       </div>
     </aside>

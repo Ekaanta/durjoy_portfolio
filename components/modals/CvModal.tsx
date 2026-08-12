@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { X, Mail, Briefcase, GraduationCap, Award } from "lucide-react";
 
 interface CvModalProps {
   isOpen: boolean;
@@ -26,7 +27,7 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "850px" }}>
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
-          ✕
+          <X size={20} />
         </button>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.75rem", borderBottom: "1px solid var(--border)", paddingBottom: "1.25rem", flexWrap: "wrap", gap: "1rem" }}>
@@ -45,9 +46,10 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
             <a
               href="mailto:durjoybanik35138@gmail.com?subject=Inquiry%20from%20Portfolio%20CV"
               className="btn-hire-gold"
-              style={{ fontSize: "0.82rem", padding: "0.65rem 1.25rem", width: "auto" }}
+              style={{ fontSize: "0.82rem", padding: "0.65rem 1.25rem", width: "auto", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
             >
-              Contact Durjoy
+              <Mail size={14} />
+              <span>Contact Durjoy</span>
             </a>
           </div>
         </div>
@@ -65,9 +67,12 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
 
           {/* Professional Experience */}
           <div>
-            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.85rem", color: "var(--purple-primary)" }}>
-              Professional Experience
-            </h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.85rem" }}>
+              <Briefcase size={20} style={{ color: "var(--purple-primary)" }} />
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, color: "var(--purple-primary)", margin: 0 }}>
+                Professional Experience
+              </h3>
+            </div>
 
             <div style={{ marginBottom: "1.25rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700, fontSize: "0.95rem" }}>
@@ -113,16 +118,19 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
 
           {/* Education */}
           <div>
-            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.75rem", color: "var(--purple-primary)" }}>
-              Education
-            </h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+              <GraduationCap size={20} style={{ color: "var(--purple-primary)" }} />
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, color: "var(--purple-primary)", margin: 0 }}>
+                Education
+              </h3>
+            </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--purple-border)" }}>
+              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--sandy-amber)" }}>
                 <div style={{ fontWeight: 700, fontSize: "0.95rem" }}>Canadian University of Bangladesh</div>
                 <div style={{ fontSize: "0.85rem", color: "var(--purple-dark)" }}>Bachelor of Science in Computer Science and Engineering</div>
                 <div style={{ fontSize: "0.78rem", color: "var(--ink-muted)" }}>08/2022 – 05/2026 • Merul-Badda, Dhaka, Bangladesh</div>
               </div>
-              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--purple-border)" }}>
+              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--sandy-amber)" }}>
                 <div style={{ fontWeight: 700, fontSize: "0.95rem" }}>Institute of Computer Science and Technology</div>
                 <div style={{ fontSize: "0.85rem", color: "var(--purple-dark)" }}>Diploma in Computer Science</div>
                 <div style={{ fontSize: "0.78rem", color: "var(--ink-muted)" }}>2018 – 2022 • Feni Sadar, Feni, Bangladesh</div>
@@ -132,9 +140,12 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
 
           {/* Certificate */}
           <div>
-            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--purple-primary)" }}>
-              Certificates & Courses
-            </h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+              <Award size={20} style={{ color: "var(--purple-primary)" }} />
+              <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, color: "var(--purple-primary)", margin: 0 }}>
+                Certificates & Courses
+              </h3>
+            </div>
             <div style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", background: "var(--bg-card)", padding: "0.85rem 1.1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
               <strong>Technical Automation:</strong> Manual and Automated Project Management Course (PMC)
             </div>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { X, ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 
 interface ProjectsModalProps {
   isOpen: boolean;
@@ -100,7 +101,7 @@ export default function ProjectsModal({ isOpen, onClose, initialSlide = 0 }: Pro
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-container" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "850px" }}>
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
-          ✕
+          <X size={20} />
         </button>
 
         <div style={{ marginBottom: "1.25rem" }}>
@@ -131,21 +132,24 @@ export default function ProjectsModal({ isOpen, onClose, initialSlide = 0 }: Pro
         {/* Live and GitHub links */}
         <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1.5rem" }}>
           {slide.live && (
-            <a href={slide.live} target="_blank" rel="noopener noreferrer" className="btn-hire-gold" style={{ width: "auto", padding: "0.55rem 1.25rem", fontSize: "0.82rem" }}>
-              Live Application ↗
+            <a href={slide.live} target="_blank" rel="noopener noreferrer" className="btn-hire-gold" style={{ width: "auto", padding: "0.55rem 1.25rem", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+              <span>Live Application</span>
+              <ExternalLink size={14} />
             </a>
           )}
           {slide.github && (
-            <a href={slide.github} target="_blank" rel="noopener noreferrer" className="read-more-btn" style={{ padding: "0.55rem 1.25rem", fontSize: "0.82rem" }}>
-              GitHub Source ↗
+            <a href={slide.github} target="_blank" rel="noopener noreferrer" className="read-more-btn" style={{ padding: "0.55rem 1.25rem", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
+              <Github size={14} />
+              <span>GitHub Source</span>
             </a>
           )}
         </div>
 
         {/* Navigation Controls */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
-          <button onClick={prevSlide} className="read-more-btn" style={{ padding: "0.6rem 1.25rem" }}>
-            ← Previous
+          <button onClick={prevSlide} className="read-more-btn" style={{ padding: "0.6rem 1.25rem", display: "inline-flex", alignItems: "center", gap: "0.3rem" }}>
+            <ChevronLeft size={16} />
+            <span>Previous</span>
           </button>
 
           <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "center" }}>
@@ -166,8 +170,9 @@ export default function ProjectsModal({ isOpen, onClose, initialSlide = 0 }: Pro
             ))}
           </div>
 
-          <button onClick={nextSlide} className="btn-hire-gold" style={{ width: "auto", padding: "0.6rem 1.25rem" }}>
-            Next →
+          <button onClick={nextSlide} className="btn-hire-gold" style={{ width: "auto", padding: "0.6rem 1.25rem", display: "inline-flex", alignItems: "center", gap: "0.3rem" }}>
+            <span>Next</span>
+            <ChevronRight size={16} />
           </button>
         </div>
       </div>

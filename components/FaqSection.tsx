@@ -1,23 +1,24 @@
 "use client";
 
 import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
     q: "What roles are you available for?",
-    a: "I am available for full-time, contract, and project-based roles as a Project Manager, QA Lead, or Test Automation Specialist in remote or hybrid configurations."
+    a: "I am available for full-time, contract, and project-based roles as an AI/ML Engineer, AI Automation Specialist, or Technical Project Coordinator in remote or hybrid configurations."
   },
   {
-    q: "How do you integrate QA test automation into Agile sprints?",
-    a: "I build modular test automation frameworks (Playwright/C#) that run in parallel with active sprint cycles. Tests are triggered automatically via CI/CD on every Git pull request, giving immediate feedback without delaying deployment velocity."
+    q: "How do you build Agentic AI and LLM automation pipelines?",
+    a: "I leverage Python, LangChain, N8N, FastAPI, and OpenAI/HuggingFace model APIs to orchestrate multi-step autonomous AI workflows, document analysis agents, and custom vision systems."
   },
   {
-    q: "Can you manage cross-functional international teams?",
-    a: "Yes! I have extensive experience coordinating developers, designers, QA engineers, and business stakeholders across different time zones using Jira, Confluence, and Slack."
+    q: "Can you manage cross-functional software project teams?",
+    a: "Yes! I have extensive experience at Unilever (UCL-Bangladesh) and Pureit managing agile sprint deliverables, requirement gathering, Jira task tracking, and developer-client alignment."
   },
   {
     q: "What is your typical project delivery workflow?",
-    a: "1) Discovery & Requirements Scope → 2) Sprint & Backlog Planning → 3) Agile Execution & Daily Standups → 4) Test Automation & QA Audit → 5) Staging Verification & Production Launch."
+    a: "1) Requirement Discovery & Scope → 2) Architecture & Agile Sprint Planning → 3) AI/ML & Full-Stack Development → 4) Test Automation & QA Audit → 5) Staging Verification & Production Release."
   }
 ];
 
@@ -42,9 +43,11 @@ export default function FaqSection() {
             <div key={idx} className="faq-item fade-up">
               <button className="faq-trigger" onClick={() => toggleFaq(idx)}>
                 <span>{faq.q}</span>
-                <span className="faq-icon" style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}>
-                  +
-                </span>
+                <ChevronDown
+                  size={20}
+                  className="faq-icon"
+                  style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s ease" }}
+                />
               </button>
               {isOpen && <div className="faq-content">{faq.a}</div>}
             </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 
 interface ProjectsSectionProps {
   onOpenProjectsModal: (index: number) => void;
@@ -111,10 +112,11 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
                     target="_blank"
                     rel="noopener noreferrer"
                     className="read-more-btn"
-                    style={{ background: "var(--purple-primary)", color: "#fff" }}
+                    style={{ background: "var(--purple-primary)", color: "#fff", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    Live Demo ↗
+                    <span>Live Demo</span>
+                    <ExternalLink size={13} />
                   </a>
                 )}
                 {proj.github && (
@@ -123,9 +125,11 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
                     target="_blank"
                     rel="noopener noreferrer"
                     className="read-more-btn"
+                    style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    GitHub ↗
+                    <Github size={13} />
+                    <span>GitHub</span>
                   </a>
                 )}
               </div>
@@ -138,7 +142,7 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
                 aria-label={`View ${proj.title}`}
                 title={`View ${proj.title} Details`}
               >
-                →
+                <ArrowRight size={18} />
               </button>
             </div>
           </div>
