@@ -20,14 +20,20 @@ const toolsList = [
 export default function ToolsSection() {
   return (
     <section id="tools">
-      <div className="section-label">07 / TOOLS & TECHNOLOGIES</div>
-      <div className="tools-grid">
-        {toolsList.map((t, idx) => (
-          <div key={idx} className="tool-pill">
-            <div className="tool-dot" style={{ background: t.color }}></div>
-            {t.name}
-          </div>
-        ))}
+      <div className="container">
+        <div className="section-label">07 / TECH STACK & TOOLS</div>
+        <h2 className="section-heading">
+          Tools <em>I Use</em>
+        </h2>
+
+        <div className="tools-grid">
+          {toolsList.map((t, idx) => (
+            <div key={idx} className="tool-pill fade-up">
+              <div className="tool-dot" style={{ background: t.color }}></div>
+              {t.name}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

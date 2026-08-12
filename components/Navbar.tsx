@@ -19,13 +19,17 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
 
   return (
     <nav>
-      <a href="#" className="nav-logo" onClick={closeMenu}>
-        Ekanta Banik Durjoy
-      </a>
+      <div className="nav-brand">
+        <a href="#" className="nav-logo" onClick={closeMenu}>
+          Ekanta Banik Durjoy
+        </a>
+        <span className="nav-role-badge">PM & QA LEAD</span>
+      </div>
+
       <ul className={`nav-links ${mobileMenuOpen ? "active" : ""}`}>
         <li>
           <a href="#skills" onClick={closeMenu}>
-            Skills
+            Capabilities
           </a>
         </li>
         <li>
@@ -50,7 +54,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
         </li>
         <li>
           <a href="#meetings" onClick={closeMenu}>
-            Meetings
+            Demos
           </a>
         </li>
         <li>
@@ -69,18 +73,13 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               closeMenu();
               onOpenCvModal();
             }}
-            style={{
-              background: "var(--gold)",
-              color: "var(--ink)",
-              fontWeight: 600,
-              border: "1.5px solid var(--gold-dark)",
-              borderRadius: "2px",
-            }}
+            className="nav-cta"
           >
             Resume / CV
           </button>
         </li>
       </ul>
+
       <button
         className={`hamburger ${mobileMenuOpen ? "active" : ""}`}
         onClick={toggleMenu}

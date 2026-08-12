@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface ProjectsModalProps {
@@ -80,6 +80,18 @@ const slides = [
 export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    if (isOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const nextSlide = () => {
@@ -94,60 +106,60 @@ export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-container" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "750px" }}>
+      <div className="modal-container" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "850px" }}>
         <button className="modal-close" onClick={onClose} aria-label="Close modal">
           ✕
         </button>
 
-        <div style={{ marginBottom: "1rem" }}>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", color: "var(--gold-dark)", textTransform: "uppercase" }}>
-            Slide {currentSlide + 1} of {slides.length}
+        <div style={{ marginBottom: "1.25rem" }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", color: "var(--gold-dark)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            Slide {currentSlide + 1} of {slides.length} • CASE STUDY GALLERY
           </div>
-          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.4rem", fontWeight: 700, margin: "0.2rem 0" }}>
+          <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.6rem", fontWeight: 700, margin: "0.2rem 0" }}>
             {slide.title}
           </h2>
-          <div style={{ fontSize: "0.8rem", color: "var(--muted)" }}>{slide.subtitle}</div>
+          <div style={{ fontSize: "0.85rem", color: "var(--muted)" }}>{slide.subtitle}</div>
         </div>
 
-        <div style={{ background: "var(--paper2)", borderRadius: "4px", overflow: "hidden", position: "relative", marginBottom: "1rem" }}>
+        <div style={{ background: "#111", borderRadius: "var(--radius-md)", overflow: "hidden", position: "relative", marginBottom: "1.25rem", aspectRatio: "16 / 10" }}>
           <Image
             src={slide.image}
             alt={slide.title}
-            width={700}
-            height={450}
-            style={{ width: "100%", height: "auto", display: "block" }}
+            fill
+            sizes="(max-width: 900px) 100vw, 850px"
+            style={{ objectFit: "contain" }}
           />
         </div>
 
-        <p style={{ fontSize: "0.85rem", color: "var(--muted)", marginBottom: "1.5rem" }}>
+        <p style={{ fontSize: "0.9rem", color: "var(--muted)", marginBottom: "1.5rem", lineHeight: 1.6 }}>
           {slide.description}
         </p>
 
-        {/* Controls */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <button onClick={prevSlide} className="btn-outline" style={{ padding: "0.5rem 1rem" }}>
+        {/* Navigation Controls */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
+          <button onClick={prevSlide} className="btn-outline" style={{ padding: "0.6rem 1.25rem" }}>
             ← Previous
           </button>
 
-          <div style={{ display: "flex", gap: "0.4rem" }}>
+          <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", justifyContent: "center" }}>
             {slides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 style={{
-                  width: idx === currentSlide ? "20px" : "8px",
+                  width: idx === currentSlide ? "22px" : "8px",
                   height: "8px",
                   borderRadius: "4px",
-                  background: idx === currentSlide ? "var(--gold)" : "var(--border)",
+                  background: idx === currentSlide ? "var(--gold)" : "var(--border-strong)",
                   border: "none",
                   cursor: "pointer",
-                  transition: "all 0.2s"
+                  transition: "all 0.25s ease"
                 }}
               />
             ))}
           </div>
 
-          <button onClick={nextSlide} className="btn-primary" style={{ padding: "0.5rem 1rem" }}>
+          <button onClick={nextSlide} className="btn-primary" style={{ padding: "0.6rem 1.25rem" }}>
             Next →
           </button>
         </div>

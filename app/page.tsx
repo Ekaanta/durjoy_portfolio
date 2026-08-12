@@ -51,9 +51,12 @@ export default function Home() {
       <Navbar onOpenCvModal={() => setCvModalOpen(true)} />
 
       {/* Hero Section */}
-      <HeroSection onOpenReviewsModal={() => setReviewsModalOpen(true)} />
+      <HeroSection
+        onOpenReviewsModal={() => setReviewsModalOpen(true)}
+        onOpenCvModal={() => setCvModalOpen(true)}
+      />
 
-      {/* 01 / Core Competencies */}
+      {/* 01 / Core Capabilities */}
       <SkillsSection />
 
       {/* 02 / Featured Projects */}

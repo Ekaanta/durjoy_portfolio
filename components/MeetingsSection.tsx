@@ -2,37 +2,45 @@
 
 import React from "react";
 
+const meetings = [
+  {
+    title: "Sprint Planning & Backlog Refinement",
+    meta: "Agile Ceremony • Stakeholder Alignment",
+    duration: "45 mins"
+  },
+  {
+    title: "Client Demo & Release Presentation",
+    meta: "Product Walkthrough • Feature Sign-off",
+    duration: "30 mins"
+  },
+  {
+    title: "QA Bug Triage & Dev Alignment",
+    meta: "Defect Review • Priority Mapping",
+    duration: "25 mins"
+  }
+];
+
 export default function MeetingsSection() {
   return (
-    <section id="meetings" style={{ background: "var(--paper2)" }}>
-      <div className="section-label">06 / LEADERSHIP & MEETINGS</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1rem" }}>
-        <div className="meeting-card">
-          <div className="meeting-thumb">
-            <div className="meeting-play">▶</div>
-          </div>
-          <div className="meeting-info">
-            <div className="meeting-title">Sprint Planning & Backlog Refinement</div>
-            <div className="meeting-meta">Agile Ceremony • Stakeholder Alignment</div>
-          </div>
-        </div>
-        <div className="meeting-card">
-          <div className="meeting-thumb">
-            <div className="meeting-play">▶</div>
-          </div>
-          <div className="meeting-info">
-            <div className="meeting-title">Client Demo & Release Presentation</div>
-            <div className="meeting-meta">Product Walkthrough • Feature Sign-off</div>
-          </div>
-        </div>
-        <div className="meeting-card">
-          <div className="meeting-thumb">
-            <div className="meeting-play">▶</div>
-          </div>
-          <div className="meeting-info">
-            <div className="meeting-title">QA Bug Triage & Dev Alignment</div>
-            <div className="meeting-meta">Defect Review • Priority Mapping</div>
-          </div>
+    <section id="meetings" style={{ background: "var(--paper-card)" }}>
+      <div className="container">
+        <div className="section-label">06 / LEADERSHIP & MEETINGS</div>
+        <h2 className="section-heading">
+          Client Meeting <em>Demos</em>
+        </h2>
+
+        <div className="meetings-grid">
+          {meetings.map((m, idx) => (
+            <div key={idx} className="meeting-card fade-up">
+              <div className="meeting-thumb">
+                <div className="meeting-play">▶</div>
+              </div>
+              <div className="meeting-info">
+                <h3 className="meeting-title">{m.title}</h3>
+                <div className="meeting-meta">{m.meta}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

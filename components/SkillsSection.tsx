@@ -2,54 +2,98 @@
 
 import React from "react";
 
+const capabilities = [
+  {
+    num: "01",
+    title: "Agile & Project Management",
+    skills: [
+      "Agile / Scrum Sprint Management",
+      "Sprint Planning & Backlog Grooming",
+      "Stakeholder Communication & Alignment",
+      "Cross-functional Team Leadership",
+      "Risk Assessment & Mitigation Scoping"
+    ]
+  },
+  {
+    num: "02",
+    title: "Test Automation Architecture",
+    skills: [
+      "C# & ASP.NET Core Frameworks",
+      "Playwright Automated UI & E2E Testing",
+      "Selenium Web Automation",
+      "CI/CD Test Pipeline Integration",
+      "Cross-Browser & Multi-Device Suites"
+    ]
+  },
+  {
+    num: "03",
+    title: "QA Engineering & Execution",
+    skills: [
+      "Manual & Automated Test Execution",
+      "Bug Life Cycle & Defect Matrix",
+      "Comprehensive Test Case Design",
+      "Regression & Sanity Suite Planning",
+      "UI/UX & Accessibility Validation"
+    ]
+  },
+  {
+    num: "04",
+    title: "Product Operations & Scoping",
+    skills: [
+      "Jira, Confluence & Trello Management",
+      "User Story & Acceptance Criteria Writing",
+      "Release Management Checklists",
+      "Technical Documentation & Reporting",
+      "Client Onboarding & Product Demos"
+    ]
+  },
+  {
+    num: "05",
+    title: "API & Data Validation",
+    skills: [
+      "REST API Testing & Assertion Suites",
+      "Postman Collection Automation",
+      "SQL, PostgreSQL & MongoDB Validation",
+      "JSON Schema & Payload Inspection",
+      "Performance & Load Benchmarking"
+    ]
+  },
+  {
+    num: "06",
+    title: "Technical Strategy & Quality",
+    skills: [
+      "End-to-End Delivery Ownership",
+      "Defect Root Cause Analysis",
+      "Zero-Critical Post-Launch QA Standard",
+      "Requirement Traceability Matrix",
+      "Continuous Quality Improvement"
+    ]
+  }
+];
+
 export default function SkillsSection() {
   return (
     <section id="skills">
-      <div className="section-label">01 / CORE COMPETENCIES</div>
-      <div className="skills-grid">
-        <div className="skill-card fade-up">
-          <h3 className="skill-title">Core Management Skills</h3>
-          <ul className="skill-list">
-            <li className="skill-item">Agile / Scrum Project Management</li>
-            <li className="skill-item">Sprint Planning & Backlog Grooming</li>
-            <li className="skill-item">Stakeholder Communication & Alignment</li>
-            <li className="skill-item">QA Strategy & Test Automation Integration</li>
-            <li className="skill-item">Cross-functional Team Leadership</li>
-            <li className="skill-item">Risk Assessment & Mitigation</li>
-          </ul>
-        </div>
-        <div className="skill-card fade-up">
-          <h3 className="skill-title">Technical & Automation</h3>
-          <ul className="skill-list">
-            <li className="skill-item">C# & ASP.NET Core Frameworks</li>
-            <li className="skill-item">Playwright & Selenium Automation</li>
-            <li className="skill-item">SQL, PostgreSQL & MongoDB Databases</li>
-            <li className="skill-item">REST API Testing & Postman Collections</li>
-            <li className="skill-item">Git / GitHub Workflow & CI/CD Pipelines</li>
-            <li className="skill-item">BrowserStack & Cross-Device Testing</li>
-          </ul>
-        </div>
-        <div className="skill-card fade-up">
-          <h3 className="skill-title">QA & Process Discipline</h3>
-          <ul className="skill-list">
-            <li className="skill-item">Manual & Automated Test Execution</li>
-            <li className="skill-item">Bug Life Cycle & Defect Tracking</li>
-            <li className="skill-item">Test Case Design & Matrix Creation</li>
-            <li className="skill-item">Performance & Load Testing</li>
-            <li className="skill-item">Regression & Sanity Testing Suites</li>
-            <li className="skill-item">API Validation via Postman & Swagger</li>
-          </ul>
-        </div>
-        <div className="skill-card fade-up">
-          <h3 className="skill-title">Product & Operations</h3>
-          <ul className="skill-list">
-            <li className="skill-item">Jira, Confluence & Trello Administration</li>
-            <li className="skill-item">User Story & Acceptance Criteria Writing</li>
-            <li className="skill-item">UI/UX Auditing & Accessibility Review</li>
-            <li className="skill-item">Release Management & Deployment Checklists</li>
-            <li className="skill-item">Technical Documentation & Reporting</li>
-            <li className="skill-item">Client Onboarding & Demos</li>
-          </ul>
+      <div className="container">
+        <div className="section-label">01 / CORE CAPABILITIES</div>
+        <h2 className="section-heading">
+          Systematic PM & <em>QA Discipline</em>
+        </h2>
+
+        <div className="skills-grid">
+          {capabilities.map((cap) => (
+            <div key={cap.num} className="skill-card fade-up">
+              <div className="skill-num">{cap.num}</div>
+              <h3 className="skill-title">{cap.title}</h3>
+              <ul className="skill-list">
+                {cap.skills.map((s, i) => (
+                  <li key={i} className="skill-item">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

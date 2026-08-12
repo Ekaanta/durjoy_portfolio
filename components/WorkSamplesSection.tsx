@@ -3,57 +3,68 @@
 import React from "react";
 import Image from "next/image";
 
+const artifacts = [
+  {
+    type: "QA ARTIFACT",
+    title: "Automated Test Suite & Codebase",
+    image: "/images/work-code.png",
+    alt: "Code",
+    description: "Modular C# Playwright test scripts with Page Object Model (POM) pattern and clean assertions."
+  },
+  {
+    type: "PM ARTIFACT",
+    title: "Sprint Velocity & Burndown Analytics",
+    image: "/images/work-stats.png",
+    alt: "Stats",
+    description: "Jira dashboard tracking team velocity, bug burn rate, and sprint release predictability."
+  },
+  {
+    type: "METRICS ARTIFACT",
+    title: "Test Coverage & Quality Distribution",
+    image: "/images/work-graph.png",
+    alt: "Graph",
+    description: "Comprehensive coverage matrix mapping user stories directly to automated test cases."
+  },
+  {
+    type: "API QA ARTIFACT",
+    title: "REST API Postman Workspace",
+    image: "/images/work-api-dashboard.png",
+    alt: "API Test Dashboard",
+    description: "Automated API collection runs, environment variable configs, and JSON schema assertions."
+  }
+];
+
 export default function WorkSamplesSection() {
   return (
     <section id="work-samples">
-      <div className="section-label">05 / QA & MANAGEMENT ARTIFACTS</div>
-      <div className="work-grid">
-        <div className="work-card fade-up">
-          <div className="work-card-top">
-            <div className="wc-type">QA ARTIFACT</div>
-            <div className="wc-name">Automated Test Execution & Code Suite</div>
-          </div>
-          <Image src="/images/work-code.png" alt="Code" width={400} height={250} style={{ width: "100%", height: "auto", borderRadius: "4px", marginBottom: "1rem" }} />
-          <div className="work-card-bot">
-            <div className="wc-what-lbl">Deliverable</div>
-            <div className="wc-what-txt">Clean, modular C# Playwright test scripts with Page Object Model (POM) pattern.</div>
-          </div>
-        </div>
+      <div className="container">
+        <div className="section-label">05 / QA & MANAGEMENT ARTIFACTS</div>
+        <h2 className="section-heading">
+          My Work <em>In Action</em>
+        </h2>
 
-        <div className="work-card fade-up">
-          <div className="work-card-top">
-            <div className="wc-type">PM ARTIFACT</div>
-            <div className="wc-name">Sprint Velocity & Burndown Analytics</div>
-          </div>
-          <Image src="/images/work-stats.png" alt="Stats" width={400} height={250} style={{ width: "100%", height: "auto", borderRadius: "4px", marginBottom: "1rem" }} />
-          <div className="work-card-bot">
-            <div className="wc-what-lbl">Deliverable</div>
-            <div className="wc-what-txt">Jira dashboard tracking team velocity, bug burn rate, and sprint release predictability.</div>
-          </div>
-        </div>
+        <div className="work-grid">
+          {artifacts.map((art, idx) => (
+            <div key={idx} className="work-card fade-up">
+              <div className="wc-type">{art.type}</div>
+              <h3 className="wc-name">{art.title}</h3>
+              
+              <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 10", borderRadius: "var(--radius-sm)", overflow: "hidden", marginBottom: "1rem", background: "#111" }}>
+                <Image
+                  src={art.image}
+                  alt={art.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
 
-        <div className="work-card fade-up">
-          <div className="work-card-top">
-            <div className="wc-type">METRICS ARTIFACT</div>
-            <div className="wc-name">Test Coverage & Quality Distribution</div>
-          </div>
-          <Image src="/images/work-graph.png" alt="Graph" width={400} height={250} style={{ width: "100%", height: "auto", borderRadius: "4px", marginBottom: "1rem" }} />
-          <div className="work-card-bot">
-            <div className="wc-what-lbl">Deliverable</div>
-            <div className="wc-what-txt">Comprehensive coverage breakdown mapping user requirements to automated test cases.</div>
-          </div>
-        </div>
-
-        <div className="work-card fade-up">
-          <div className="work-card-top">
-            <div className="wc-type">API QA ARTIFACT</div>
-            <div className="wc-name">REST API Testing & Postman Workspace</div>
-          </div>
-          <Image src="/images/work-api-dashboard.png" alt="API Test Dashboard" width={400} height={250} style={{ width: "100%", height: "auto", borderRadius: "4px", marginBottom: "1rem" }} />
-          <div className="work-card-bot">
-            <div className="wc-what-lbl">Deliverable</div>
-            <div className="wc-what-txt">Automated API collection runs, environment variable management, and JSON schema assertions.</div>
-          </div>
+              <div className="work-card-bot">
+                <div className="wc-what-lbl">Deliverable Summary</div>
+                <div className="wc-what-txt">{art.description}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
