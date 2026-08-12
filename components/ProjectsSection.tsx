@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 interface ProjectsSectionProps {
-  onOpenProjectsModal: () => void;
+  onOpenProjectsModal: (index: number) => void;
 }
 
 const projects = [
@@ -77,19 +77,25 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
       </h2>
 
       <div className="projects-rows-list">
-        {projects.map((proj) => (
-          <div key={proj.num} className="project-row-item fade-up">
+        {projects.map((proj, idx) => (
+          <div
+            key={proj.num}
+            className="project-row-item fade-up"
+            onClick={() => onOpenProjectsModal(idx)}
+          >
             <div className="row-left">
               <div className="row-num">{proj.num}</div>
-              <div style={{ width: 72, height: 72, position: "relative", flexShrink: 0, borderRadius: "10px", overflow: "hidden", border: "1px solid var(--purple-border)", background: "#111" }}>
+              <div
+                style={{ width: 72, height: 72, position: "relative", flexShrink: 0, borderRadius: "10px", overflow: "hidden", border: "1px solid var(--purple-border)", background: "#111", cursor: "pointer" }}
+              >
                 <Image src={proj.image} alt={proj.title} fill style={{ objectFit: "cover" }} />
               </div>
               <div>
                 <h3 className="row-title">{proj.title}</h3>
                 <div className="row-desc">{proj.description}</div>
                 <div className="row-tags" style={{ marginTop: "0.5rem" }}>
-                  {proj.tags.map((t, idx) => (
-                    <span key={idx} className="type-badge">
+                  {proj.tags.map((t, i) => (
+                    <span key={i} className="type-badge">
                       {t}
                     </span>
                   ))}
@@ -124,10 +130,13 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
                 )}
               </div>
               <button
-                onClick={onOpenProjectsModal}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenProjectsModal(idx);
+                }}
                 className="row-arrow-btn"
-                aria-label="View Project Gallery"
-                title="View Gallery Details"
+                aria-label={`View ${proj.title}`}
+                title={`View ${proj.title} Details`}
               >
                 →
               </button>

@@ -17,7 +17,7 @@ import ReviewsModal from "@/components/modals/ReviewsModal";
 import CvModal from "@/components/modals/CvModal";
 
 export default function Home() {
-  const [projectsModalOpen, setProjectsModalOpen] = useState(false);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
   const [reviewsModalOpen, setReviewsModalOpen] = useState(false);
   const [cvModalOpen, setCvModalOpen] = useState(false);
 
@@ -61,7 +61,7 @@ export default function Home() {
         <SkillsSection />
 
         {/* Built to Scale, Made to Perform (Projects Rows) */}
-        <ProjectsSection onOpenProjectsModal={() => setProjectsModalOpen(true)} />
+        <ProjectsSection onOpenProjectsModal={(index: number) => setSelectedProjectIndex(index)} />
 
         {/* What You Get? */}
         <WhatYouGetSection />
@@ -80,7 +80,11 @@ export default function Home() {
       </main>
 
       {/* Interactive Modals */}
-      <ProjectsModal isOpen={projectsModalOpen} onClose={() => setProjectsModalOpen(false)} />
+      <ProjectsModal
+        isOpen={selectedProjectIndex !== null}
+        initialSlide={selectedProjectIndex ?? 0}
+        onClose={() => setSelectedProjectIndex(null)}
+      />
       <ReviewsModal isOpen={reviewsModalOpen} onClose={() => setReviewsModalOpen(false)} />
       <CvModal isOpen={cvModalOpen} onClose={() => setCvModalOpen(false)} />
     </div>

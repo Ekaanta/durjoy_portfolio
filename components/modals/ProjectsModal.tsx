@@ -6,6 +6,7 @@ import Image from "next/image";
 interface ProjectsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  initialSlide?: number;
 }
 
 const slides = [
@@ -62,8 +63,14 @@ const slides = [
   }
 ];
 
-export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+export default function ProjectsModal({ isOpen, onClose, initialSlide = 0 }: ProjectsModalProps) {
+  const [currentSlide, setCurrentSlide] = useState(initialSlide);
+
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentSlide(initialSlide);
+    }
+  }, [isOpen, initialSlide]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
