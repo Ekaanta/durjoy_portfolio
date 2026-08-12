@@ -35,24 +35,3 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
-
-# Static Image Assets (as per user requirements)
-*.png
-*.jpg
-*.jpeg
-*.webp
-*.gif
-*.svg
-*.ico
-*.avif
-public/images/*.png
-public/images/*.jpg
-public/images/*.jpeg
-public/images/*.webp
-public/images/*.gif
-public/images/*.svg
-
-# Unignore .gitkeep so public and public/images directory structures exist in Git
-!public/.gitkeep
-!public/images/.gitkeep
-!public/images/*/.gitkeep

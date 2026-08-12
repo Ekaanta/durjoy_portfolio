@@ -12,7 +12,7 @@ const slides = [
   {
     title: "Virtual Try-On System (AI GenAI App)",
     subtitle: "Stable Diffusion & OpenCV Body Segmentation",
-    image: "/images/bornolipi-cover.png",
+    image: "/images/work-api-dashboard.png",
     description: "AI-powered clothing virtual try-on app using Stable Diffusion Inpainting. Users upload a photo and describe clothing via text prompt; system generates realistic try-on results using GrabCut body segmentation. Tech: Python, Stable Diffusion, Diffusers, OpenCV, Gradio, HuggingFace Spaces.",
     live: "https://ekantabanik-virtual-try-on.hf.space",
     github: "https://github.com/Ekaanta/Virtual-Try-On-System"
@@ -20,7 +20,7 @@ const slides = [
   {
     title: "Client Requirement Analyzer Agent (Agentic AI)",
     subtitle: "LLM, LangChain & Document AI Engine",
-    image: "/images/work-api-dashboard.png",
+    image: "/images/work-code.png",
     description: "Agentic AI system analyzing client documents and extracting structured business requirements. Leverages LLMs for deep document understanding, requirement classification, and natural language report generation. Tech: Python, LLM, LangChain, Prompt Engineering, NLP, Vercel.",
     live: "https://client-requirement-analyzer-agent.vercel.app/",
     github: "https://github.com/Ekaanta/Client-Requirement-Analyzer-Agent"
@@ -42,7 +42,7 @@ const slides = [
   {
     title: "Bornolipi AR Educational App",
     subtitle: "Augmented Reality Bengali Learning",
-    image: "/images/brochure.png",
+    image: "/images/bornolipi-cover.png",
     description: "Directed AR learning app project from planning to delivery. Oversaw QA processes, validated AR features, and coordinated testing efforts across Android and iOS platforms.",
     github: "https://github.com/Ekaanta"
   },
@@ -106,13 +106,14 @@ export default function ProjectsModal({ isOpen, onClose }: ProjectsModalProps) {
           <div style={{ fontSize: "0.85rem", color: "var(--ink-muted)" }}>{slide.subtitle}</div>
         </div>
 
-        <div style={{ background: "#111", borderRadius: "var(--radius-md)", overflow: "hidden", position: "relative", marginBottom: "1.25rem", aspectRatio: "16 / 10" }}>
+        <div style={{ background: "#f5f3ff", borderRadius: "var(--radius-md)", overflow: "hidden", position: "relative", marginBottom: "1.25rem", aspectRatio: "16 / 10", border: "1px solid var(--purple-border)" }}>
           <Image
             src={slide.image}
             alt={slide.title}
             fill
             sizes="(max-width: 900px) 100vw, 850px"
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "cover" }}
+            priority
           />
         </div>
 

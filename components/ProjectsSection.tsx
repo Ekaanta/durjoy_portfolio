@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface ProjectsSectionProps {
   onOpenProjectsModal: () => void;
@@ -11,6 +12,7 @@ const projects = [
     num: "01",
     title: "Virtual Try-On System (AI GenAI)",
     description: "AI-powered clothing virtual try-on app using Stable Diffusion Inpainting, GrabCut body segmentation, OpenCV, Diffusers & HuggingFace Spaces.",
+    image: "/images/work-api-dashboard.png",
     tags: ["Python", "Stable Diffusion", "OpenCV", "Gradio", "HuggingFace"],
     live: "https://ekantabanik-virtual-try-on.hf.space",
     github: "https://github.com/Ekaanta/Virtual-Try-On-System"
@@ -19,6 +21,7 @@ const projects = [
     num: "02",
     title: "Client Requirement Analyzer Agent (Agentic AI)",
     description: "Agentic AI system that intelligently analyzes client documents and extracts structured business requirements using LLMs, LangChain & NLP.",
+    image: "/images/work-code.png",
     tags: ["Agentic AI", "LangChain", "LLM", "Prompt Eng", "Document AI"],
     live: "https://client-requirement-analyzer-agent.vercel.app/",
     github: "https://github.com/Ekaanta/Client-Requirement-Analyzer-Agent"
@@ -27,6 +30,7 @@ const projects = [
     num: "03",
     title: "N8N AI Model Automation (Workflow Pipelines)",
     description: "Multi-step AI automation workflows using N8N, orchestrating LLM agents, external APIs, conditional branching, and process automation.",
+    image: "/images/qa-tracker.png",
     tags: ["N8N", "Workflow Automation", "LLM Agents", "Python", "API"],
     github: "https://github.com/Ekaanta/N8N_AI-MODEL"
   },
@@ -34,6 +38,7 @@ const projects = [
     num: "04",
     title: "Real-Time Cheat Detection System (Computer Vision)",
     description: "AI-powered exam cheat detection using YOLOv8, Roboflow custom dataset, Matplotlib, OpenCV, and real-time video analysis.",
+    image: "/images/ar-experience.png",
     tags: ["YOLOv8", "Computer Vision", "Roboflow", "OpenCV", "Python"],
     github: "https://github.com/Ekaanta/Ai_Project-Real-time-cheat-detection-system-exam"
   },
@@ -41,6 +46,7 @@ const projects = [
     num: "05",
     title: "Bornolipi Android & iOS Augmented Reality App",
     description: "Directed AR learning app project from planning to delivery. Oversaw QA processes, validated AR features, and coordinated testing efforts.",
+    image: "/images/bornolipi-cover.png",
     tags: ["Augmented Reality", "QA Oversight", "App Testing", "Agile PM"],
     github: "https://github.com/Ekaanta"
   },
@@ -48,6 +54,7 @@ const projects = [
     num: "06",
     title: "Coupon Management System (Mobile Automation)",
     description: "Managed mobile automation testing project for Android and iOS applications with Python-based test scripts and quality deliverables.",
+    image: "/images/app-flow.png",
     tags: ["Python Automation", "Mobile Testing", "Android/iOS", "QA"],
     github: "https://github.com/Ekaanta"
   },
@@ -55,6 +62,7 @@ const projects = [
     num: "07",
     title: "Volunteering Application System (API & QA)",
     description: "Led project activities for volunteering management application. Organized test case design, bug tracking, and Postman API validation.",
+    image: "/images/figma-design.png",
     tags: ["Postman API", "Bug Tracking", "Test Case Design", "PM"],
     github: "https://github.com/Ekaanta"
   }
@@ -73,6 +81,9 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
           <div key={proj.num} className="project-row-item fade-up">
             <div className="row-left">
               <div className="row-num">{proj.num}</div>
+              <div style={{ width: 64, height: 64, position: "relative", flexShrink: 0, borderRadius: "10px", overflow: "hidden", border: "1px solid var(--purple-border)" }}>
+                <Image src={proj.image} alt={proj.title} fill style={{ objectFit: "cover" }} />
+              </div>
               <div>
                 <h3 className="row-title">{proj.title}</h3>
                 <div className="row-desc">{proj.description}</div>
