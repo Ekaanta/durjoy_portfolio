@@ -31,90 +31,112 @@ export default function CvModal({ isOpen, onClose }: CvModalProps) {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.75rem", borderBottom: "1px solid var(--border)", paddingBottom: "1.25rem", flexWrap: "wrap", gap: "1rem" }}>
           <div>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", color: "var(--gold-dark)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", color: "var(--purple-primary)", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>
               CURRICULUM VITAE / RESUME SUMMARY
             </div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.8rem", fontWeight: 700, margin: "0.2rem 0" }}>
-              Ekanta Banik Durjoy
+            <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.8rem", fontWeight: 800, margin: "0.2rem 0" }}>
+              Ekanta Banik (Durjoy)
             </h2>
-            <div style={{ fontSize: "0.9rem", color: "var(--muted)" }}>
-              Project Manager & QA Specialist • Remote / Hybrid
+            <div style={{ fontSize: "0.9rem", color: "var(--ink-muted)" }}>
+              AI/ML Engineer & Technical Project Coordinator • Dhaka, Bangladesh
             </div>
           </div>
-          <a
-            href="mailto:durjoybanik35138@gmail.com?subject=Inquiry%20from%20Portfolio%20CV"
-            className="btn-primary"
-            style={{ fontSize: "0.82rem", padding: "0.65rem 1.25rem" }}
-          >
-            Request Official PDF
-          </a>
+          <div style={{ display: "flex", gap: "0.5rem" }}>
+            <a
+              href="mailto:durjoybanik35138@gmail.com?subject=Inquiry%20from%20Portfolio%20CV"
+              className="btn-hire-gold"
+              style={{ fontSize: "0.82rem", padding: "0.65rem 1.25rem", width: "auto" }}
+            >
+              Contact Durjoy
+            </a>
+          </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1.75rem" }}>
-          {/* Executive Summary */}
+          {/* Career Objective */}
           <div>
-            <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--gold-dark)" }}>
-              Executive Summary
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--purple-primary)" }}>
+              Career Objective
             </h3>
-            <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.7 }}>
-              Results-driven Project Manager and QA Specialist with 4+ years of hands-on experience managing web, mobile, and SaaS product deliveries. Adept at coordinating cross-functional Agile teams, implementing automated QA testing frameworks (Playwright, C#), and maintaining 99%+ quality assurance standards across production releases.
+            <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", lineHeight: 1.7 }}>
+              AI Engineer with hands-on experience in Large Language Models (LLMs), Generative AI, Agentic AI systems, and computer vision applications. Experienced in developing intelligent automation pipelines and AI-driven solutions. Seeking an AI/ML Engineer, AI Automation Engineer, or GenAI Developer role to build innovative, real-world AI products.
             </p>
-          </div>
-
-          {/* Core Competencies */}
-          <div>
-            <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.75rem", color: "var(--gold-dark)" }}>
-              Core Technical & PM Skills
-            </h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "0.85rem", fontSize: "0.85rem" }}>
-              <div style={{ background: "var(--paper-card)", padding: "0.85rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
-                <strong>Agile / Scrum:</strong> Sprint planning, Jira backlog grooming, retrospectives.
-              </div>
-              <div style={{ background: "var(--paper-card)", padding: "0.85rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
-                <strong>Test Automation:</strong> Playwright, Selenium, C# / ASP.NET Core.
-              </div>
-              <div style={{ background: "var(--paper-card)", padding: "0.85rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
-                <strong>API & DB:</strong> Postman, REST API, PostgreSQL, MongoDB, SQL.
-              </div>
-              <div style={{ background: "var(--paper-card)", padding: "0.85rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
-                <strong>DevOps & CI/CD:</strong> GitHub Actions, Git, Release Checklists.
-              </div>
-            </div>
           </div>
 
           {/* Professional Experience */}
           <div>
-            <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.85rem", color: "var(--gold-dark)" }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.85rem", color: "var(--purple-primary)" }}>
               Professional Experience
             </h3>
 
-            <div style={{ marginBottom: "1.5rem" }}>
+            <div style={{ marginBottom: "1.25rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700, fontSize: "0.95rem" }}>
-                <span>Project Manager & Lead QA</span>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--muted)" }}>2022 – Present</span>
+                <span>Jr. AI Engineer — Sparktech AI Limited</span>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--purple-badge-text)" }}>01/2025 – Present</span>
               </div>
-              <div style={{ fontSize: "0.85rem", color: "var(--rust)", marginBottom: "0.5rem" }}>
-                Bornolipi & Client Projects
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-muted)", marginBottom: "0.4rem" }}>
+                Gulshan-1, Dhaka, Bangladesh
               </div>
-              <ul style={{ fontSize: "0.88rem", color: "var(--muted)", paddingLeft: "1.2rem", lineHeight: 1.6 }}>
-                <li>Led cross-functional development team across bi-weekly Agile sprints for mobile & web apps.</li>
-                <li>Implemented Playwright test automation suite reducing manual regression testing by 65%.</li>
-                <li>Managed client communication, requirement documentation, and post-launch maintenance.</li>
+              <ul style={{ fontSize: "0.88rem", color: "var(--ink-secondary)", paddingLeft: "1.2rem", lineHeight: 1.6 }}>
+                <li>Working on AI-powered solutions and automation workflows using Python, LangChain, N8N, and FastAPI.</li>
+                <li>Developed and integrated AI agents, LLM-based applications, APIs, and automated workflows to improve business processes and deliver intelligent software solutions.</li>
               </ul>
             </div>
 
-            <div>
+            <div style={{ marginBottom: "1.25rem" }}>
               <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700, fontSize: "0.95rem" }}>
-                <span>QA Specialist & Agile Coordinator</span>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--muted)" }}>2020 – 2022</span>
+                <span>Project Coordinator — Unilever (UCL-Bangladesh)</span>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--purple-badge-text)" }}>01/2025 – Present</span>
               </div>
-              <div style={{ fontSize: "0.85rem", color: "var(--rust)", marginBottom: "0.5rem" }}>
-                Software & Digital Solutions
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-muted)", marginBottom: "0.4rem" }}>
+                Gulshan-1, Dhaka, Bangladesh
               </div>
-              <ul style={{ fontSize: "0.88rem", color: "var(--muted)", paddingLeft: "1.2rem", lineHeight: 1.6 }}>
-                <li>Created automated and manual test plans for client web platforms.</li>
-                <li>Coordinated defect triage meetings, tracked bug resolution in Jira, and delivered client updates.</li>
+              <ul style={{ fontSize: "0.88rem", color: "var(--ink-secondary)", paddingLeft: "1.2rem", lineHeight: 1.6 }}>
+                <li>Managed and supported projects related to retail and consumer-based software solutions.</li>
+                <li>Coordinated with teams to ensure smooth execution, tracked progress, and helped deliver solutions aligned with business and customer needs.</li>
               </ul>
+            </div>
+
+            <div style={{ marginBottom: "1.25rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700, fontSize: "0.95rem" }}>
+                <span>Technical Project Coordinator / Trainee — Pureit</span>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.78rem", color: "var(--purple-badge-text)" }}>03/2022 – 09/2024</span>
+              </div>
+              <div style={{ fontSize: "0.82rem", color: "var(--ink-muted)", marginBottom: "0.4rem" }}>
+                Mohakhali DOHS, Dhaka, Bangladesh
+              </div>
+              <ul style={{ fontSize: "0.88rem", color: "var(--ink-secondary)", paddingLeft: "1.2rem", lineHeight: 1.6 }}>
+                <li>Worked on requirement analysis, project planning, task tracking, team coordination, API integration, software development lifecycle, and ensuring timely project delivery.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Education */}
+          <div>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.75rem", color: "var(--purple-primary)" }}>
+              Education
+            </h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--purple-border)" }}>
+                <div style={{ fontWeight: 700, fontSize: "0.95rem" }}>Canadian University of Bangladesh</div>
+                <div style={{ fontSize: "0.85rem", color: "var(--purple-dark)" }}>Bachelor of Science in Computer Science and Engineering</div>
+                <div style={{ fontSize: "0.78rem", color: "var(--ink-muted)" }}>08/2022 – 05/2026 • Merul-Badda, Dhaka, Bangladesh</div>
+              </div>
+              <div style={{ background: "var(--purple-light)", padding: "1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--purple-border)" }}>
+                <div style={{ fontWeight: 700, fontSize: "0.95rem" }}>Institute of Computer Science and Technology</div>
+                <div style={{ fontSize: "0.85rem", color: "var(--purple-dark)" }}>Diploma in Computer Science</div>
+                <div style={{ fontSize: "0.78rem", color: "var(--ink-muted)" }}>2018 – 2022 • Feni Sadar, Feni, Bangladesh</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Certificate */}
+          <div>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--purple-primary)" }}>
+              Certificates & Courses
+            </h3>
+            <div style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", background: "var(--bg-card)", padding: "0.85rem 1.1rem", borderRadius: "var(--radius-sm)", border: "1px solid var(--border)" }}>
+              <strong>Technical Automation:</strong> Manual and Automated Project Management Course (PMC)
             </div>
           </div>
         </div>

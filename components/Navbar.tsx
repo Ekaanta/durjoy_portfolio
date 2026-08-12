@@ -26,20 +26,20 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           </a>
           <div className="social-pills">
             <a
-              href="https://github.com"
+              href="https://github.com/Ekaanta"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon-btn"
-              title="GitHub"
+              title="GitHub Profile"
             >
               ⌨
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/durjoy-banik"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon-btn"
-              title="LinkedIn"
+              title="LinkedIn Profile"
             >
               in
             </a>
@@ -49,12 +49,12 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
         {/* Sidebar Stats Box */}
         <div className="sidebar-stats-card">
           <div>
-            <div className="sb-stat-num">15+</div>
-            <div className="sb-stat-label">Projects</div>
+            <div className="sb-stat-num">AI/ML</div>
+            <div className="sb-stat-label">Engineer</div>
           </div>
           <div>
-            <div className="sb-stat-num">4+</div>
-            <div className="sb-stat-label">Yrs Exp.</div>
+            <div className="sb-stat-num">PM</div>
+            <div className="sb-stat-label">Lead</div>
           </div>
         </div>
 
@@ -67,17 +67,22 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           </li>
           <li>
             <a href="#journey" className="sidebar-nav-link">
-              ABOUT ME
+              EXPERIENCE
+            </a>
+          </li>
+          <li>
+            <a href="#stack" className="sidebar-nav-link">
+              TECH STACK
             </a>
           </li>
           <li>
             <a href="#projects" className="sidebar-nav-link">
-              PROJECTS
+              AI & PM PROJECTS
             </a>
           </li>
           <li>
             <a href="#what-you-get" className="sidebar-nav-link">
-              WHAT YOU GET
+              DELIVERABLES
             </a>
           </li>
           <li>
@@ -86,13 +91,8 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
             </a>
           </li>
           <li>
-            <a href="#work-samples" className="sidebar-nav-link">
-              CLIENTS
-            </a>
-          </li>
-          <li>
-            <a href="#faq" className="sidebar-nav-link">
-              FAQ
+            <a href="#contact" className="sidebar-nav-link">
+              CONTACT
             </a>
           </li>
         </ul>
@@ -100,7 +100,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
 
       {/* Sidebar Bottom Actions */}
       <div className="sidebar-bottom">
-        <div className="email-copy-pill" onClick={handleCopyEmail}>
+        <div className="email-copy-pill" onClick={handleCopyEmail} title="Click to copy email">
           <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
             {email}
           </span>
@@ -108,7 +108,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
         </div>
 
         <button onClick={onOpenCvModal} className="btn-hire-gold">
-          Hire Me
+          View Resume / CV
         </button>
       </div>
     </aside>
