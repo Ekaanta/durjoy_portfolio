@@ -1,7 +1,29 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Sparkles, Building2, ShieldCheck, ChevronRight } from "lucide-react";
+
+const reviews = [
+  {
+    logo: "/images/unilever.png",
+    name: "Unilever Campaign Lead",
+    title: "FMCG Digital Transformation & QA",
+    quote: "Durjoy's attention to detail during our product rollout was exceptional. He caught several critical API integration bugs prior to go-live and kept cross-functional teams synchronized."
+  },
+  {
+    logo: "/images/betupia.png",
+    name: "Betupia Group Product Director",
+    title: "Mobile App & SaaS Delivery",
+    quote: "Working with Durjoy transformed our release pipeline. His automated Playwright scripts reduced test cycles drastically, and his daily standup reports gave stakeholders full visibility."
+  },
+  {
+    logo: "/images/pureit.png",
+    name: "Pureit Tech Lead",
+    title: "Web Application QA",
+    quote: "Highly professional, communicative, and thorough. Durjoy brings a rare blend of PM organization and deep QA technical skills that elevate the entire engineering team."
+  }
+];
 
 export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () => void }) {
   return (
@@ -10,9 +32,29 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
       <h2 className="section-title-large">
         About Me <em>(S)</em><br />My Journey
       </h2>
-      <p style={{ maxWidth: "620px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "3rem" }}>
+      <p style={{ maxWidth: "680px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "2.5rem" }}>
         AI Engineer & Technical Project Coordinator with hands-on experience developing Large Language Model (LLM) agents, GenAI automation pipelines, and leading agile software project execution.
       </p>
+
+      {/* Endorsements / Testimonials Row */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "3.5rem" }}>
+        {reviews.map((r, idx) => (
+          <div key={idx} className="what-card fade-up" style={{ background: "var(--bg-card-white)", border: "1px solid var(--sandy-amber)", borderRadius: "var(--radius-md)", padding: "1.5rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.85rem" }}>
+              <div style={{ width: 44, height: 44, position: "relative", flexShrink: 0, borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border)", background: "#fff" }}>
+                <Image src={r.logo} alt={r.name} fill style={{ objectFit: "contain" }} />
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--ink)" }}>{r.name}</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--purple-badge-text)", fontWeight: 600 }}>{r.title}</div>
+              </div>
+            </div>
+            <p style={{ fontSize: "0.85rem", color: "var(--ink-secondary)", fontStyle: "italic", lineHeight: 1.6 }}>
+              "{r.quote}"
+            </p>
+          </div>
+        ))}
+      </div>
 
       <div className="timeline-container">
         {/* Curved SVG connector line behind cards */}
