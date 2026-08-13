@@ -43,10 +43,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
         {/* Elegant Executive Badge */}
         <div className="hero-chest-badge">
-          <span className="badge-text-group">
-            <Sparkles size={15} style={{ color: "#ffffff", flexShrink: 0 }} />
-            <span>Software Project Coordinator & AI Specialist</span>
-          </span>
+          <Sparkles size={15} style={{ color: "#ffffff", flexShrink: 0 }} />
           <span className="chest-badge-gold">GenAI & LLMs</span>
         </div>
       </div>
