@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Copy, Check, FileText, Menu, X } from "lucide-react";
 
 interface NavbarProps {
@@ -11,6 +11,17 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
   const [copied, setCopied] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const email = "durjoybanik35138@gmail.com";
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -30,8 +41,8 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           DURJOY<span>*</span>
         </a>
         
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <div className="social-pills">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <div className="social-pills header-social-pills">
             <a
               href="https://github.com/Ekaanta"
               target="_blank"
@@ -54,17 +65,50 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
 
           {/* Mobile Hamburger Toggle Button */}
           <button
+            type="button"
             className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Drawer Overlay Backdrop */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-menu-backdrop" 
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Expandable Sidebar Menu Content */}
       <div className={`sidebar-menu-wrapper ${mobileMenuOpen ? "open" : ""}`}>
+        {/* Mobile-only social links in drawer header */}
+        <div className="mobile-drawer-social">
+          <a
+            href="https://github.com/Ekaanta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon-btn"
+            title="GitHub Profile"
+          >
+            <Github size={18} />
+          </a>
+          <a
+            href="https://linkedin.com/in/durjoy-banik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon-btn"
+            title="LinkedIn Profile"
+          >
+            <Linkedin size={18} />
+          </a>
+        </div>
+
         {/* Sidebar Stats Box */}
         <div className="sidebar-stats-card">
           <div>
@@ -128,6 +172,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           </div>
 
           <button
+            type="button"
             onClick={() => {
               handleNavClick();
               onOpenCvModal();

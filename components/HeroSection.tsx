@@ -25,7 +25,9 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
       {/* Giant Typography Header behind Cutout */}
       <h1 className="giant-hero-text">
-        D U <span className="black-text">R</span> J O Y
+        <span className="hero-title-nowrap">
+          D U <span className="black-text">R</span> J O Y
+        </span>
       </h1>
 
       {/* Transparent Cutout Profile Photo Overlay */}
@@ -41,8 +43,8 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
         {/* Elegant Executive Badge */}
         <div className="hero-chest-badge">
-          <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-            <Sparkles size={15} style={{ color: "#ffffff" }} />
+          <span className="badge-text-group">
+            <Sparkles size={15} style={{ color: "#ffffff", flexShrink: 0 }} />
             <span>Software Project Coordinator & AI Specialist</span>
           </span>
           <span className="chest-badge-gold">GenAI & LLMs</span>
