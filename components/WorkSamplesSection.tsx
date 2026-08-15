@@ -29,7 +29,7 @@ export default function WorkSamplesSection() {
     <section className="section-wrapper" id="work-samples">
       <div className="section-tag">TESTIMONIALS</div>
       <h2 className="section-title-large">
-        From People<br /><em>I've Worked With</em>
+        Corporate Companies<br /><em>I Work With</em>
       </h2>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "2.5rem" }}>
