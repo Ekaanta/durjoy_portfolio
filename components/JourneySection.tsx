@@ -32,9 +32,6 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
       <h2 className="section-title-large">
         About Me <em>(S)</em><br />My Journey
       </h2>
-      <p style={{ maxWidth: "680px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "2.5rem" }}>
-        AI Engineer & Technical Project Coordinator with hands-on experience developing Large Language Model (LLM) agents, GenAI automation pipelines, and leading agile software project execution.
-      </p>
 
       {/* Endorsements / Testimonials Row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem", marginBottom: "3.5rem" }}>
