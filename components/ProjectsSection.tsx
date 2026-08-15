@@ -87,7 +87,7 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
             <div className="row-left">
               <div className="row-num">{proj.num}</div>
               <div
-                style={{ width: 72, height: 72, position: "relative", flexShrink: 0, borderRadius: "10px", overflow: "hidden", border: "1px solid var(--purple-border)", background: "#111", cursor: "pointer" }}
+                style={{ width: 72, height: 72, position: "relative", flexShrink: 0, borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--purple-border)", background: "#111", cursor: "pointer" }}
               >
                 <Image src={proj.image} alt={proj.title} fill style={{ objectFit: "cover" }} />
               </div>
@@ -104,35 +104,33 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
               </div>
             </div>
 
-            <div className="row-right" style={{ flexDirection: "column", alignItems: "flex-end", gap: "0.5rem" }}>
-              <div style={{ display: "flex", gap: "0.5rem" }}>
-                {proj.live && (
-                  <a
-                    href={proj.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="read-more-btn"
-                    style={{ background: "var(--purple-primary)", color: "#fff", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span>Live Demo</span>
-                    <ExternalLink size={13} />
-                  </a>
-                )}
-                {proj.github && (
-                  <a
-                    href={proj.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="read-more-btn"
-                    style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Github size={13} />
-                    <span>GitHub</span>
-                  </a>
-                )}
-              </div>
+            <div className="row-right" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              {proj.live && (
+                <a
+                  href={proj.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="read-more-btn"
+                  style={{ background: "var(--purple-primary)", color: "#fff", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink size={13} />
+                </a>
+              )}
+              {proj.github && (
+                <a
+                  href={proj.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="read-more-btn"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Github size={13} />
+                  <span>GitHub</span>
+                </a>
+              )}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -142,7 +140,7 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
                 aria-label={`View ${proj.title}`}
                 title={`View ${proj.title} Details`}
               >
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </button>
             </div>
           </div>

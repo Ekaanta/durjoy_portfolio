@@ -41,7 +41,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         {reviews.map((r, idx) => (
           <div key={idx} className="what-card fade-up" style={{ background: "var(--bg-card-white)", border: "1px solid var(--sandy-amber)", borderRadius: "var(--radius-md)", padding: "1.5rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.85rem" }}>
-              <div style={{ width: 44, height: 44, position: "relative", flexShrink: 0, borderRadius: "8px", overflow: "hidden", border: "1px solid var(--border)", background: "#fff" }}>
+              <div style={{ width: 44, height: 44, position: "relative", flexShrink: 0, borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border)", background: "#fff" }}>
                 <Image src={r.logo} alt={r.name} fill style={{ objectFit: "contain" }} />
               </div>
               <div>
@@ -67,49 +67,20 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
           />
         </svg>
 
-        {/* Card 1: Sparktech AI Limited */}
+        {/* Card 1: Unilever (UCL-Bangladesh) */}
         <div className="journey-card card-left fade-up">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div className="journey-year">'25</div>
-            <Sparkles size={24} style={{ color: "var(--purple-primary)" }} />
-          </div>
-          <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
-          <h3 className="journey-role">Jr. AI Engineer</h3>
-          <div className="journey-company">
-            <span className="company-name">Sparktech AI Limited</span>
-            <span className="type-badge">FULL TIME AI</span>
-          </div>
-          <p className="journey-desc">
-            Working on AI-powered solutions & automation workflows using Python, LangChain, N8N, and FastAPI. Developing & integrating Agentic AI systems, LLM apps, and intelligent APIs.
-          </p>
-          <div className="journey-footer">
-            <div className="journey-tags">
-              <span className="journey-tag">LangChain</span>
-              <span className="journey-tag">Agentic AI</span>
-              <span className="journey-tag">N8N Automation</span>
-              <span className="journey-tag">FastAPI</span>
-            </div>
-            <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
-              <span>Details</span>
-              <ChevronRight size={14} />
-            </button>
-          </div>
-        </div>
-
-        {/* Card 2: Unilever (UCL-Bangladesh) */}
-        <div className="journey-card card-right fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
             <Building2 size={24} style={{ color: "var(--purple-primary)" }} />
           </div>
-          <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
+          <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA.</div>
           <h3 className="journey-role">Project Coordinator</h3>
           <div className="journey-company">
             <span className="company-name">Unilever (UCL-Bangladesh)</span>
             <span className="type-badge">ENTERPRISE PM</span>
           </div>
           <p className="journey-desc">
-            Managing and supporting retail & consumer software solutions. Coordinating cross-functional teams to track progress, ensure smooth execution, and align delivery with customer needs.
+            Managed and supported projects related to retail and consumer-based software solutions. Coordinated with teams to ensure smooth execution, tracked progress, and helped deliver solutions aligned with business and customer needs.
           </p>
           <div className="journey-footer">
             <div className="journey-tags">
@@ -124,26 +95,55 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
           </div>
         </div>
 
-        {/* Card 3: Pureit */}
-        <div className="journey-card card-left fade-up">
+        {/* Card 2: Pureit */}
+        <div className="journey-card card-right fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'22</div>
             <ShieldCheck size={24} style={{ color: "var(--purple-primary)" }} />
           </div>
-          <div className="journey-date">03/2022 – 09/2024 • MOHAKHALI DOHS, DHAKA</div>
-          <h3 className="journey-role">Technical Project Coordinator</h3>
+          <div className="journey-date">03/2022 – 09/2024 • MOHAKHALI DOHS, DHAKA.</div>
+          <h3 className="journey-role">Trainee Project Coordinator</h3>
           <div className="journey-company">
             <span className="company-name">Pureit</span>
             <span className="type-badge">PM & QA</span>
           </div>
           <p className="journey-desc">
-            Assisted in project planning, requirement analysis, task tracking, team coordination, API integration, QA validation, and ensuring timely SDLC software project delivery.
+            Assisted in managing project activities, tracking deliverables, and coordinating with team members. Contributed to ensuring smooth execution and timely completion of project tasks.
           </p>
           <div className="journey-footer">
             <div className="journey-tags">
               <span className="journey-tag">Requirement Analysis</span>
               <span className="journey-tag">API Integration</span>
               <span className="journey-tag">Task Tracking</span>
+            </div>
+            <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
+              <span>Details</span>
+              <ChevronRight size={14} />
+            </button>
+          </div>
+        </div>
+
+        {/* Card 3: Sparktech AI Limited */}
+        <div className="journey-card card-left fade-up">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div className="journey-year">'25</div>
+            <Sparkles size={24} style={{ color: "var(--purple-primary)" }} />
+          </div>
+          <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA.</div>
+          <h3 className="journey-role">Jr. AI Engineer</h3>
+          <div className="journey-company">
+            <span className="company-name">Sparktech AI Limited</span>
+            <span className="type-badge">FULL TIME AI</span>
+          </div>
+          <p className="journey-desc">
+            Working on AI-powered solutions and automation workflows using Python, LangChain, n8n, and FastAPI. Developed and integrated AI agents, LLM-based applications, APIs, and automated workflows to improve business processes and deliver intelligent software solutions.
+          </p>
+          <div className="journey-footer">
+            <div className="journey-tags">
+              <span className="journey-tag">LangChain</span>
+              <span className="journey-tag">Agentic AI</span>
+              <span className="journey-tag">n8n Automation</span>
+              <span className="journey-tag">FastAPI</span>
             </div>
             <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
               <span>Details</span>

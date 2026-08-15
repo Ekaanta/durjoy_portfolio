@@ -10,13 +10,6 @@ interface FooterProps {
 export default function Footer({ onOpenCvModal }: FooterProps) {
   return (
     <footer id="footer">
-      {/* Giant Footer Header */}
-      <h2 className="giant-footer-text">
-        <span className="footer-title-nowrap">
-          D U R <span className="gold-text">J O Y</span>
-        </span>
-      </h2>
-
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "1.5rem", borderTop: "1px solid var(--border)", fontSize: "0.85rem", color: "var(--ink-muted)", flexWrap: "wrap", gap: "1rem" }}>
         <div>
           © {new Date().getFullYear()} Ekanta Banik (Durjoy) • Software Project Coordinator & AI Specialist (Dhaka, Bangladesh)
