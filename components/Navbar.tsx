@@ -55,14 +55,14 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.substring(1));
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
-      for (const sectionId of sections) {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
         const el = document.getElementById(sectionId);
         if (el) {
           const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          if (scrollPosition >= top) {
             setActiveSection(sectionId);
             break;
           }
@@ -71,6 +71,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

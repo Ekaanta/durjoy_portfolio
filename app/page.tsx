@@ -11,6 +11,7 @@ import ProcessSection from "@/components/ProcessSection";
 import ClientManagementSection, { VideoItem } from "@/components/ClientManagementSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
 import FaqSection from "@/components/FaqSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 import ProjectsModal from "@/components/modals/ProjectsModal";
@@ -81,7 +82,10 @@ export default function Home() {
         {/* Got any questions? (FAQ Accordion) */}
         <FaqSection />
 
-        {/* Footer with Giant DURJOY Header */}
+        {/* Contact Section */}
+        <ContactSection />
+
+        {/* Footer with Copyright & Back to Top */}
         <Footer onOpenCvModal={() => setCvModalOpen(true)} />
       </main>
 
