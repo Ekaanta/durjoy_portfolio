@@ -1,40 +1,51 @@
 "use client";
 
 import React from "react";
-import { Brain, Code2, CheckSquare } from "lucide-react";
+import { Brain, Code2, ShieldCheck, CheckSquare } from "lucide-react";
 
 const stacks = [
   {
-    icon: <Brain size={22} style={{ color: "var(--purple-primary)" }} />,
-    title: "AI Engineering & Automation",
+    icon: <Brain size={20} style={{ color: "var(--purple-primary)" }} />,
+    title: "AI & GenAI Automation",
     items: [
-      "Large Language Models (LLMs)",
-      "Generative AI & Agentic AI Systems",
-      "LangChain & N8N Workflow Automation",
+      "Large Language Models (LLMs) & Prompting",
+      "Agentic AI Workflows & LangChain",
+      "N8N & Make Automation Pipelines",
       "Computer Vision (YOLOv8, OpenCV)",
-      "Stable Diffusion & Diffusers (Inpainting)"
+      "Diffusion Models (Inpainting)"
     ]
   },
   {
-    icon: <Code2 size={22} style={{ color: "var(--purple-primary)" }} />,
-    title: "Programming & Backend Dev",
+    icon: <Code2 size={20} style={{ color: "var(--purple-primary)" }} />,
+    title: "Programming & Backend",
     items: [
-      "Python & JavaScript",
-      "Node.js & FastAPI",
-      "REST API Testing (Postman)",
-      "Selenium WebDriver Automation",
+      "Python & JavaScript (ES6+)",
+      "FastAPI & Node.js REST APIs",
+      "PostgreSQL & MongoDB Queries",
+      "Git & GitHub Actions CI/CD",
       "Docker Basics & HuggingFace Spaces"
     ]
   },
   {
-    icon: <CheckSquare size={22} style={{ color: "var(--purple-primary)" }} />,
-    title: "Project Management & QA",
+    icon: <ShieldCheck size={20} style={{ color: "var(--purple-primary)" }} />,
+    title: "QA & Test Automation",
     items: [
-      "Agile & Scrum Methodology",
-      "Requirement Analysis & Gap Review",
-      "Defect Lifecycle & JIRA Tracking",
-      "CI/CD Pipelines (GitHub Actions)",
-      "Stakeholder Communication & Leadership"
+      "Selenium WebDriver & Playwright",
+      "Postman API Automated Collections",
+      "JSON Schema & Payload Validation",
+      "Regression & Smoke Test Suites",
+      "Defect Lifecycle & Triage in JIRA"
+    ]
+  },
+  {
+    icon: <CheckSquare size={20} style={{ color: "var(--purple-primary)" }} />,
+    title: "Project Coordination & Agile",
+    items: [
+      "Agile Scrum Ceremonies & Sprints",
+      "Requirement Analysis & Scope Matrix",
+      "Cross-Functional Team Alignment",
+      "Milestone Forecasting & Delivery",
+      "Client Communication & Walkthroughs"
     ]
   }
 ];
@@ -42,23 +53,26 @@ const stacks = [
 export default function SkillsSection() {
   return (
     <section className="section-wrapper" id="stack">
-      <div className="section-tag">TECH STACK</div>
+      <div className="section-tag">TECHNICAL CAPABILITIES</div>
       <h2 className="section-title-large">
-        The Stack<br /><em>I Build With</em>
+        The Stack<br /><em>I Build & Lead With</em>
       </h2>
+      <p style={{ maxWidth: "620px", color: "var(--ink-muted)", fontSize: "0.9rem", marginBottom: "1.75rem", lineHeight: 1.55 }}>
+        A balanced blend of hands-on AI engineering, robust test automation frameworks, and structured agile project delivery.
+      </p>
 
       <div className="stack-grid">
         {stacks.map((st, idx) => (
           <div key={idx} className="stack-card fade-up">
-            <div style={{ display: "flex", alignItems: "center", gap: "0.65rem", marginBottom: "1.25rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.55rem" }}>
               {st.icon}
-              <h3 className="stack-card-title" style={{ margin: 0 }}>{st.title}</h3>
+              <h3 className="stack-card-title">{st.title}</h3>
             </div>
             <div className="stack-items-list">
               {st.items.map((item, i) => (
                 <div key={i} className="stack-item-row">
                   <span className="stack-dot"></span>
-                  {item}
+                  <span>{item}</span>
                 </div>
               ))}
             </div>

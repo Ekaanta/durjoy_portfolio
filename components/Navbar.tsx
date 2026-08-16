@@ -7,8 +7,9 @@ import {
   Code2,
   FolderGit2,
   CheckCircle2,
-  Wrench,
   Video,
+  Star,
+  HelpCircle,
   Mail,
   Github,
   Linkedin,
@@ -24,14 +25,15 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { label: "Home", href: "#hero", icon: <HomeIcon size={16} /> },
-  { label: "Experience", href: "#journey", icon: <Briefcase size={16} /> },
-  { label: "Tech Stack", href: "#stack", icon: <Code2 size={16} /> },
-  { label: "AI & PM Projects", href: "#projects", icon: <FolderGit2 size={16} /> },
-  { label: "Deliverables", href: "#what-you-get", icon: <CheckCircle2 size={16} /> },
-  { label: "Services", href: "#services", icon: <Wrench size={16} /> },
-  { label: "Client Management", href: "#client-management", icon: <Video size={16} /> },
-  { label: "Contact", href: "#contact", icon: <Mail size={16} /> }
+  { label: "Home", href: "#hero", icon: <HomeIcon size={15} /> },
+  { label: "Experience", href: "#journey", icon: <Briefcase size={15} /> },
+  { label: "Tech Stack", href: "#stack", icon: <Code2 size={15} /> },
+  { label: "AI & PM Projects", href: "#projects", icon: <FolderGit2 size={15} /> },
+  { label: "What I Deliver", href: "#what-you-get", icon: <CheckCircle2 size={15} /> },
+  { label: "Client Management", href: "#client-management", icon: <Video size={15} /> },
+  { label: "Results & Reviews", href: "#work-samples", icon: <Star size={15} /> },
+  { label: "FAQ", href: "#faq", icon: <HelpCircle size={15} /> },
+  { label: "Contact", href: "#contact", icon: <Mail size={15} /> }
 ];
 
 export default function Navbar({ onOpenCvModal }: NavbarProps) {
@@ -55,14 +57,14 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.substring(1));
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 140;
 
-      for (const sectionId of sections) {
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
         const el = document.getElementById(sectionId);
         if (el) {
           const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
+          if (scrollPosition >= top) {
             setActiveSection(sectionId);
             break;
           }
@@ -71,6 +73,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -94,7 +97,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
             DURJOY<span>*</span>
           </a>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
             <div className="social-pills header-social-pills">
               <a
                 href="https://github.com/Ekaanta"
@@ -103,7 +106,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
                 className="social-icon-btn"
                 title="GitHub Profile"
               >
-                <Github size={15} />
+                <Github size={14} />
               </a>
               <a
                 href="https://linkedin.com/in/durjoy-banik"
@@ -112,7 +115,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
                 className="social-icon-btn"
                 title="LinkedIn Profile"
               >
-                <Linkedin size={15} />
+                <Linkedin size={14} />
               </a>
             </div>
 
@@ -124,7 +127,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -180,7 +183,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               {email}
             </span>
             <span style={{ display: "flex", alignItems: "center", marginLeft: "0.4rem", color: "var(--purple-primary)" }}>
-              {copied ? <Check size={14} /> : <Copy size={14} />}
+              {copied ? <Check size={13} /> : <Copy size={13} />}
             </span>
           </div>
 
@@ -195,12 +198,12 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: "0.5rem",
-              fontSize: "0.85rem",
-              padding: "0.75rem 1.25rem"
+              gap: "0.45rem",
+              fontSize: "0.82rem",
+              padding: "0.68rem 1.15rem"
             }}
           >
-            <FileText size={15} />
+            <FileText size={14} />
             <span>View Resume / CV</span>
           </button>
         </div>

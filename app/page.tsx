@@ -7,7 +7,6 @@ import JourneySection from "@/components/JourneySection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import WhatYouGetSection from "@/components/WhatYouGetSection";
-import ProcessSection from "@/components/ProcessSection";
 import ClientManagementSection, { VideoItem } from "@/components/ClientManagementSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
 import FaqSection from "@/components/FaqSection";
@@ -32,7 +31,7 @@ export default function Home() {
           if (e.isIntersecting) {
             setTimeout(() => {
               e.target.classList.add("visible");
-            }, i * 60);
+            }, i * 50);
             obs.unobserve(e.target);
           }
         });
@@ -52,36 +51,33 @@ export default function Home() {
       {/* Sidebar Navigation */}
       <Navbar onOpenCvModal={() => setCvModalOpen(true)} />
 
-      {/* Main Content Area */}
+      {/* Main Content Area with Unified 1180px Max-Width Grid */}
       <main className="content-column">
-        {/* Giant Hero Section with Cutout Profile */}
+        {/* 1. Hero Section */}
         <HeroSection onOpenCvModal={() => setCvModalOpen(true)} />
 
-        {/* Journey Timeline Section ('21, '23, '25) */}
+        {/* 2. Professional Journey / Experience Section */}
         <JourneySection onOpenCvModal={() => setCvModalOpen(true)} />
 
-        {/* The Stack I Build With */}
+        {/* 3. Technical Capabilities / Stack */}
         <SkillsSection />
 
-        {/* Built to Scale, Made to Perform (Projects Rows) */}
+        {/* 4. Featured Projects Showcase */}
         <ProjectsSection onOpenProjectsModal={(index: number) => setSelectedProjectIndex(index)} />
 
-        {/* What You Get? */}
+        {/* 5. What I Deliver (Consolidated Capabilities) */}
         <WhatYouGetSection />
 
-        {/* Solutions That Deliver (Services) */}
-        <ProcessSection />
-
-        {/* International Client Management Section with 2 Side-by-Side Video Demos */}
+        {/* 6. International Client Management (Video Demos) */}
         <ClientManagementSection onOpenVideoModal={(video: VideoItem) => setSelectedVideo(video)} />
 
-        {/* From People I've Worked With (Testimonials & Impact Stats) */}
+        {/* 7. Results & Verified Client Reviews */}
         <WorkSamplesSection />
 
-        {/* Got any questions? (FAQ Accordion) */}
+        {/* 8. Frequently Asked Questions */}
         <FaqSection />
 
-        {/* Contact Section */}
+        {/* 9. Contact Section */}
         <ContactSection />
       </main>
 

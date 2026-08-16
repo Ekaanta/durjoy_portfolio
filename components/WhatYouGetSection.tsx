@@ -1,68 +1,58 @@
 "use client";
 
 import React from "react";
-import { Zap, ShieldCheck, Plug, BarChart3, Users, Rocket, RefreshCw, Mic } from "lucide-react";
+import { CheckSquare, ShieldCheck, Brain, Plug, Users, Rocket } from "lucide-react";
 
-const deliverables = [
+const capabilities = [
   {
-    icon: <Zap size={20} />,
-    title: "Sprint Management",
-    desc: "Structured Agile sprint planning, backlog grooming, and predictable velocity."
+    icon: <CheckSquare size={20} />,
+    title: "Project Coordination & Agile Delivery",
+    desc: "Facilitating sprint planning, backlog grooming, risk mitigation, and keeping cross-functional teams synchronized on milestones."
   },
   {
     icon: <ShieldCheck size={20} />,
-    title: "Test Automation",
-    desc: "Robust Playwright, Selenium & Python automated testing suites covering critical user flows."
+    title: "QA Architecture & Test Automation",
+    desc: "Designing Playwright, Selenium & Python automated regression suites ensuring zero critical defects before deployment."
+  },
+  {
+    icon: <Brain size={20} />,
+    title: "Agentic AI & LLM Automation",
+    desc: "Building multi-agent systems, prompt workflows, and N8N automation pipelines to streamline complex business processes."
   },
   {
     icon: <Plug size={20} />,
-    title: "API Validation",
-    desc: "Postman collections, payload assertion tests, and REST endpoint verification."
-  },
-  {
-    icon: <BarChart3 size={20} />,
-    title: "Defect Matrix",
-    desc: "Clear bug lifecycle tracking in Jira with severity classification and zero critical post-launch bugs."
+    title: "REST API & Data Validation",
+    desc: "Automated Postman test collections, JSON schema assertion suites, payload verification, and database integrity checks."
   },
   {
     icon: <Users size={20} />,
-    title: "Team Leadership",
-    desc: "Aligning developers, designers, QA engineers, and clients through clear communication."
+    title: "International Client Management",
+    desc: "Leading sprint reviews, defect triage sessions, and technical walkthroughs across global time zones and stakeholder tiers."
   },
   {
     icon: <Rocket size={20} />,
-    title: "Release Management",
-    desc: "Strict pre-deployment checklists, staging verification, and production release sign-off."
-  },
-  {
-    icon: <RefreshCw size={20} />,
-    title: "CI/CD Integration",
-    desc: "Automated test runs triggered on Git commits & pull requests via GitHub Actions."
-  },
-  {
-    icon: <Mic size={20} />,
-    title: "Client Demos",
-    desc: "Transparent product walkthroughs, stakeholder progress reports, and sprint retrospectives."
+    title: "Release & Defect Governance",
+    desc: "Enforcing pre-deployment checklists, staging validation, Jira defect lifecycle tracking, and CI/CD automated pipeline triggers."
   }
 ];
 
 export default function WhatYouGetSection() {
   return (
     <section className="section-wrapper" id="what-you-get">
-      <div className="section-tag">DELIVERABLES</div>
+      <div className="section-tag">VALUE & CAPABILITIES</div>
       <h2 className="section-title-large">
-        What<br /><em>You Get?</em>
+        What I Deliver To<br /><em>Your Product & Team</em>
       </h2>
-      <p style={{ maxWidth: "600px", color: "var(--ink-muted)", fontSize: "0.95rem", marginBottom: "2.5rem" }}>
-        Clean workflows, automated QA, and scalable AI architecture combined — turning your vision into a product that holds up in production.
+      <p style={{ maxWidth: "620px", color: "var(--ink-muted)", fontSize: "0.9rem", marginBottom: "1.75rem", lineHeight: 1.55 }}>
+        Bridging the gap between engineering execution, AI capability, and stakeholder clarity to ship dependable software.
       </p>
 
-      <div className="what-grid">
-        {deliverables.map((d, idx) => (
-          <div key={idx} className="what-card fade-up">
-            <div className="what-icon">{d.icon}</div>
-            <h3 className="what-title">{d.title}</h3>
-            <p className="what-desc">{d.desc}</p>
+      <div className="capabilities-grid">
+        {capabilities.map((c, idx) => (
+          <div key={idx} className="capability-card fade-up">
+            <div className="capability-icon-box">{c.icon}</div>
+            <h3 className="capability-title">{c.title}</h3>
+            <p className="capability-desc">{c.desc}</p>
           </div>
         ))}
       </div>
