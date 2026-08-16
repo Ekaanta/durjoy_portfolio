@@ -109,18 +109,6 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           </a>
         </div>
 
-        {/* Sidebar Stats Box */}
-        <div className="sidebar-stats-card">
-          <div>
-            <div className="sb-stat-num">Software</div>
-            <div className="sb-stat-label">PM Lead</div>
-          </div>
-          <div>
-            <div className="sb-stat-num">AI</div>
-            <div className="sb-stat-label">Specialist</div>
-          </div>
-        </div>
-
         {/* Navigation List */}
         <ul className="sidebar-nav-list">
           <li>
@@ -151,6 +139,11 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           <li>
             <a href="#services" className="sidebar-nav-link" onClick={handleNavClick}>
               SERVICES
+            </a>
+          </li>
+          <li>
+            <a href="#client-management" className="sidebar-nav-link" onClick={handleNavClick}>
+              CLIENT MANAGEMENT
             </a>
           </li>
           <li>

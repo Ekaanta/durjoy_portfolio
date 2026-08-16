@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ExternalLink, FileText, ArrowDown, Sparkles } from "lucide-react";
+import { ExternalLink, FileText, ArrowDown } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenCvModal: () => void;
@@ -43,7 +43,6 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
 
         {/* Elegant Executive Badge */}
         <div className="hero-chest-badge">
-          <Sparkles size={15} style={{ color: "#ffffff", flexShrink: 0 }} />
           <span>Software Project Coordinator & AI Specialist</span>
         </div>
       </div>
