@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { X, Play } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl?: string;
+  driveShareUrl?: string;
   title?: string;
   description?: string;
 }
@@ -14,9 +15,10 @@ interface VideoModalProps {
 export default function VideoModal({
   isOpen,
   onClose,
-  videoUrl,
-  title = "International Client Management & Technical Walkthrough",
-  description = "A live recording demonstration of cross-functional team coordination, client sprint review, requirement validation, and project milestone sign-off with international stakeholders."
+  videoUrl = "https://drive.google.com/file/d/1BfkvPwprIDzNotT-e-2nLXkHIYFXaDT8/preview",
+  driveShareUrl = "https://drive.google.com/file/d/1BfkvPwprIDzNotT-e-2nLXkHIYFXaDT8/view?usp=sharing",
+  title = "International Client Meeting & Technical Walkthrough",
+  description = "A live recording demonstration of cross-functional team coordination, client sprint review, requirement validation, and project milestone alignment with international stakeholders."
 }: VideoModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -55,7 +57,7 @@ export default function VideoModal({
               marginBottom: "0.3rem"
             }}
           >
-            VIDEO RECORDING • INTERNATIONAL CLIENT SESSION
+            VIDEO RECORDING • CLIENT MEETING SESSION
           </div>
           <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.5rem", fontWeight: 800, margin: "0.2rem 0", color: "var(--ink)" }}>
             {title}
@@ -75,57 +77,39 @@ export default function VideoModal({
             boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
           }}
         >
-          {videoUrl ? (
-            <iframe
-              src={videoUrl}
-              title={title}
-              style={{ width: "100%", height: "100%", border: "none" }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          ) : (
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#ffffff",
-                background: "linear-gradient(135deg, #1e110c 0%, #2a1711 50%, #4a281e 100%)",
-                padding: "2rem",
-                textAlign: "center"
-              }}
-            >
-              <div
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: "50%",
-                  background: "var(--purple-primary)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "1rem",
-                  boxShadow: "0 8px 24px rgba(227, 83, 54, 0.45)"
-                }}
-              >
-                <Play size={28} style={{ color: "#ffffff", marginLeft: "4px" }} />
-              </div>
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
-                Client Meeting Demo & Technical Walkthrough
-              </h3>
-              <p style={{ fontSize: "0.88rem", color: "rgba(255, 255, 255, 0.75)", maxWidth: "520px", lineHeight: 1.5 }}>
-                Interactive video session demonstrating sprint ceremony facilitation, defect triage, and architecture delivery.
-              </p>
-            </div>
-          )}
+          <iframe
+            src={videoUrl}
+            title={title}
+            style={{ width: "100%", height: "100%", border: "none" }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
 
-        <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", marginTop: "1.25rem", lineHeight: 1.6 }}>
-          {description}
-        </p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.25rem", flexWrap: "wrap", gap: "1rem" }}>
+          <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", lineHeight: 1.6, flex: 1, minWidth: "260px", margin: 0 }}>
+            {description}
+          </p>
+          {driveShareUrl && (
+            <a
+              href={driveShareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="read-more-btn"
+              style={{
+                padding: "0.6rem 1.25rem",
+                fontSize: "0.82rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                whiteSpace: "nowrap"
+              }}
+            >
+              <span>Open in Google Drive</span>
+              <ExternalLink size={13} />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
