@@ -74,12 +74,13 @@ export default function WorkSamplesSection() {
         Corporate Companies<br /><em>I Work With</em>
       </h2>
 
-      {/* Review Cards Grid */}
+      {/* Responsive Review Cards Grid */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          gap: "1.25rem"
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
+          gap: "1.25rem",
+          width: "100%"
         }}
       >
         {reviews.map((r, idx) => (
@@ -88,10 +89,11 @@ export default function WorkSamplesSection() {
             className="capability-card fade-up"
             style={{
               justifyContent: "space-between",
-              gap: "1rem"
+              gap: "1rem",
+              width: "100%"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "0.85rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", flexWrap: "wrap" }}>
               <div
                 style={{
                   width: 40,
@@ -106,9 +108,9 @@ export default function WorkSamplesSection() {
               >
                 <Image src={r.logo} alt={r.name} fill style={{ objectFit: "contain" }} />
               </div>
-              <div>
-                <div style={{ fontWeight: 700, fontSize: "0.92rem", color: "var(--ink)" }}>{r.name}</div>
-                <div style={{ fontSize: "0.74rem", color: "var(--purple-primary)", fontWeight: 600 }}>{r.title}</div>
+              <div style={{ minWidth: 0, flex: 1 }}>
+                <div style={{ fontWeight: 700, fontSize: "0.92rem", color: "var(--ink)", overflowWrap: "break-word" }}>{r.name}</div>
+                <div style={{ fontSize: "0.74rem", color: "var(--purple-primary)", fontWeight: 600, overflowWrap: "break-word" }}>{r.title}</div>
               </div>
             </div>
 

@@ -87,7 +87,7 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
         </button>
       </div>
 
-      {/* 3-Column Prominent Project Showcase Grid */}
+      {/* Responsive Project Showcase Grid */}
       <div className="projects-grid">
         {featuredProjects.map((proj, idx) => (
           <div
@@ -142,7 +142,7 @@ export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSection
 
             {/* Actions */}
             <div className="project-card-footer">
-              <div style={{ display: "flex", gap: "0.35rem" }}>
+              <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
                 {proj.live && (
                   <a
                     href={proj.live}
