@@ -14,7 +14,9 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
       {/* Top Left Floating Stat Pill */}
       <div className="hero-top-left-stats">
         <div className="stat-pill-box">
-          <div className="stat-pill-num">PM<span>&AI</span></div>
+          <div className="stat-pill-num" style={{ fontSize: "1.05rem", fontWeight: 800, letterSpacing: "-0.01em" }}>
+            Project Management <span style={{ color: "var(--purple-primary)" }}>& AI Specialist</span>
+          </div>
           <div className="stat-pill-lbl">Sparktech AI & Unilever</div>
         </div>
         <div className="stat-pill-box">
