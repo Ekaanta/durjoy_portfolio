@@ -35,8 +35,8 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
         <Image
           src="/images/durjoy-hero.png"
           alt="Ekanta Banik (Durjoy) - Software Project Coordinator & AI Specialist"
-          width={440}
-          height={520}
+          width={360}
+          height={430}
           className="hero-profile-img"
           priority
         />
@@ -48,34 +48,34 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
       </div>
 
       {/* Sub-headline description */}
-      <div style={{ textAlign: "center", maxWidth: "680px", margin: "2rem auto 0", zIndex: 10, position: "relative" }}>
-        <p style={{ fontSize: "1.05rem", color: "var(--ink-secondary)", fontWeight: 500, lineHeight: 1.6 }}>
+      <div style={{ textAlign: "center", maxWidth: "660px", margin: "1.15rem auto 0", zIndex: 10, position: "relative" }}>
+        <p style={{ fontSize: "0.98rem", color: "var(--ink-secondary)", fontWeight: 500, lineHeight: 1.55 }}>
           Building intelligent AI agents, LLM automation pipelines, and leading agile software project delivery for enterprise & consumer products.
         </p>
       </div>
 
       {/* Action Buttons */}
-      <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "2rem", flexWrap: "wrap", zIndex: 10, position: "relative" }}>
-        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.85rem 2rem", fontSize: "0.92rem", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+      <div style={{ display: "flex", justifyContent: "center", gap: "0.85rem", marginTop: "1.25rem", flexWrap: "wrap", zIndex: 10, position: "relative" }}>
+        <a href="#projects" className="btn-hire-gold" style={{ width: "auto", padding: "0.75rem 1.75rem", fontSize: "0.88rem", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
           <span>Explore AI & PM Projects</span>
-          <ArrowDown size={16} />
+          <ArrowDown size={15} />
         </a>
         <a
           href="https://durjoy-ai.lovable.app"
           target="_blank"
           rel="noopener noreferrer"
           className="read-more-btn"
-          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--bg-card-white)", borderColor: "var(--sandy-amber)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
+          style={{ padding: "0.75rem 1.5rem", fontSize: "0.88rem", background: "var(--bg-card-white)", borderColor: "var(--sandy-amber)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
         >
           <span>Live AI Site</span>
-          <ExternalLink size={15} />
+          <ExternalLink size={14} />
         </a>
         <button
           onClick={onOpenCvModal}
           className="read-more-btn"
-          style={{ padding: "0.85rem 1.75rem", fontSize: "0.92rem", background: "var(--ink)", color: "#ffffff", borderColor: "var(--ink)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
+          style={{ padding: "0.75rem 1.5rem", fontSize: "0.88rem", background: "var(--ink)", color: "#ffffff", borderColor: "var(--ink)", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}
         >
-          <FileText size={16} />
+          <FileText size={15} />
           <span>View Full CV</span>
         </button>
       </div>
