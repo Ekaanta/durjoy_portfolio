@@ -1,15 +1,43 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Copy, Check, FileText, Menu, X } from "lucide-react";
+import {
+  Home as HomeIcon,
+  Briefcase,
+  Code2,
+  FolderGit2,
+  CheckCircle2,
+  Wrench,
+  Video,
+  Mail,
+  Github,
+  Linkedin,
+  Copy,
+  Check,
+  FileText,
+  Menu,
+  X
+} from "lucide-react";
 
 interface NavbarProps {
   onOpenCvModal: () => void;
 }
 
+const navItems = [
+  { label: "Home", href: "#hero", icon: <HomeIcon size={16} /> },
+  { label: "Experience", href: "#journey", icon: <Briefcase size={16} /> },
+  { label: "Tech Stack", href: "#stack", icon: <Code2 size={16} /> },
+  { label: "AI & PM Projects", href: "#projects", icon: <FolderGit2 size={16} /> },
+  { label: "Deliverables", href: "#what-you-get", icon: <CheckCircle2 size={16} /> },
+  { label: "Services", href: "#services", icon: <Wrench size={16} /> },
+  { label: "Client Management", href: "#client-management", icon: <Video size={16} /> },
+  { label: "Contact", href: "#contact", icon: <Mail size={16} /> }
+];
+
 export default function Navbar({ onOpenCvModal }: NavbarProps) {
   const [copied, setCopied] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
   const email = "durjoybanik35138@gmail.com";
 
   useEffect(() => {
@@ -23,139 +51,131 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
     };
   }, [mobileMenuOpen]);
 
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => item.href.substring(1));
+      const scrollPosition = window.scrollY + 200;
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = (sectionId: string) => {
+    setActiveSection(sectionId);
     setMobileMenuOpen(false);
   };
 
   return (
     <aside className="sidebar-column">
-      {/* Brand & Mobile Header Row */}
-      <div className="brand-row">
-        <a href="#" className="brand-logo" onClick={handleNavClick}>
-          DURJOY<span>*</span>
-        </a>
-        
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <div className="social-pills header-social-pills">
-            <a
-              href="https://github.com/Ekaanta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon-btn"
-              title="GitHub Profile"
-            >
-              <Github size={16} />
-            </a>
-            <a
-              href="https://linkedin.com/in/durjoy-banik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon-btn"
-              title="LinkedIn Profile"
-            >
-              <Linkedin size={16} />
-            </a>
-          </div>
+      {/* Brand & Profile Top Header */}
+      <div className="sidebar-top-section">
+        <div className="brand-row">
+          <a href="#" className="brand-logo" onClick={() => handleNavClick("hero")}>
+            DURJOY<span>*</span>
+          </a>
 
-          {/* Mobile Hamburger Toggle Button */}
-          <button
-            type="button"
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen((prev) => !prev)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <div className="social-pills header-social-pills">
+              <a
+                href="https://github.com/Ekaanta"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                title="GitHub Profile"
+              >
+                <Github size={15} />
+              </a>
+              <a
+                href="https://linkedin.com/in/durjoy-banik"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon-btn"
+                title="LinkedIn Profile"
+              >
+                <Linkedin size={15} />
+              </a>
+            </div>
+
+            {/* Mobile Hamburger Toggle Button */}
+            <button
+              type="button"
+              className="mobile-menu-toggle"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Status Pill Badge */}
+        <div className="sidebar-status-badge">
+          <span className="status-indicator-dot"></span>
+          <span>Available for Projects</span>
         </div>
       </div>
 
       {/* Mobile Drawer Overlay Backdrop */}
       {mobileMenuOpen && (
-        <div 
-          className="mobile-menu-backdrop" 
+        <div
+          className="mobile-menu-backdrop"
           onClick={() => setMobileMenuOpen(false)}
           aria-hidden="true"
         />
       )}
 
-      {/* Expandable Sidebar Menu Content */}
+      {/* Main Navigation List */}
       <div className={`sidebar-menu-wrapper ${mobileMenuOpen ? "open" : ""}`}>
-        {/* Mobile-only social links in drawer header */}
-        <div className="mobile-drawer-social">
-          <a
-            href="https://github.com/Ekaanta"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-btn"
-            title="GitHub Profile"
-          >
-            <Github size={18} />
-          </a>
-          <a
-            href="https://linkedin.com/in/durjoy-banik"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-btn"
-            title="LinkedIn Profile"
-          >
-            <Linkedin size={18} />
-          </a>
-        </div>
-
-        {/* Navigation List */}
-        <ul className="sidebar-nav-list">
-          <li>
-            <a href="#hero" className="sidebar-nav-link active" onClick={handleNavClick}>
-              HOME
-            </a>
-          </li>
-          <li>
-            <a href="#journey" className="sidebar-nav-link" onClick={handleNavClick}>
-              EXPERIENCE
-            </a>
-          </li>
-          <li>
-            <a href="#stack" className="sidebar-nav-link" onClick={handleNavClick}>
-              TECH STACK
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="sidebar-nav-link" onClick={handleNavClick}>
-              AI & PM PROJECTS
-            </a>
-          </li>
-          <li>
-            <a href="#what-you-get" className="sidebar-nav-link" onClick={handleNavClick}>
-              DELIVERABLES
-            </a>
-          </li>
-          <li>
-            <a href="#services" className="sidebar-nav-link" onClick={handleNavClick}>
-              SERVICES
-            </a>
-          </li>
-          <li>
-            <a href="#client-management" className="sidebar-nav-link" onClick={handleNavClick}>
-              CLIENT MANAGEMENT
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="sidebar-nav-link" onClick={handleNavClick}>
-              CONTACT
-            </a>
-          </li>
-        </ul>
+        <nav className="sidebar-nav-container">
+          <ul className="sidebar-nav-list">
+            {navItems.map((item) => {
+              const sectionId = item.href.substring(1);
+              const isActive = activeSection === sectionId;
+              return (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className={`sidebar-nav-link ${isActive ? "active" : ""}`}
+                    onClick={() => handleNavClick(sectionId)}
+                  >
+                    <span className="nav-icon-wrap">{item.icon}</span>
+                    <span className="nav-label-text">{item.label}</span>
+                    {isActive && <span className="nav-active-pill"></span>}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
 
         {/* Sidebar Bottom Actions */}
         <div className="sidebar-bottom">
-          <div className="email-copy-pill" onClick={handleCopyEmail} title="Click to copy email">
+          <div
+            className="email-copy-pill"
+            onClick={handleCopyEmail}
+            title="Click to copy email address"
+          >
             <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
               {email}
             </span>
@@ -167,13 +187,20 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
           <button
             type="button"
             onClick={() => {
-              handleNavClick();
+              setMobileMenuOpen(false);
               onOpenCvModal();
             }}
             className="btn-hire-gold"
-            style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5rem" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem",
+              fontSize: "0.85rem",
+              padding: "0.75rem 1.25rem"
+            }}
           >
-            <FileText size={16} />
+            <FileText size={15} />
             <span>View Resume / CV</span>
           </button>
         </div>
