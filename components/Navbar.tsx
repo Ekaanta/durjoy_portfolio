@@ -10,7 +10,6 @@ import {
   Video,
   Star,
   HelpCircle,
-  Mail,
   Github,
   Linkedin,
   Copy,
@@ -32,8 +31,7 @@ const navItems = [
   { label: "What I Deliver", href: "#what-you-get", icon: <CheckCircle2 size={15} /> },
   { label: "Client Management", href: "#client-management", icon: <Video size={15} /> },
   { label: "Results & Reviews", href: "#work-samples", icon: <Star size={15} /> },
-  { label: "FAQ", href: "#faq", icon: <HelpCircle size={15} /> },
-  { label: "Contact", href: "#contact", icon: <Mail size={15} /> }
+  { label: "FAQ", href: "#faq", icon: <HelpCircle size={15} /> }
 ];
 
 export default function Navbar({ onOpenCvModal }: NavbarProps) {

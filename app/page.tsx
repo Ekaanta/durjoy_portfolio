@@ -10,7 +10,6 @@ import WhatYouGetSection from "@/components/WhatYouGetSection";
 import ClientManagementSection, { VideoItem } from "@/components/ClientManagementSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
 import FaqSection from "@/components/FaqSection";
-import ContactSection from "@/components/ContactSection";
 
 import ProjectsModal from "@/components/modals/ProjectsModal";
 import ReviewsModal from "@/components/modals/ReviewsModal";
@@ -76,9 +75,6 @@ export default function Home() {
 
         {/* 8. Frequently Asked Questions */}
         <FaqSection />
-
-        {/* 9. Contact Section */}
-        <ContactSection />
       </main>
 
       {/* Interactive Modals */}
