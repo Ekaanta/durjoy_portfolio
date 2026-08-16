@@ -46,7 +46,7 @@ export default function VideoModal({
         <div style={{ marginBottom: "1.25rem" }}>
           <div
             style={{
-              fontFamily: "'DM Mono', monospace",
+              fontFamily: "'Poppins', sans-serif",
               fontSize: "0.72rem",
               color: "var(--purple-primary)",
               textTransform: "uppercase",
@@ -57,7 +57,7 @@ export default function VideoModal({
           >
             VIDEO RECORDING • CLIENT MEETING SESSION
           </div>
-          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.5rem", fontWeight: 800, margin: "0.2rem 0", color: "var(--ink)" }}>
+          <h2 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.45rem", fontWeight: 800, margin: "0.2rem 0", color: "var(--ink)" }}>
             {title}
           </h2>
         </div>
@@ -84,7 +84,7 @@ export default function VideoModal({
           />
         </div>
 
-        <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", marginTop: "1.25rem", lineHeight: 1.6, margin: "1.25rem 0 0 0" }}>
+        <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem", color: "var(--ink-secondary)", marginTop: "1.25rem", lineHeight: 1.6, margin: "1.25rem 0 0 0" }}>
           {description}
         </p>
       </div>

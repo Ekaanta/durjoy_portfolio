@@ -8,7 +8,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import WhatYouGetSection from "@/components/WhatYouGetSection";
 import ProcessSection from "@/components/ProcessSection";
-import ClientManagementSection from "@/components/ClientManagementSection";
+import ClientManagementSection, { VideoItem } from "@/components/ClientManagementSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
@@ -22,7 +22,7 @@ export default function Home() {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
   const [reviewsModalOpen, setReviewsModalOpen] = useState(false);
   const [cvModalOpen, setCvModalOpen] = useState(false);
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
 
   useEffect(() => {
     // IntersectionObserver for scroll animations
@@ -72,8 +72,8 @@ export default function Home() {
         {/* Solutions That Deliver (Services) */}
         <ProcessSection />
 
-        {/* International Client Management Section with Video Lightbox */}
-        <ClientManagementSection onOpenVideoModal={() => setVideoModalOpen(true)} />
+        {/* International Client Management Section with 2 Side-by-Side Video Demos */}
+        <ClientManagementSection onOpenVideoModal={(video: VideoItem) => setSelectedVideo(video)} />
 
         {/* From People I've Worked With (Testimonials & Impact Stats) */}
         <WorkSamplesSection />
@@ -93,7 +93,13 @@ export default function Home() {
       />
       <ReviewsModal isOpen={reviewsModalOpen} onClose={() => setReviewsModalOpen(false)} />
       <CvModal isOpen={cvModalOpen} onClose={() => setCvModalOpen(false)} />
-      <VideoModal isOpen={videoModalOpen} onClose={() => setVideoModalOpen(false)} />
+      <VideoModal
+        isOpen={selectedVideo !== null}
+        onClose={() => setSelectedVideo(null)}
+        videoUrl={selectedVideo?.videoUrl}
+        title={selectedVideo?.title}
+        description={selectedVideo?.description}
+      />
     </div>
   );
 }
