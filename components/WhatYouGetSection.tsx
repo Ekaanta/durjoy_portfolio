@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckSquare, ShieldCheck, Brain, Plug, Users, Rocket } from "lucide-react";
+import { CheckSquare, ShieldCheck, Cpu, Plug, Users, Rocket } from "lucide-react";
 
 const capabilities = [
   {
@@ -15,7 +15,7 @@ const capabilities = [
     desc: "Designing Playwright, Selenium & Python automated regression suites ensuring zero critical defects before deployment."
   },
   {
-    icon: <Brain size={20} />,
+    icon: <Cpu size={20} />,
     title: "Agentic AI & LLM Automation",
     desc: "Building multi-agent systems, prompt workflows, and N8N automation pipelines to streamline complex business processes."
   },

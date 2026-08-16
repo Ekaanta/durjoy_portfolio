@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { Brain, Code2, ShieldCheck, CheckSquare } from "lucide-react";
+import { Cpu, Code2, ShieldCheck, CheckSquare } from "lucide-react";
 
 const stacks = [
   {
-    icon: <Brain size={20} style={{ color: "var(--purple-primary)" }} />,
+    icon: <Cpu size={20} style={{ color: "var(--purple-primary)" }} />,
     title: "AI & GenAI Automation",
     items: [
       "Large Language Models (LLMs) & Prompting",

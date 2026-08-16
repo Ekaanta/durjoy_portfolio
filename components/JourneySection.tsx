@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, Building2, ShieldCheck, ChevronRight } from "lucide-react";
+import { Cpu, Building2, ShieldCheck, ChevronRight } from "lucide-react";
 
 export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () => void }) {
   return (
@@ -97,7 +97,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
-            <Sparkles size={22} style={{ color: "var(--purple-primary)" }} />
+            <Cpu size={22} style={{ color: "var(--purple-primary)" }} />
           </div>
           <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
           <h3 className="journey-role">Jr. AI Engineer</h3>
