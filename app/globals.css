@@ -110,7 +110,7 @@ p, span, div, a, button {
   min-width: 0;
   width: 100%;
   max-width: 1240px;
-  padding: 2.25rem 3rem 4rem;
+  padding: 1.5rem 3rem 3rem;
   margin: 0 auto;
 }
 
@@ -359,11 +359,17 @@ p, span, div, a, button {
   box-shadow: 0 8px 22px rgba(227, 83, 54, 0.4);
 }
 
-/* HERO SECTION - BALANCED SINGLE-VIEWPORT IDENTITY */
+/* HERO SECTION - PROPORTIONED TO OCCUPY VIEWPORT CLEANLY */
 .hero-editorial {
   position: relative;
-  padding: 1.5rem 0 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 0 2.5rem;
   width: 100%;
+  box-sizing: border-box;
+  scroll-margin-top: 0;
 }
 
 .giant-hero-text {
@@ -389,7 +395,7 @@ p, span, div, a, button {
 
 .hero-cutout-wrap {
   position: relative;
-  max-width: 350px;
+  max-width: 340px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -399,7 +405,7 @@ p, span, div, a, button {
 
 .hero-profile-img {
   width: 100%;
-  max-width: 320px;
+  max-width: 310px;
   height: auto;
   display: block;
   background: transparent;
@@ -449,7 +455,7 @@ p, span, div, a, button {
   background: rgba(252, 228, 220, 0.95);
   backdrop-filter: blur(12px);
   border: 1px solid var(--sandy-amber);
-  padding: 0.5rem 0.9rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   max-width: 100%;
@@ -457,7 +463,7 @@ p, span, div, a, button {
 
 .stat-pill-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--purple-primary);
   line-height: 1;
@@ -469,17 +475,22 @@ p, span, div, a, button {
 
 .stat-pill-lbl {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   color: var(--purple-badge-text);
   text-transform: uppercase;
   font-weight: 600;
 }
 
-/* NATURAL CONTENT-BASED SECTION WRAPPER */
+/* SECTION WRAPPER - DEDICATED FULL VIEWPORT HEIGHT SCREEN ON DESKTOP */
 .section-wrapper {
-  padding: 56px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 0;
   border-top: 1px solid var(--border);
-  scroll-margin-top: 24px;
+  box-sizing: border-box;
+  scroll-margin-top: 0;
   width: 100%;
   max-width: 100%;
 }
@@ -519,8 +530,8 @@ p, span, div, a, button {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
-  margin-top: 1.25rem;
+  gap: 1.15rem;
+  margin-top: 1rem;
   width: 100%;
 }
 
@@ -540,8 +551,8 @@ p, span, div, a, button {
   background: var(--bg-card-white);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.4rem 1.6rem;
-  max-width: 520px;
+  padding: 1.25rem 1.45rem;
+  max-width: 500px;
   width: 100%;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
@@ -566,7 +577,7 @@ p, span, div, a, button {
 
 .journey-year {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.85rem;
   font-weight: 900;
   color: var(--purple-primary);
   line-height: 1;
@@ -584,22 +595,22 @@ p, span, div, a, button {
 
 .journey-role {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 .journey-company {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.55rem;
   flex-wrap: wrap;
 }
 
 .company-name {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--ink);
 }
@@ -617,10 +628,10 @@ p, span, div, a, button {
 }
 
 .journey-desc {
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   color: var(--ink-secondary);
-  line-height: 1.55;
-  margin-bottom: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
 }
 
 .journey-footer {
@@ -628,7 +639,7 @@ p, span, div, a, button {
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--border-light);
-  padding-top: 0.65rem;
+  padding-top: 0.6rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -640,7 +651,7 @@ p, span, div, a, button {
 }
 
 .journey-tag {
-  font-size: 0.66rem;
+  font-size: 0.65rem;
   padding: 0.18rem 0.45rem;
   background: var(--bg-canvas);
   border-radius: var(--radius-sm);
@@ -684,12 +695,12 @@ p, span, div, a, button {
   background: var(--bg-card-white);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.4rem 1.25rem;
+  padding: 1.35rem 1.2rem;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.75rem;
   width: 100%;
 }
 
@@ -709,7 +720,7 @@ p, span, div, a, button {
 .stack-items-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 }
 
 .stack-item-row {
@@ -733,7 +744,7 @@ p, span, div, a, button {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.35rem;
+  gap: 1.25rem;
   width: 100%;
 }
 
@@ -766,36 +777,36 @@ p, span, div, a, button {
 }
 
 .project-card-body {
-  padding: 1.25rem 1.25rem 0.75rem;
+  padding: 1.15rem 1.15rem 0.65rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex: 1;
 }
 
 .project-card-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--ink);
   line-height: 1.35;
 }
 
 .project-card-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--ink-muted);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .project-card-meta {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--purple-badge-text);
   font-weight: 600;
-  margin-top: 0.2rem;
+  margin-top: 0.15rem;
 }
 
 .project-card-footer {
-  padding: 0.75rem 1.25rem 1.15rem;
+  padding: 0.65rem 1.15rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -808,7 +819,7 @@ p, span, div, a, button {
 .capabilities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.15rem;
   width: 100%;
 }
 
@@ -816,10 +827,10 @@ p, span, div, a, button {
   background: var(--bg-card-white);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.45rem 1.35rem;
+  padding: 1.35rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.65rem;
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
   width: 100%;
@@ -832,30 +843,90 @@ p, span, div, a, button {
 }
 
 .capability-icon-box {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   background: var(--purple-light);
   color: var(--purple-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .capability-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   font-weight: 700;
   color: var(--ink);
 }
 
 .capability-desc {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--ink-secondary);
-  line-height: 1.55;
+  line-height: 1.5;
+}
+
+/* SERVICES GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+  width: 100%;
+}
+
+.service-card {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.service-card:hover {
+  border-color: var(--purple-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  color: var(--purple-badge-text);
+  background: var(--purple-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+.service-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.service-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+}
+
+.service-bullets li::before {
+  content: '✓ ';
+  color: var(--purple-primary);
+  font-weight: 700;
 }
 
 /* COMPACT HORIZONTAL STATS BANNER */
@@ -866,8 +937,8 @@ p, span, div, a, button {
   background: var(--bg-card-white);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 2.25rem;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 2rem;
   box-shadow: var(--shadow-sm);
   width: 100%;
 }
@@ -957,6 +1028,33 @@ p, span, div, a, button {
   line-height: 1.6;
 }
 
+/* CONTACT CTA CARD */
+.footer-cta-card {
+  background: var(--bg-card-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  margin-top: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.footer-cta-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.65rem;
+}
+
+.footer-cta-sub {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
 /* MODALS */
 .modal-overlay {
   position: fixed;
@@ -1037,6 +1135,9 @@ p, span, div, a, button {
   .capabilities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablet / Mobile Navigation Breakpoint */
@@ -1053,7 +1154,6 @@ p, span, div, a, button {
     border-bottom: 1px solid var(--border);
     padding: 0.75rem 1rem;
     background: rgba(245, 245, 220, 0.98);
-    /* NO backdrop-filter here to avoid trapping fixed drawer */
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     z-index: 1000;
@@ -1101,8 +1201,14 @@ p, span, div, a, button {
   .sidebar-nav-container {
     justify-content: flex-start;
   }
+  .hero-editorial {
+    min-height: auto;
+    padding: 2rem 0;
+    scroll-margin-top: 75px;
+  }
   .section-wrapper {
-    padding: 44px 0;
+    min-height: auto;
+    padding: 3rem 0;
     scroll-margin-top: 75px;
   }
 }
@@ -1141,6 +1247,9 @@ p, span, div, a, button {
     grid-template-columns: 1fr;
   }
   .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
     grid-template-columns: 1fr;
   }
   .hero-top-left-stats {
