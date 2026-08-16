@@ -82,7 +82,7 @@ export default function VideoModal({
           </h2>
         </div>
 
-        {/* Rock-Solid 16:9 Responsive Video Player Container for Mobile & Desktop */}
+        {/* Clean Full-Bleed 16:9 Video Frame Without Google Drive Top Banner */}
         <div
           style={{
             position: "relative",
@@ -100,10 +100,10 @@ export default function VideoModal({
             title={title}
             style={{
               position: "absolute",
-              top: 0,
+              top: "-46px",
               left: 0,
               width: "100%",
-              height: "100%",
+              height: "calc(100% + 46px)",
               border: "none"
             }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
