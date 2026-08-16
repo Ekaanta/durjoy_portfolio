@@ -7,11 +7,9 @@ import JourneySection from "@/components/JourneySection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import WhatYouGetSection from "@/components/WhatYouGetSection";
-import ProcessSection from "@/components/ProcessSection";
 import ClientManagementSection, { VideoItem } from "@/components/ClientManagementSection";
 import WorkSamplesSection from "@/components/WorkSamplesSection";
 import FaqSection from "@/components/FaqSection";
-import ContactSection from "@/components/ContactSection";
 
 import ProjectsModal from "@/components/modals/ProjectsModal";
 import ReviewsModal from "@/components/modals/ReviewsModal";
@@ -52,7 +50,7 @@ export default function Home() {
       {/* Sidebar Navigation */}
       <Navbar onOpenCvModal={() => setCvModalOpen(true)} />
 
-      {/* Main Content Area with Unified 1240px Max-Width Grid */}
+      {/* Main Content Area with Unified 1180px Max-Width Grid */}
       <main className="content-column">
         {/* 1. Hero Section */}
         <HeroSection onOpenCvModal={() => setCvModalOpen(true)} />
@@ -66,23 +64,17 @@ export default function Home() {
         {/* 4. Featured Projects Showcase */}
         <ProjectsSection onOpenProjectsModal={(index: number) => setSelectedProjectIndex(index)} />
 
-        {/* 5. Deliverables (What I Deliver) */}
+        {/* 5. What I Deliver (Consolidated Capabilities) */}
         <WhatYouGetSection />
 
-        {/* 6. Services (Solutions That Deliver) */}
-        <ProcessSection />
-
-        {/* 7. International Client Management (Video Demos) */}
+        {/* 6. International Client Management (Video Demos) */}
         <ClientManagementSection onOpenVideoModal={(video: VideoItem) => setSelectedVideo(video)} />
 
-        {/* 8. Results & Verified Client Reviews */}
+        {/* 7. Results & Verified Client Reviews */}
         <WorkSamplesSection />
 
-        {/* 9. Frequently Asked Questions */}
+        {/* 8. Frequently Asked Questions */}
         <FaqSection />
-
-        {/* 10. Contact Section */}
-        <ContactSection />
       </main>
 
       {/* Interactive Modals */}

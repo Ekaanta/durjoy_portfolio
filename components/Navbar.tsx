@@ -7,9 +7,9 @@ import {
   Code2,
   FolderGit2,
   CheckCircle2,
-  Wrench,
   Video,
-  Mail,
+  Star,
+  HelpCircle,
   Github,
   Linkedin,
   Copy,
@@ -28,10 +28,10 @@ const navItems = [
   { label: "Experience", href: "#journey", icon: <Briefcase size={15} /> },
   { label: "Tech Stack", href: "#stack", icon: <Code2 size={15} /> },
   { label: "AI & PM Projects", href: "#projects", icon: <FolderGit2 size={15} /> },
-  { label: "Deliverables", href: "#what-you-get", icon: <CheckCircle2 size={15} /> },
-  { label: "Services", href: "#services", icon: <Wrench size={15} /> },
+  { label: "What I Deliver", href: "#what-you-get", icon: <CheckCircle2 size={15} /> },
   { label: "Client Management", href: "#client-management", icon: <Video size={15} /> },
-  { label: "Contact", href: "#contact", icon: <Mail size={15} /> }
+  { label: "Results & Reviews", href: "#work-samples", icon: <Star size={15} /> },
+  { label: "FAQ", href: "#faq", icon: <HelpCircle size={15} /> }
 ];
 
 export default function Navbar({ onOpenCvModal }: NavbarProps) {
@@ -55,7 +55,7 @@ export default function Navbar({ onOpenCvModal }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.substring(1));
-      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      const scrollPosition = window.scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const sectionId = sections[i];
