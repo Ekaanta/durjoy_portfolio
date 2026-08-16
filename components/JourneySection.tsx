@@ -27,16 +27,6 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
       </p>
 
       <div className="timeline-container">
-        {/* Curved SVG connector line behind cards */}
-        <svg className="timeline-svg-connector" viewBox="0 0 1000 900" fill="none" preserveAspectRatio="none">
-          <path
-            d="M 250,150 C 750,250 800,450 350,550 C 100,620 400,780 750,850"
-            stroke="var(--purple-primary)"
-            strokeWidth="2"
-            strokeDasharray="4 4"
-          />
-        </svg>
-
         {/* Card 1: Unilever (UCL-Bangladesh) */}
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
