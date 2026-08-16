@@ -57,10 +57,10 @@ export default function ClientManagementSection({ onOpenVideoModal }: ClientMana
           }}
         >
           <Image
-            src="/images/work-api-dashboard.png"
-            alt="International Client Management Session"
+            src="/images/client-meeting-demo.jpg"
+            alt="International Client Management Meeting Demo"
             fill
-            style={{ objectFit: "cover", opacity: 0.85, transition: "all 0.3s ease" }}
+            style={{ objectFit: "cover", opacity: 0.9, transition: "all 0.3s ease" }}
           />
 
           {/* Dark Gradient Overlay */}

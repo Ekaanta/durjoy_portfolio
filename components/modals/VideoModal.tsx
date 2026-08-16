@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { X, ExternalLink } from "lucide-react";
+import { X } from "lucide-react";
 
 interface VideoModalProps {
   isOpen: boolean;
   onClose: () => void;
   videoUrl?: string;
-  driveShareUrl?: string;
   title?: string;
   description?: string;
 }
@@ -16,7 +15,6 @@ export default function VideoModal({
   isOpen,
   onClose,
   videoUrl = "https://drive.google.com/file/d/1BfkvPwprIDzNotT-e-2nLXkHIYFXaDT8/preview",
-  driveShareUrl = "https://drive.google.com/file/d/1BfkvPwprIDzNotT-e-2nLXkHIYFXaDT8/view?usp=sharing",
   title = "International Client Meeting & Technical Walkthrough",
   description = "A live recording demonstration of cross-functional team coordination, client sprint review, requirement validation, and project milestone alignment with international stakeholders."
 }: VideoModalProps) {
@@ -86,30 +84,9 @@ export default function VideoModal({
           />
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "1.25rem", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", lineHeight: 1.6, flex: 1, minWidth: "260px", margin: 0 }}>
-            {description}
-          </p>
-          {driveShareUrl && (
-            <a
-              href={driveShareUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="read-more-btn"
-              style={{
-                padding: "0.6rem 1.25rem",
-                fontSize: "0.82rem",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.35rem",
-                whiteSpace: "nowrap"
-              }}
-            >
-              <span>Open in Google Drive</span>
-              <ExternalLink size={13} />
-            </a>
-          )}
-        </div>
+        <p style={{ fontSize: "0.9rem", color: "var(--ink-secondary)", marginTop: "1.25rem", lineHeight: 1.6, margin: "1.25rem 0 0 0" }}>
+          {description}
+        </p>
       </div>
     </div>
   );
