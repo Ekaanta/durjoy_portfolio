@@ -17,9 +17,9 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         style={{
           maxWidth: "640px",
           color: "var(--ink-muted)",
-          fontSize: "0.95rem",
-          marginBottom: "2.5rem",
-          lineHeight: 1.6,
+          fontSize: "0.9rem",
+          marginBottom: "1.5rem",
+          lineHeight: 1.5,
           fontFamily: "'Poppins', sans-serif"
         }}
       >
@@ -28,9 +28,9 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
 
       <div className="timeline-container">
         {/* Curved SVG connector line behind cards */}
-        <svg className="timeline-svg-connector" viewBox="0 0 1000 900" fill="none" preserveAspectRatio="none">
+        <svg className="timeline-svg-connector" viewBox="0 0 1000 640" fill="none" preserveAspectRatio="none">
           <path
-            d="M 250,150 C 750,250 800,450 350,550 C 200,620 220,700 250,750"
+            d="M 250,110 C 720,160 800,260 750,310 C 700,360 280,450 250,510"
             stroke="var(--purple-primary)"
             strokeWidth="2"
             strokeDasharray="4 4"
@@ -41,7 +41,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
-            <Building2 size={24} style={{ color: "var(--purple-primary)" }} />
+            <Building2 size={22} style={{ color: "var(--purple-primary)" }} />
           </div>
           <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
           <h3 className="journey-role">Project Coordinator</h3>
@@ -60,7 +60,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
             </div>
             <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
               <span>Details</span>
-              <ChevronRight size={14} />
+              <ChevronRight size={13} />
             </button>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         <div className="journey-card card-right fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'22</div>
-            <ShieldCheck size={24} style={{ color: "var(--purple-primary)" }} />
+            <ShieldCheck size={22} style={{ color: "var(--purple-primary)" }} />
           </div>
           <div className="journey-date">03/2022 – 09/2024 • MOHAKHALI DOHS, DHAKA</div>
           <h3 className="journey-role">Trainee Project Coordinator</h3>
@@ -88,7 +88,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
             </div>
             <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
               <span>Details</span>
-              <ChevronRight size={14} />
+              <ChevronRight size={13} />
             </button>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
-            <Sparkles size={24} style={{ color: "var(--purple-primary)" }} />
+            <Sparkles size={22} style={{ color: "var(--purple-primary)" }} />
           </div>
           <div className="journey-date">01/2025 – PRESENT • GULSHAN-1, DHAKA</div>
           <h3 className="journey-role">Jr. AI Engineer</h3>
@@ -117,7 +117,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
             </div>
             <button onClick={onOpenCvModal} className="read-more-btn" style={{ display: "inline-flex", alignItems: "center", gap: "0.2rem" }}>
               <span>Details</span>
-              <ChevronRight size={14} />
+              <ChevronRight size={13} />
             </button>
           </div>
         </div>
