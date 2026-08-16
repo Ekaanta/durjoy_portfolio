@@ -82,12 +82,12 @@ export default function VideoModal({
           </h2>
         </div>
 
-        {/* Video Player Container */}
+        {/* Rock-Solid 16:9 Responsive Video Player Container for Mobile & Desktop */}
         <div
           style={{
             position: "relative",
             width: "100%",
-            aspectRatio: "16 / 9",
+            paddingTop: "56.25%", /* Exactly 16:9 aspect ratio */
             background: "#000",
             borderRadius: "var(--radius-md)",
             overflow: "hidden",
@@ -98,13 +98,20 @@ export default function VideoModal({
           <iframe
             src={videoUrl}
             title={title}
-            style={{ width: "100%", height: "100%", border: "none" }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none"
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
             allowFullScreen
           />
         </div>
 
-        {/* Mobile Quick Action Link */}
+        {/* Description & Action Link */}
         <div
           style={{
             display: "flex",
