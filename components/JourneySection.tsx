@@ -26,30 +26,18 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
         Track record of driving AI/ML engineering, QA test automation, and agile software project coordination across global and enterprise teams.
       </p>
 
-      <div className="timeline-container" style={{ position: "relative" }}>
-        {/* Curved connecting line starting at Card 1 (Project Coordinator) and ending cleanly at Card 3 (AI Engineer) */}
-        <svg
-          className="timeline-svg-connector"
-          viewBox="0 0 1000 850"
-          fill="none"
-          preserveAspectRatio="none"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 1 }}
-        >
+      <div className="timeline-container">
+        {/* Curved SVG connector line behind cards */}
+        <svg className="timeline-svg-connector" viewBox="0 0 1000 900" fill="none" preserveAspectRatio="none">
           <path
-            d="M 250,140 C 700,200 800,360 750,440 C 700,520 300,680 250,750"
+            d="M 250,150 C 750,250 800,450 350,550 C 200,620 220,700 250,750"
             stroke="var(--purple-primary)"
-            strokeWidth="2.2"
-            strokeDasharray="6 6"
+            strokeWidth="2"
+            strokeDasharray="4 4"
           />
-          {/* Starting Circle at Project Coordinator */}
-          <circle cx="250" cy="140" r="5" fill="var(--purple-primary)" />
-          {/* Intermediate Circle at Pureit */}
-          <circle cx="750" cy="440" r="5" fill="var(--purple-primary)" />
-          {/* Terminating Circle exactly at AI Engineer */}
-          <circle cx="250" cy="750" r="5" fill="var(--purple-primary)" />
         </svg>
 
-        {/* Card 1: Unilever (Project Coordinator - Start of Line) */}
+        {/* Card 1: Unilever (UCL-Bangladesh) */}
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
@@ -77,7 +65,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
           </div>
         </div>
 
-        {/* Card 2: Pureit (Trainee Project Coordinator - Mid Curve) */}
+        {/* Card 2: Pureit */}
         <div className="journey-card card-right fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'22</div>
@@ -105,7 +93,7 @@ export default function JourneySection({ onOpenCvModal }: { onOpenCvModal: () =>
           </div>
         </div>
 
-        {/* Card 3: Sparktech AI Limited (Jr. AI Engineer - End of Line) */}
+        {/* Card 3: Sparktech AI Limited */}
         <div className="journey-card card-left fade-up">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div className="journey-year">'25</div>
