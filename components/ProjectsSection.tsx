@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Layers } from "lucide-react";
 
 interface ProjectsSectionProps {
   onOpenProjectsModal: (index: number) => void;
@@ -72,75 +72,188 @@ const projects = [
 export default function ProjectsSection({ onOpenProjectsModal }: ProjectsSectionProps) {
   return (
     <section className="section-wrapper" id="projects">
-      <div className="section-tag">SELECTED REAL PROJECTS</div>
-      <h2 className="section-title-large">
+      <div className="section-tag" style={{ fontFamily: "'Poppins', sans-serif" }}>SELECTED REAL PROJECTS</div>
+      <h2 className="section-title-large" style={{ fontFamily: "'Poppins', sans-serif" }}>
         Built to Scale,<br /><em>Made to Perform</em>
       </h2>
 
-      <div className="projects-rows-list">
+      {/* Grid of Clean Project Cards matching Deliverables style */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "1.35rem"
+        }}
+      >
         {projects.map((proj, idx) => (
           <div
             key={proj.num}
-            className="project-row-item fade-up"
+            className="what-card fade-up"
             onClick={() => onOpenProjectsModal(idx)}
+            style={{
+              background: "var(--bg-card-white)",
+              border: "1px solid var(--sandy-amber)",
+              borderRadius: "var(--radius-md)",
+              padding: "1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              gap: "1rem",
+              cursor: "pointer",
+              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+              fontFamily: "'Poppins', sans-serif"
+            }}
           >
-            <div className="row-left">
-              <div className="row-num">{proj.num}</div>
+            {/* Top Thumbnail Image */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "16 / 10",
+                borderRadius: "var(--radius-sm)",
+                overflow: "hidden",
+                border: "1px solid var(--purple-border)",
+                background: "#111"
+              }}
+            >
+              <Image
+                src={proj.image}
+                alt={proj.title}
+                fill
+                style={{ objectFit: "cover", transition: "transform 0.3s ease" }}
+              />
               <div
-                style={{ width: 72, height: 72, position: "relative", flexShrink: 0, borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--purple-border)", background: "#111", cursor: "pointer" }}
+                style={{
+                  position: "absolute",
+                  top: "0.6rem",
+                  left: "0.6rem",
+                  background: "var(--purple-primary)",
+                  color: "#ffffff",
+                  fontSize: "0.7rem",
+                  fontWeight: 800,
+                  padding: "0.2rem 0.55rem",
+                  borderRadius: "var(--radius-sm)",
+                  fontFamily: "'Poppins', sans-serif"
+                }}
               >
-                <Image src={proj.image} alt={proj.title} fill style={{ objectFit: "cover" }} />
-              </div>
-              <div>
-                <h3 className="row-title">{proj.title}</h3>
-                <div className="row-desc">{proj.description}</div>
-                <div className="row-tags" style={{ marginTop: "0.5rem" }}>
-                  {proj.tags.map((t, i) => (
-                    <span key={i} className="type-badge">
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                PROJ {proj.num}
               </div>
             </div>
 
-            <div className="row-right" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              {proj.live && (
-                <a
-                  href={proj.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="read-more-btn"
-                  style={{ background: "var(--purple-primary)", color: "#fff", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
-                  onClick={(e) => e.stopPropagation()}
+            {/* Title & Description */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.45rem" }}>
+              <h3
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "1.05rem",
+                  fontWeight: 700,
+                  color: "var(--ink)",
+                  margin: 0,
+                  lineHeight: 1.35
+                }}
+              >
+                {proj.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: "0.84rem",
+                  color: "var(--ink-muted)",
+                  lineHeight: 1.55,
+                  margin: 0
+                }}
+              >
+                {proj.description}
+              </p>
+            </div>
+
+            {/* Tags */}
+            <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap" }}>
+              {proj.tags.slice(0, 3).map((t, i) => (
+                <span
+                  key={i}
+                  className="type-badge"
+                  style={{ fontSize: "0.66rem", padding: "0.2rem 0.5rem" }}
                 >
-                  <span>Live Demo</span>
-                  <ExternalLink size={13} />
-                </a>
-              )}
-              {proj.github && (
-                <a
-                  href={proj.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="read-more-btn"
-                  style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
-                  onClick={(e) => e.stopPropagation()}
+                  {t}
+                </span>
+              ))}
+              {proj.tags.length > 3 && (
+                <span
+                  className="type-badge"
+                  style={{ fontSize: "0.66rem", padding: "0.2rem 0.5rem", background: "var(--bg-card)" }}
                 >
-                  <Github size={13} />
-                  <span>GitHub</span>
-                </a>
+                  +{proj.tags.length - 3}
+                </span>
               )}
+            </div>
+
+            {/* Action Buttons Row */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                borderTop: "1px solid var(--border)",
+                paddingTop: "0.85rem",
+                marginTop: "0.25rem",
+                gap: "0.5rem",
+                flexWrap: "wrap"
+              }}
+            >
+              <div style={{ display: "flex", gap: "0.4rem" }}>
+                {proj.live && (
+                  <a
+                    href={proj.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="read-more-btn"
+                    style={{
+                      background: "var(--purple-primary)",
+                      color: "#fff",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.3rem",
+                      padding: "0.35rem 0.75rem",
+                      fontSize: "0.75rem"
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
+                {proj.github && (
+                  <a
+                    href={proj.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="read-more-btn"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.3rem",
+                      padding: "0.35rem 0.75rem",
+                      fontSize: "0.75rem"
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Github size={12} />
+                    <span>GitHub</span>
+                  </a>
+                )}
+              </div>
+
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   onOpenProjectsModal(idx);
                 }}
                 className="row-arrow-btn"
-                aria-label={`View ${proj.title}`}
+                style={{ width: "34px", height: "34px", fontSize: "0.9rem" }}
+                aria-label={`View ${proj.title} Details`}
                 title={`View ${proj.title} Details`}
               >
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </button>
             </div>
           </div>
