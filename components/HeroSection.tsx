@@ -18,7 +18,7 @@ export default function HeroSection({ onOpenCvModal }: HeroSectionProps) {
           <div className="stat-pill-lbl">Sparktech AI & Unilever</div>
         </div>
         <div className="stat-pill-box">
-          <div className="stat-pill-num">7<span>+</span></div>
+          <div className="stat-pill-num">30<span>+</span></div>
           <div className="stat-pill-lbl">Real AI & PM Projects</div>
         </div>
       </div>

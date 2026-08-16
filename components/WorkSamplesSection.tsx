@@ -28,7 +28,7 @@ const reviews = [
 const stats = [
   {
     icon: <Rocket size={20} />,
-    value: "15+",
+    value: "30+",
     label: "Projects Delivered",
     subtext: "Enterprise AI & Software Solutions"
   },
@@ -40,7 +40,7 @@ const stats = [
   },
   {
     icon: <Briefcase size={20} />,
-    value: "4+",
+    value: "2+",
     label: "Years Experience",
     subtext: "Sparktech AI, Unilever & Pureit"
   },
