@@ -212,8 +212,8 @@ p, span, div, a, button {
   background: var(--purple-primary);
   color: #ffffff;
   border: none;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -221,6 +221,7 @@ p, span, div, a, button {
   box-shadow: 0 4px 12px rgba(227, 83, 54, 0.3);
   transition: all 0.25s ease;
   flex-shrink: 0;
+  z-index: 1002;
 }
 
 .sidebar-menu-wrapper {
@@ -1051,10 +1052,11 @@ p, span, div, a, button {
     border-right: none;
     border-bottom: 1px solid var(--border);
     padding: 0.75rem 1rem;
-    background: rgba(245, 245, 220, 0.96);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    z-index: 100;
+    background: rgba(245, 245, 220, 0.98);
+    /* NO backdrop-filter here to avoid trapping fixed drawer */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    z-index: 1000;
   }
   .content-column {
     padding: 1.5rem 1.25rem 3rem;
@@ -1062,34 +1064,46 @@ p, span, div, a, button {
   .mobile-menu-toggle {
     display: flex;
   }
-  .sidebar-menu-wrapper {
-    display: none;
+  .mobile-menu-backdrop {
     position: fixed;
-    top: 56px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    height: calc(100vh - 56px);
-    background: rgba(245, 245, 220, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    padding: 1.5rem;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(42, 23, 17, 0.65);
+    z-index: 998;
+  }
+  .sidebar-menu-wrapper {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background: #f5f5dc;
+    padding: 1.5rem 1.25rem 2.5rem;
     overflow-y: auto;
     margin-top: 0;
-    z-index: 99;
-    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid var(--border);
   }
   .sidebar-menu-wrapper.open {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1.5rem;
   }
   .sidebar-nav-container {
     justify-content: flex-start;
   }
   .section-wrapper {
     padding: 44px 0;
-    scroll-margin-top: 65px;
+    scroll-margin-top: 75px;
   }
 }
 
